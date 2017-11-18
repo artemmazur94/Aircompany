@@ -21,7 +21,7 @@ namespace Aircompany.Services.Helpers
                 emailBody.Append("Please click on the following link to restore your password:<br/>");
                 emailBody.Append(restoreUrl);
                 emailBody.Append("<br/><br/>");
-                emailBody.Append("<strong>Cinema administration</strong>");
+                emailBody.Append("<strong>Aircompany administration</strong>");
 
                 mailMessage.IsBodyHtml = true;
                 mailMessage.Body = emailBody.ToString();
@@ -37,10 +37,10 @@ namespace Aircompany.Services.Helpers
             {
                 var emailBody = new StringBuilder();
                 emailBody.Append($"Dear {fullName}, <br/><br/>");
-                emailBody.Append("You booked tickets in our cinema.<br/>");
+                emailBody.Append("You booked tickets in our aircompany.<br/>");
                 emailBody.Append("Tickets attached to this email as *.pdf files.");
                 emailBody.Append("<br/><br/>");
-                emailBody.Append("<strong>Cinema administration</strong>");
+                emailBody.Append("<strong>Aircompany administration</strong>");
 
                 mailMessage.IsBodyHtml = true;
                 mailMessage.Body = emailBody.ToString();

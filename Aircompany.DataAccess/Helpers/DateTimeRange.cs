@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Cinema.DataAccess.Helpers
+namespace Aircompany.DataAccess.Helpers
 {
     public class DateTimeRange
     {
