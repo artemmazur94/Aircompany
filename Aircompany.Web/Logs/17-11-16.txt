@@ -1,0 +1,517 @@
+
+Log entry:
+11/16/2017 19:02:37
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, Object htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 22
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:02:37
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, Object htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 22
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:03:14
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxHelper(HtmlHelper htmlHelper, ModelMetadata metadata, String name, Nullable`1 isChecked, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxFor[TModel](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 32
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:03:14
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxHelper(HtmlHelper htmlHelper, ModelMetadata metadata, String name, Nullable`1 isChecked, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxFor[TModel](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 32
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:12:30
+
+Log entry:
+11/16/2017 19:15:04
+
+Profile id: 1
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.HiddenHelper(HtmlHelper htmlHelper, ModelMetadata metadata, Object value, Boolean useViewData, String expression, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.HiddenFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Movie_CreateEdit_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Movie\CreateEdit.cshtml:line 25
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:15:04
+
+Profile id: 1
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.HiddenHelper(HtmlHelper htmlHelper, ModelMetadata metadata, Object value, Boolean useViewData, String expression, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.HiddenFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Movie_CreateEdit_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Movie\CreateEdit.cshtml:line 25
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:19:07
+
+Profile id: 1
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.HiddenHelper(HtmlHelper htmlHelper, ModelMetadata metadata, Object value, Boolean useViewData, String expression, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.HiddenFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Movie_CreateEdit_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Movie\CreateEdit.cshtml:line 25
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:19:07
+
+Profile id: 1
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.HiddenHelper(HtmlHelper htmlHelper, ModelMetadata metadata, Object value, Boolean useViewData, String expression, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.HiddenFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Movie_CreateEdit_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Movie\CreateEdit.cshtml:line 25
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:19:46
+
+Profile id: 1
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.HiddenHelper(HtmlHelper htmlHelper, ModelMetadata metadata, Object value, Boolean useViewData, String expression, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.HiddenFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Movie_CreateEdit_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Movie\CreateEdit.cshtml:line 25
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:19:46
+
+Profile id: 1
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.HiddenHelper(HtmlHelper htmlHelper, ModelMetadata metadata, Object value, Boolean useViewData, String expression, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.HiddenFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Movie_CreateEdit_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Movie\CreateEdit.cshtml:line 25
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:23:55
+
+Profile id: 1
+
+Exception type: System.Data.Entity.Infrastructure.DbUpdateException
+
+Exception message: An error occurred while updating the entries. See the inner exception for details.
+
+Strack trace: 
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Aircompany.DataAccess.UnitOfWork.Commit() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.DataAccess\UnitOfWork.cs:line 37
+   at Aircompany.Services.Services.MovieService.Commit() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\MovieService.cs:line 25
+   at Aircompany.Web.Controllers.MovieController.AddMovie(MovieAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\MovieController.cs:line 231
+   at Aircompany.Web.Controllers.MovieController.CreateEdit(MovieAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\MovieController.cs:line 182
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:23:55
+
+Profile id: 1
+
+Exception type: System.Data.Entity.Infrastructure.DbUpdateException
+
+Exception message: An error occurred while updating the entries. See the inner exception for details.
+
+Strack trace: 
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Aircompany.DataAccess.UnitOfWork.Commit() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.DataAccess\UnitOfWork.cs:line 37
+   at Aircompany.Services.Services.MovieService.Commit() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\MovieService.cs:line 25
+   at Aircompany.Web.Controllers.MovieController.AddMovie(MovieAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\MovieController.cs:line 231
+   at Aircompany.Web.Controllers.MovieController.CreateEdit(MovieAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\MovieController.cs:line 182
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:30:09
+
+Profile id: 1
+
+Exception type: System.IO.DirectoryNotFoundException
+
+Exception message: Could not find a part of the path 'H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\uploadFiles\8f845af9-26a2-4aa3-95cd-e00bcbaec4b7.JPG'.
+
+Strack trace: 
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at System.Web.HttpPostedFile.SaveAs(String filename)
+   at Aircompany.Services.Services.MovieService.SetPhotoToDirectory(HttpPostedFileBase poster, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\MovieService.cs:line 78
+   at Aircompany.Web.Controllers.PersonController.AddPerson(PersonAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\PersonController.cs:line 135
+   at Aircompany.Web.Controllers.PersonController.CreateEdit(PersonAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\PersonController.cs:line 115
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:30:09
+
+Profile id: 1
+
+Exception type: System.IO.DirectoryNotFoundException
+
+Exception message: Could not find a part of the path 'H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\uploadFiles\8f845af9-26a2-4aa3-95cd-e00bcbaec4b7.JPG'.
+
+Strack trace: 
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at System.Web.HttpPostedFile.SaveAs(String filename)
+   at Aircompany.Services.Services.MovieService.SetPhotoToDirectory(HttpPostedFileBase poster, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\MovieService.cs:line 78
+   at Aircompany.Web.Controllers.PersonController.AddPerson(PersonAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\PersonController.cs:line 135
+   at Aircompany.Web.Controllers.PersonController.CreateEdit(PersonAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\PersonController.cs:line 115
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:31:49
+
+Profile id: 1
+
+Exception type: System.IO.DirectoryNotFoundException
+
+Exception message: Could not find a part of the path 'H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\uploadFiles\2b52914b-869c-435f-bb71-440612ca8a90.JPG'.
+
+Strack trace: 
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at System.Web.HttpPostedFile.SaveAs(String filename)
+   at Aircompany.Services.Services.MovieService.SetPhotoToDirectory(HttpPostedFileBase poster, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\MovieService.cs:line 83
+   at Aircompany.Web.Controllers.PersonController.AddPerson(PersonAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\PersonController.cs:line 135
+   at Aircompany.Web.Controllers.PersonController.CreateEdit(PersonAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\PersonController.cs:line 115
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:31:50
+
+Profile id: 1
+
+Exception type: System.IO.DirectoryNotFoundException
+
+Exception message: Could not find a part of the path 'H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\uploadFiles\2b52914b-869c-435f-bb71-440612ca8a90.JPG'.
+
+Strack trace: 
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at System.Web.HttpPostedFile.SaveAs(String filename)
+   at Aircompany.Services.Services.MovieService.SetPhotoToDirectory(HttpPostedFileBase poster, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\MovieService.cs:line 83
+   at Aircompany.Web.Controllers.PersonController.AddPerson(PersonAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\PersonController.cs:line 135
+   at Aircompany.Web.Controllers.PersonController.CreateEdit(PersonAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\PersonController.cs:line 115
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:32:50
+
+Profile id: 1
+
+Exception type: System.IO.DirectoryNotFoundException
+
+Exception message: Could not find a part of the path 'H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\uploadFiles\eaf8ceec-ff16-49b5-b7b1-3b3fe672f23a.JPG'.
+
+Strack trace: 
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at System.Web.HttpPostedFile.SaveAs(String filename)
+   at Aircompany.Services.Services.MovieService.SetPhotoToDirectory(HttpPostedFileBase poster, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\MovieService.cs:line 83
+   at Aircompany.Web.Controllers.PersonController.AddPerson(PersonAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\PersonController.cs:line 135
+   at Aircompany.Web.Controllers.PersonController.CreateEdit(PersonAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\PersonController.cs:line 115
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/16/2017 19:32:50
+
+Profile id: 1
+
+Exception type: System.IO.DirectoryNotFoundException
+
+Exception message: Could not find a part of the path 'H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\uploadFiles\eaf8ceec-ff16-49b5-b7b1-3b3fe672f23a.JPG'.
+
+Strack trace: 
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at System.Web.HttpPostedFile.SaveAs(String filename)
+   at Aircompany.Services.Services.MovieService.SetPhotoToDirectory(HttpPostedFileBase poster, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\MovieService.cs:line 83
+   at Aircompany.Web.Controllers.PersonController.AddPerson(PersonAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\PersonController.cs:line 135
+   at Aircompany.Web.Controllers.PersonController.CreateEdit(PersonAddEditViewModel model) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\PersonController.cs:line 115
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================

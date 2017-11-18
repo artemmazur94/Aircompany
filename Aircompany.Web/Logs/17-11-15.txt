@@ -1,0 +1,550 @@
+
+Log entry:
+11/15/2017 18:18:49
+
+Exception type: System.InvalidOperationException
+
+Exception message: No connection string named 'AircompanyContext' could be found in the application config file.
+
+Strack trace: 
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Aircompany.DataAccess.Repositories.GenericRepositrory`1.Find(Expression`1 predicate) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.DataAccess\Repositories\GenericRepository.cs:line 33
+   at Aircompany.Services.Services.MovieService.GetAllMovies() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\MovieService.cs:line 30
+   at Aircompany.Web.Controllers.MovieController.Index() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\MovieController.cs:line 39
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:33:08
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: maxlength
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, Object htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 22
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:33:08
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: maxlength
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, Object htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 22
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:34:22
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: maxlength
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, Object htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 22
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:34:22
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: maxlength
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, Object htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 22
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:35:40
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, Object htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 22
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:35:40
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, Object htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 22
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:36:23
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.PasswordFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 27
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:36:23
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.PasswordFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 27
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:38:10
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxHelper(HtmlHelper htmlHelper, ModelMetadata metadata, String name, Nullable`1 isChecked, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxFor[TModel](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 32
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:38:10
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxHelper(HtmlHelper htmlHelper, ModelMetadata metadata, String name, Nullable`1 isChecked, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxFor[TModel](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 32
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:38:46
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxHelper(HtmlHelper htmlHelper, ModelMetadata metadata, String name, Nullable`1 isChecked, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxFor[TModel](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 32
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:38:46
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxHelper(HtmlHelper htmlHelper, ModelMetadata metadata, String name, Nullable`1 isChecked, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxFor[TModel](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 32
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:39:48
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxHelper(HtmlHelper htmlHelper, ModelMetadata metadata, String name, Nullable`1 isChecked, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxFor[TModel](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 32
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:39:48
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: required
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxHelper(HtmlHelper htmlHelper, ModelMetadata metadata, String name, Nullable`1 isChecked, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.CheckBoxFor[TModel](HtmlHelper`1 htmlHelper, Expression`1 expression, IDictionary`2 htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 32
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:41:03
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: minlength
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, Object htmlAttributes)
+   at ASP._Page_Views_Account_Register_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Register.cshtml:line 19
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:41:03
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: minlength
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, Object htmlAttributes)
+   at ASP._Page_Views_Account_Register_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Register.cshtml:line 19
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:41:09
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: maxlength
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, Object htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 22
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:41:09
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: maxlength
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, Object htmlAttributes)
+   at ASP._Page_Views_Account_Login_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Login.cshtml:line 22
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:50:20
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: minlength
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, Object htmlAttributes)
+   at ASP._Page_Views_Account_Register_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Register.cshtml:line 19
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/15/2017 21:50:20
+
+Exception type: System.InvalidOperationException
+
+Exception message: Validation type names in unobtrusive client validation rules must be unique. The following validation type was seen more than once: minlength
+
+Strack trace: 
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.ValidateUnobtrusiveValidationRule(ModelClientValidationRule rule, IDictionary`2 resultsDictionary, String dictionaryKey)
+   at System.Web.Mvc.UnobtrusiveValidationAttributesGenerator.GetValidationAttributes(IEnumerable`1 clientRules, IDictionary`2 results)
+   at System.Web.Mvc.HtmlHelper.GetUnobtrusiveValidationAttributes(String name, ModelMetadata metadata)
+   at System.Web.Mvc.Html.InputExtensions.InputHelper(HtmlHelper htmlHelper, InputType inputType, ModelMetadata metadata, String name, Object value, Boolean useViewData, Boolean isChecked, Boolean setId, Boolean isExplicitValue, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, String format, IDictionary`2 htmlAttributes)
+   at System.Web.Mvc.Html.InputExtensions.TextBoxFor[TModel,TProperty](HtmlHelper`1 htmlHelper, Expression`1 expression, Object htmlAttributes)
+   at ASP._Page_Views_Account_Register_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Register.cshtml:line 19
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================

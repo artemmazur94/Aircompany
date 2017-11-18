@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BCB3E5E1-197D-4277-8C9B-11BF69CF5EE0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Aircompany.DataAccess</RootNamespace>
+    <AssemblyName>Aircompany.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AircompanyContext.cs" />
+    <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\Comment.cs" />
+    <Compile Include="Entities\ExternalAccount.cs" />
+    <Compile Include="Entities\ExternalProvider.cs" />
+    <Compile Include="Entities\Genre.cs" />
+    <Compile Include="Entities\GenreLocalization.cs" />
+    <Compile Include="Entities\Plane.cs" />
+    <Compile Include="Entities\Language.cs" />
+    <Compile Include="Entities\Movie.cs" />
+    <Compile Include="Entities\MovieLocalization.cs" />
+    <Compile Include="Entities\Person.cs" />
+    <Compile Include="Entities\PersonLocalization.cs" />
+    <Compile Include="Entities\Photo.cs" />
+    <Compile Include="Entities\PlaneLocalization.cs" />
+    <Compile Include="Entities\Profile.cs" />
+    <Compile Include="Entities\Rating.cs" />
+    <Compile Include="Entities\Seance.cs" />
+    <Compile Include="Entities\SeatTypeClass.cs" />
+    <Compile Include="Entities\Sector.cs" />
+    <Compile Include="Entities\SectorTypePrice.cs" />
+    <Compile Include="Entities\SecurityToken.cs" />
+    <Compile Include="Entities\Ticket.cs" />
+    <Compile Include="Entities\TicketPreOrder.cs" />
+    <Compile Include="Entities\TicketPreOrdersDeleted.cs" />
+    <Compile Include="EntityMappings\AccountMap.cs" />
+    <Compile Include="EntityMappings\CommentMap.cs" />
+    <Compile Include="EntityMappings\ExternalAccountMap.cs" />
+    <Compile Include="EntityMappings\ExternalProviderMap.cs" />
+    <Compile Include="EntityMappings\GenreLocalizationMap.cs" />
+    <Compile Include="EntityMappings\GenreMap.cs" />
+    <Compile Include="EntityMappings\PlaneMap.cs" />
+    <Compile Include="EntityMappings\LanguageMap.cs" />
+    <Compile Include="EntityMappings\MovieLocalizationMap.cs" />
+    <Compile Include="EntityMappings\MovieMap.cs" />
+    <Compile Include="EntityMappings\PersonLocalizationMap.cs" />
+    <Compile Include="EntityMappings\PersonMap.cs" />
+    <Compile Include="EntityMappings\PhotoMap.cs" />
+    <Compile Include="EntityMappings\PlaneLocalizationMap.cs" />
+    <Compile Include="EntityMappings\ProfileMap.cs" />
+    <Compile Include="EntityMappings\RatingMap.cs" />
+    <Compile Include="EntityMappings\SeanceMap.cs" />
+    <Compile Include="EntityMappings\SeatTypeMap.cs" />
+    <Compile Include="EntityMappings\SectorMap.cs" />
+    <Compile Include="EntityMappings\SectorTypePriceMap.cs" />
+    <Compile Include="EntityMappings\SecurityTokenMap.cs" />
+    <Compile Include="EntityMappings\TicketMap.cs" />
+    <Compile Include="EntityMappings\TicketPreOrderMap.cs" />
+    <Compile Include="EntityMappings\TicketPreOrdersDeletedMap.cs" />
+    <Compile Include="Enums\SeatType.cs" />
+    <Compile Include="Helpers\DateTimeRange.cs" />
+    <Compile Include="IUnitOfWork.cs" />
+    <Compile Include="Migrations\201711152104521_Initial.cs" />
+    <Compile Include="Migrations\201711152104521_Initial.Designer.cs">
+      <DependentUpon>201711152104521_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711181127128_hall_to_plane.cs" />
+    <Compile Include="Migrations\201711181127128_hall_to_plane.Designer.cs">
+      <DependentUpon>201711181127128_hall_to_plane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\AccountRepository.cs" />
+    <Compile Include="Repositories\Contracts\IAccountRepository.cs" />
+    <Compile Include="Repositories\Contracts\IGenreRepository.cs" />
+    <Compile Include="Repositories\Contracts\IMovieRepository.cs" />
+    <Compile Include="Repositories\Contracts\IPersonRepository.cs" />
+    <Compile Include="Repositories\Contracts\IRepository.cs" />
+    <Compile Include="Repositories\Contracts\ISeanceRepository.cs" />
+    <Compile Include="Repositories\Contracts\ISecurityTokenRepository.cs" />
+    <Compile Include="Repositories\GenericRepository.cs" />
+    <Compile Include="Repositories\GenreRepository.cs" />
+    <Compile Include="Repositories\MovieRepository.cs" />
+    <Compile Include="Repositories\PersonRepository.cs" />
+    <Compile Include="Repositories\SeanceRepository.cs" />
+    <Compile Include="Repositories\SecurityTokenRepository.cs" />
+    <Compile Include="UnitOfWork.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711152104521_Initial.resx">
+      <DependentUpon>201711152104521_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711181127128_hall_to_plane.resx">
+      <DependentUpon>201711181127128_hall_to_plane.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
