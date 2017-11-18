@@ -21,8 +21,13 @@ namespace Aircompany.Services.Helpers
                     using (PdfWriter writer = PdfWriter.GetInstance(document, fileStream))
                     {
                         document.Open();
-                        document.Add(new Paragraph("TICKET"));
-                        document.Add(new Paragraph($"Movie: {ticket.MovieName}"));
+                        document.Add(new Paragraph("FLIGHT TICKET"));
+                        document.Add(new Paragraph($"Departure airport code: {ticket.DepartureAirportCode}"));
+                        document.Add(new Paragraph($"Departure airport city: {ticket.DepartureCity}"));
+                        document.Add(new Paragraph($"Departure airport country: {ticket.DepartureCountry}"));
+                        document.Add(new Paragraph($"Ariving airport code: {ticket.ArivingAirportCode}"));
+                        document.Add(new Paragraph($"Ariving airport city: {ticket.ArivingCity}"));
+                        document.Add(new Paragraph($"Ariving airport country: {ticket.ArivingCountry}"));
                         document.Add(new Paragraph($"Date: {ticket.Date.ToShortDateString()}"));
                         document.Add(new Paragraph($"Time: {ticket.Time}"));
                         document.Add(new Paragraph($"Plane model: {ticket.PlaneModel}"));

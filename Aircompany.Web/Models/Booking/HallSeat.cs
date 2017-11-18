@@ -16,15 +16,15 @@ namespace Aircompany.Web.Models.Booking
         [Display(Name = "Seat type: ")]
         public int Type { get; set; }
 
-        public static List<PlaneSeat> GetAllSeats(List<Ticket> seanceTickets, List<TicketPreOrder> seanceTicketPreOrders)
+        public static List<PlaneSeat> GetAllSeats(List<Ticket> tickets, List<TicketPreOrder> ticketPreOrders)
         {
-            List<PlaneSeat> seats = seanceTickets.Select(x => new PlaneSeat
+            List<PlaneSeat> seats = tickets.Select(x => new PlaneSeat
             {
                 Row = x.Row,
                 Place = x.Place
             }).ToList();
 
-            seats.AddRange(seanceTicketPreOrders.Distinct().Select(x => new PlaneSeat
+            seats.AddRange(ticketPreOrders.Distinct().Select(x => new PlaneSeat
             {
                 Row = x.Row,
                 Place = x.Place
@@ -33,9 +33,9 @@ namespace Aircompany.Web.Models.Booking
             return seats;
         }
 
-        public static List<PlaneSeat> GetAllSeats(List<TicketPreOrder> seanceTicketPreOrders)
+        public static List<PlaneSeat> GetAllSeats(List<TicketPreOrder> ticketPreOrders)
         {
-            return seanceTicketPreOrders.Select(x => new PlaneSeat
+            return ticketPreOrders.Select(x => new PlaneSeat
             {
                 Row = x.Row,
                 Place = x.Place

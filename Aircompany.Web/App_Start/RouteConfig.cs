@@ -12,7 +12,7 @@ namespace Aircompany.Web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Movie", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Flight", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

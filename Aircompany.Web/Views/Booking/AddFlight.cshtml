@@ -1,0 +1,81 @@
+﻿@model Aircompany.Web.Models.Booking.AddFlightViewModel
+
+@{
+    ViewBag.Title = "Add flight";
+}
+
+<script src="~/Scripts/Custom/cusotm_validators.js"></script>
+<script src="~/Scripts/Custom/add_flight.js"></script>
+<script type="text/javascript">
+    var ActionUrl = '@Url.Action("GetSeatTypes", "Booking")';
+</script>
+
+<div class="page-header">
+    <h1>Add flight</h1>
+</div>
+<div class="row">
+    <div class="col-sm-12">
+        @using (Html.BeginForm("AddFlight", "Booking", FormMethod.Post, new {@class = "form-horizontal", id = "add-flight-form" }))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.Partial("FormValidation")
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.DepartureDate, new { @class = "control-label col-sm-2" })
+                @Html.TextBoxFor(x => x.DepartureDate, "{0:d}", new { @class = "form-control col-sm-4" })
+                <span class="help-block col-sm-6 hidden" id="date-label">Date is not valid.</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Departure time: </label>
+                @Html.TextBoxFor(x => x.DepartureTime, new { @class = "form-control col-sm-4", type = "time" })
+                <span class="help-block col-sm-6 hidden" id="time-label">Time is not valid.</span>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.ArivingDate, new { @class = "control-label col-sm-2" })
+                @Html.TextBoxFor(x => x.ArivingDate, "{0:d}", new { @class = "form-control col-sm-4" })
+                <span class="help-block col-sm-6 hidden" id="date-label">Date is not valid.</span>
+            </div>
+            <div class="form-group">
+                <label class="control-label col-sm-2">Ariving time: </label>
+                @Html.TextBoxFor(x => x.ArivingTime, new { @class = "form-control col-sm-4", type = "time" })
+                <span class="help-block col-sm-6 hidden" id="time-label">Time is not valid.</span>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.DepartureAirportId, new {@class = "control-label col-sm-2"})
+                @Html.DropDownListFor(x => x.DepartureAirportId, (SelectList) ViewBag.DepartureAirports, new {@class = "form-control col-sm-4"})
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.ArivingAirportId, new { @class = "control-label col-sm-2" })
+                @Html.DropDownListFor(x => x.ArivingAirportId, (SelectList)ViewBag.ArivingAirports, new { @class = "form-control col-sm-4" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.PlaneId, new { @class = "control-label col-sm-2" })
+                @Html.DropDownListFor(x => x.PlaneId, (SelectList)ViewBag.Planes, new { @class = "form-control col-sm-4" })
+            </div>
+
+            <div id="seat-prices-constainer">
+                @Html.Partial("_SeatTypePrices", Model.SeatTypePrices, new ViewDataDictionary
+                {
+                    TemplateInfo = new TemplateInfo {HtmlFieldPrefix = nameof(Model.SeatTypePrices)}
+                })
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input class="btn btn-success" type="button" value="Add flight" id="submit-btn"/>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<hr/>
+<div class="row">
+    <div class="col-sm-12">
+        @Html.ActionLink("< Back", "Flights", new { departureAirportId = Model.DepartureAirportId, arivingAirportId = Model.ArivingAirportId })
+    </div>
+</div>

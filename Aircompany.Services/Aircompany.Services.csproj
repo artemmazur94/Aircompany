@@ -54,12 +54,10 @@
     <Compile Include="Services\BookingService.cs" />
     <Compile Include="Services\Contracts\IAccountService.cs" />
     <Compile Include="Services\Contracts\IBookingService.cs" />
-    <Compile Include="Services\Contracts\IGenreService.cs" />
-    <Compile Include="Services\Contracts\IMovieService.cs" />
-    <Compile Include="Services\Contracts\IPersonService.cs" />
-    <Compile Include="Services\GenreService.cs" />
-    <Compile Include="Services\MovieService.cs" />
-    <Compile Include="Services\PersonService.cs" />
+    <Compile Include="Services\Contracts\IAirportService.cs" />
+    <Compile Include="Services\Contracts\IFlightService.cs" />
+    <Compile Include="Services\AirportService.cs" />
+    <Compile Include="Services\FlightService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

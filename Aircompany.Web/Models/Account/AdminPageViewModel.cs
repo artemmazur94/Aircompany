@@ -7,10 +7,8 @@ namespace Aircompany.Web.Models.Account
     {
         public decimal AvarageNumberOfBookedTickets { get; set; }
 
-        public int NumberOfSeancesThisWeek { get; set; }
+        public int NumberOfFlightsThisWeek { get; set; }
 
-        public List<string> MoviesThisWeek { get; set; }
-
-        public List<SeanceViewModel> SeancesThisWeek { get; set; }
+        public List<FlightViewModel> FlightsThisWeek { get; set; }
     }
 }

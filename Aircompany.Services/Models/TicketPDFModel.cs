@@ -6,7 +6,13 @@ namespace Aircompany.Services.Models
     {
         public Guid Guid { get; set; }
 
-        public string MovieName { get; set; }
+        public string DepartureAirportCode { get; set; }
+        public string DepartureCity { get; set; }
+        public string DepartureCountry { get; set; }
+
+        public string ArivingAirportCode { get; set; }
+        public string ArivingCity { get; set; }
+        public string ArivingCountry { get; set; }
 
         public DateTime Date { get; set; }
 

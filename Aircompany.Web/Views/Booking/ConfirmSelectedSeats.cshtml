@@ -1,6 +1,6 @@
-﻿@using Aircompany.Web.Helpers
+﻿@using Aircompany.DataAccess.Enums
 @using Aircompany.Web.Models.Booking
-@model SeanceViewModel
+@model FlightViewModel
 
 @{
     ViewBag.Title = "Confirm selected seats";
@@ -14,22 +14,30 @@
 <div class="jumbotron">
     <h2>Confirm selected seats</h2>
     <hr />
-    <h2>Movie: @Model.MovieName</h2>
+    <h2>Flight: @Model.DepartureAirportCode -> @Model.ArivingAirportCode</h2>
     <div class="row">
         <div class="col-sm-4">
             <h3>
-                <strong>Seance information: </strong>
+                <strong>flight information: </strong>
             </h3>
         </div>
         <div class="col-sm-8">
             <br />
             <div class="col-sm-6">
-                @Html.LabelFor(x => x.Date)
-                @Model.Date.ToShortDateString()
+                @Html.LabelFor(x => x.DepartureDate)
+                @Model.DepartureDate.ToShortDateString()
             </div>
             <div class="col-sm-6">
-                @Html.LabelFor(x => x.Time)
-                @Model.Time.ToString()
+                @Html.LabelFor(x => x.DepartureTime)
+                @Model.DepartureTime.ToString()
+            </div>
+            <div class="col-sm-6">
+                @Html.LabelFor(x => x.ArivingDate)
+                @Model.ArivingDate.ToShortDateString()
+            </div>
+            <div class="col-sm-6">
+                @Html.LabelFor(x => x.ArivingTime)
+                @Model.ArivingTime.ToString()
             </div>
             <div class="col-sm-6">
                 @Html.LabelFor(x => x.PlaneModel)
@@ -61,17 +69,17 @@ else
                     decimal price = Model.Prices.Find(x => x.SeatTypeId == seat.Type).Price;
                     switch (seat.Type)
                     {
-                        case (int) SeatType.Single:
+                        case (int) SeatType.Econom:
                             panelClass = "panel-primary";
-                            type = SeatType.Single.ToString();
+                            type = SeatType.Econom.ToString();
                             break;
-                        case (int) SeatType.Double:
+                        case (int) SeatType.Business:
                             panelClass = "panel-info";
-                            type = SeatType.Double.ToString();
+                            type = SeatType.Business.ToString();
                             break;
-                        case (int) SeatType.Single4D:
+                        case (int) SeatType.First:
                             panelClass = "panel-danger";
-                            type = SeatType.Single4D.ToString();
+                            type = SeatType.First.ToString();
                             break;
                         default:
                             panelClass = "panel-default";
@@ -96,8 +104,8 @@ else
     </div>
     <div class="row">
         <div class="col-sm-4 pull-right">
-            <input type="button" class="btn btn-danger" value="Cancel selected tickets" onclick="location.href = '@Url.Action("CancelSelectedSeats", "Booking", new {seanceId = Model.Id})'" />
-            <input type="button" class="btn btn-success" value="Book tickets" onclick="location.href = '@Url.Action("BookTickets", new {seanceId = Model.Id})'" />
+            <input type="button" class="btn btn-danger" value="Cancel selected tickets" onclick="location.href = '@Url.Action("CancelSelectedSeats", "Booking", new {flight = Model.Id})'" />
+            <input type="button" class="btn btn-success" value="Book tickets" onclick="location.href = '@Url.Action("BookTickets", new {flight = Model.Id})'" />
         </div>
     </div>
 }

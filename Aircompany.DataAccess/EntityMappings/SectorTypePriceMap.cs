@@ -7,9 +7,9 @@ namespace Aircompany.DataAccess.EntityMappings
     {
         public SectorTypePriceMap()
         {
-            HasKey(x => new {x.SeatTypeId, x.SeanceId});
+            HasKey(x => new {x.SeatTypeId, x.FlightId});
 
-            HasRequired(x => x.Seance).WithMany(x => x.SectorTypePrices).HasForeignKey(x => x.SeanceId);
+            HasRequired(x => x.Flight).WithMany(x => x.SectorTypePrices).HasForeignKey(x => x.FlightId);
             HasRequired(x => x.SeatTypeClass).WithMany(x => x.SectorTypePrices).HasForeignKey(x => x.SeatTypeId);
         }
     }

@@ -1,0 +1,74 @@
+﻿@using Aircompany.Web.Helpers
+@model Aircompany.Web.Models.Booking.FlightsViewModel
+
+@{
+    ViewBag.Title = "Flights";
+}
+
+<div class="page-header">
+    <h1>Flights on direction: @Model.DepartureAirportCode -> @Model.ArivingAirportCode.</h1>
+</div>
+
+@if (User.IsAdmin())
+{
+    <div class="row">
+        <div class="col-sm-10">
+            <a href="@Url.Action("AddFlight", "Booking")"><span class="glyphicon glyphicon-plus"></span> Add flight</a>
+        </div>
+    </div>
+    <hr/>
+}
+
+@if (Model.Flights.Count == 0)
+{
+    <div class="row">
+        <div class="col-sm-10">
+            Sorry, there is no flights on this direction.
+        </div>
+    </div>
+}
+else
+{
+    <div class="row">
+        <div class="col-sm-9">
+            @foreach (var flight in Model.Flights)
+            {
+                <div class="col-sm-offset-1 col-sm-5 panel panel-primary panel-body">
+                    <div class="col-sm-9">
+                        <div class="row">
+                            @Html.LabelFor(x => flight.DepartureDate, new {@class = "control-label"})
+                            @flight.DepartureDate.ToShortDateString()
+                        </div>
+                        <div class="row">
+                            @Html.LabelFor(x => flight.DepartureTime, new {@class = "control-label"})
+                            @flight.DepartureTime.ToString()
+                        </div>
+                        <div class="row">
+                            @Html.LabelFor(x => flight.ArivingDate, new { @class = "control-label" })
+                            @flight.ArivingDate.ToShortDateString()
+                        </div>
+                        <div class="row">
+                            @Html.LabelFor(x => flight.ArivingTime, new { @class = "control-label" })
+                            @flight.ArivingTime.ToString()
+                        </div>
+                        <div class="row">
+                            @Html.LabelFor(x => flight.PlaneModel, new {@class = "control-label"})
+                            @flight.PlaneModel
+                        </div>
+                        <div class="row">
+                            @Html.LabelFor(x => flight.Prices, new {@class = "control-label"})
+                            @String.Join(", ", flight.Prices.Select(x => x.Price))
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="row">
+                            <button onclick="location.href = '@Url.Action("SelectSeats", new { id = flight.Id})'" class="btn btn-primary pull-right " type="button"><span class="glyphicon glyphicon-tags"></span> Book tickets</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
+<hr/>
+@Html.ActionLink("< Back to details", "Details", "Flight")

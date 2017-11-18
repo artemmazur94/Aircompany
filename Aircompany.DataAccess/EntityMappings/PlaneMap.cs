@@ -8,6 +8,8 @@ namespace Aircompany.DataAccess.EntityMappings
         public PlaneMap()
         {
             HasKey(x => x.Id);
+
+            HasOptional(x => x.Photo).WithMany(x => x.Planes).HasForeignKey(x => x.PhotoId);
         }
     }
 }

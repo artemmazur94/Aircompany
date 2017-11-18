@@ -7,13 +7,9 @@ namespace Aircompany.DataAccess
     {
         IAccountRepository AccountRepository { get; }
 
-        IGenreRepository GenreRepository { get; }
+        IAirportRepository AirportRepository { get; }
 
-        IMovieRepository MovieRepository { get; }
-
-        IPersonRepository PersonRepository { get; }
-
-        ISeanceRepository SeanceRepository { get; }
+        IFlightRepository FlightRepository { get; }
 
         ISecurityTokenRepository SecurityTokenRepository { get; }
         

@@ -8,33 +8,33 @@ namespace Aircompany.Services.Services.Contracts
     {
         void Commit();
 
-        List<Seance> GetActiveSeancesByMovieId(int movieId);
+        List<Flight> GetActiveFlightsByDepartureAirportId(int departureAirportId);
 
-        Seance GetSeance(int id);
+        Flight GetFlight(int id);
 
         List<Sector> GetSectorsByPlaneId(int planeId);
 
-        bool IsTicketAbleToBook(int row, int place, int seanceId);
+        bool IsTicketAbleToBook(int row, int place, int flightId);
 
         void AddTicketPreOrder(TicketPreOrder ticketPreOrder);
 
-        List<Ticket> GetSeanceTickets(int seanceId);
+        List<Ticket> GetFlightTickets(int flightId);
 
-        List<TicketPreOrder> GetSeanceTicketPreOrdersOfOtherUsers(int seanceId, int profileId);
+        List<TicketPreOrder> GetFlightTicketPreOrdersOfOtherUsers(int flightId, int profileId);
 
-        List<TicketPreOrder> GetSeanceTicketPreOrdersForCurrentUser(int seanceId, int profileId);
+        List<TicketPreOrder> GetFlightTicketPreOrdersForCurrentUser(int flightId, int profileId);
 
-        bool IsSeatBindedToOtherUser(int row, int place, int seanceId, int profileId);
+        bool IsSeatBindedToOtherUser(int row, int place, int flightId, int profileId);
 
-        bool IsSeatBindedByCurrnetUser(int row, int place, int seanceId, int profileId);
+        bool IsSeatBindedByCurrnetUser(int row, int place, int flightId, int profileId);
 
         void RemoveTicketPreOrderForUser(int row, int place, int seeanceId, int profileId);
 
-        void MarkTicketPreOrdersAsDeletedForUser(int seanceId, int profileId);
+        void MarkTicketPreOrdersAsDeletedForUser(int flightId, int profileId);
 
         void BookTickets(List<Ticket> tickets);
 
-        void RemoveTicketPreOrdersForUser(int seanceId, int profileId);
+        void RemoveTicketPreOrdersForUser(int flightId, int profileId);
 
         List<Ticket> GetTicketsForUser(int profileId);
 
@@ -42,14 +42,12 @@ namespace Aircompany.Services.Services.Contracts
 
         List<Plane> GetAllPlanes();
 
-        bool IsAvailableSeanceTime(int planeId, DateTime dateTime, int movieLength);
-
-        void AddSeance(Seance seance);
+        void AddFlight(Flight flight);
 
         List<int> GetSeatTypesForPlane(int planeId);
 
-        void SendTickets(List<Ticket> tickets, int languageId, string serverPath, Profile profile);
+        void SendTickets(List<Ticket> tickets, string serverPath, Profile profile);
 
-        List<Seance> GetSeancesThisWeek();
+        List<Flight> GetFlightsThisWeek();
     }
 }

@@ -10,7 +10,7 @@ namespace Aircompany.DataAccess.Entities
         public Guid Guid { get; set; }
         public string Filename { get; set; }
 
-        public virtual ICollection<Movie> Movies { get; set; }
-        public virtual ICollection<Person> Persons { get; set; }
+        public virtual ICollection<Plane> Planes { get; set; }
+        public virtual ICollection<Airport> Airports { get; set; }
     }
 }

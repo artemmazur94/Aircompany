@@ -26,137 +26,139 @@ namespace Aircompany.Services.Services
             _unitOfWork.Commit();
         }
 
-        public List<Seance> GetActiveSeancesByMovieId(int movieId)
+        public List<Flight> GetActiveFlightsByDepartureAirportId(int departureAirportId)
         {
-            return _unitOfWork.SeanceRepository.Find(x => x.MovieId == movieId && x.DateTime > DateTime.UtcNow).ToList();
+            return _unitOfWork.FlightRepository.Find(x => 
+                x.DepartureAirportId == departureAirportId 
+                && x.DepartureDateTime > DateTime.UtcNow).ToList();
         }
 
-        public Seance GetSeance(int id)
+        public Flight GetFlight(int id)
         {
-            return _unitOfWork.SeanceRepository.Get(id);
+            return _unitOfWork.FlightRepository.Get(id);
         }
 
         public List<Sector> GetSectorsByPlaneId(int planeId)
         {
-            return _unitOfWork.SeanceRepository.GetSectorsByPlaneId(planeId);
+            return _unitOfWork.FlightRepository.GetSectorsByPlaneId(planeId);
         }
 
-        public bool IsTicketAbleToBook(int row, int place, int seanceId)
+        public bool IsTicketAbleToBook(int row, int place, int flightId)
         {
-            return !_unitOfWork.SeanceRepository.IsExistTicket(row, place, seanceId);
+            return !_unitOfWork.FlightRepository.IsExistTicket(row, place, flightId);
         }
 
         public void AddTicketPreOrder(TicketPreOrder ticketPreOrder)
         {
-            _unitOfWork.SeanceRepository.AddTicketPreOrder(ticketPreOrder);
+            _unitOfWork.FlightRepository.AddTicketPreOrder(ticketPreOrder);
         }
 
-        public List<Ticket> GetSeanceTickets(int seanceId)
+        public List<Ticket> GetFlightTickets(int flightId)
         {
-            return _unitOfWork.SeanceRepository.GetSeanceTickets(seanceId);
+            return _unitOfWork.FlightRepository.GetFlightTickets(flightId);
         }
 
-        public List<TicketPreOrder> GetSeanceTicketPreOrdersOfOtherUsers(int seanceId, int profileId)
+        public List<TicketPreOrder> GetFlightTicketPreOrdersOfOtherUsers(int flightId, int profileId)
         {
-            return _unitOfWork.SeanceRepository.GetSeanceTicketPreOrdersOfOtherUsers(seanceId, profileId);
+            return _unitOfWork.FlightRepository.GetFlightTicketPreOrdersOfOtherUsers(flightId, profileId);
         }
 
-        public List<TicketPreOrder> GetSeanceTicketPreOrdersForCurrentUser(int seanceId, int profileId)
+        public List<TicketPreOrder> GetFlightTicketPreOrdersForCurrentUser(int flightId, int profileId)
         {
-            return _unitOfWork.SeanceRepository.GetSeanceTicketPreOrdersForUser(seanceId, profileId);
+            return _unitOfWork.FlightRepository.GetFlightTicketPreOrdersForUser(flightId, profileId);
         }
 
-        public bool IsSeatBindedToOtherUser(int row, int place, int seanceId, int profileId)
+        public bool IsSeatBindedToOtherUser(int row, int place, int flightId, int profileId)
         {
-            return _unitOfWork.SeanceRepository.IsSeatBindedToOtherUser(row, place, seanceId, profileId);
+            return _unitOfWork.FlightRepository.IsSeatBindedToOtherUser(row, place, flightId, profileId);
         }
 
-        public bool IsSeatBindedByCurrnetUser(int row, int place, int seanceId, int profileId)
+        public bool IsSeatBindedByCurrnetUser(int row, int place, int flightId, int profileId)
         {
-            return _unitOfWork.SeanceRepository.IsSeatBindedByCurrnetUser(row, place, seanceId, profileId);
+            return _unitOfWork.FlightRepository.IsSeatBindedByCurrnetUser(row, place, flightId, profileId);
         }
 
-        public void RemoveTicketPreOrderForUser(int row, int place, int seanceId, int profileId)
+        public void RemoveTicketPreOrderForUser(int row, int place, int flightId, int profileId)
         {
-            TicketPreOrder ticketPreOrder = _unitOfWork.SeanceRepository.GetTicketPreOrderBySeanceData(row, place, seanceId, profileId);
-            _unitOfWork.SeanceRepository.RemoveTicketPreOrder(ticketPreOrder);
+            TicketPreOrder ticketPreOrder = _unitOfWork.FlightRepository.GetTicketPreOrderByFlightData(row, place, flightId, profileId);
+            _unitOfWork.FlightRepository.RemoveTicketPreOrder(ticketPreOrder);
         }
 
-        public void MarkTicketPreOrdersAsDeletedForUser(int seanceId, int profileId)
+        public void MarkTicketPreOrdersAsDeletedForUser(int flightId, int profileId)
         {
-            _unitOfWork.SeanceRepository.MarkSeanceTicketPreOrdersAsDeletedForUser(seanceId, profileId);
+            _unitOfWork.FlightRepository.MarkFlightTicketPreOrdersAsDeletedForUser(flightId, profileId);
         }
 
         public void BookTickets(List<Ticket> tickets)
         {
             tickets.ForEach(ticket => ticket.Guid = Guid.NewGuid());
-            _unitOfWork.SeanceRepository.AddTickets(tickets);
+            _unitOfWork.FlightRepository.AddTickets(tickets);
         }
 
-        public void SendTickets(List<Ticket> tickets, int languageId, string serverPath, Profile profile)
+        public void SendTickets(List<Ticket> tickets, string serverPath, Profile profile)
         {
             List<TicketPDFModel> ticketModels = new List<TicketPDFModel>();
-            int seanceId = tickets.First().SeanceId;
-            tickets.ForEach(ticket => ticketModels.Add(new TicketPDFModel()
+            int flightId = tickets.First().FlightId;
+            tickets.ForEach(ticket => ticketModels.Add(new TicketPDFModel
             {
-                Date = ticket.Seance.DateTime.ToLocalTime().Date,
-                Time = ticket.Seance.DateTime.ToLocalTime().TimeOfDay,
-                PlaneModel = $"{ticket.Seance.Plane.Manufacturer} {ticket.Seance.Plane.Model}",
-                MovieName = _unitOfWork.MovieRepository.GetMovieLocalization(ticket.Seance.MovieId, languageId).Name,
+                Date = ticket.Flight.DepartureDateTime.ToLocalTime().Date,
+                Time = ticket.Flight.DepartureDateTime.ToLocalTime().TimeOfDay,
+                PlaneModel = $"{ticket.Flight.Plane.Manufacturer} {ticket.Flight.Plane.Model}",
+                DepartureAirportCode = ticket.Flight.DepartureAirport.Code,
+                DepartureCountry = ticket.Flight.DepartureAirport.Country,
+                DepartureCity = ticket.Flight.DepartureAirport.City,
+                ArivingAirportCode = ticket.Flight.ArivingAirport.Code,
+                ArivingCountry = ticket.Flight.ArivingAirport.Country,
+                ArivingCity = ticket.Flight.ArivingAirport.City,
                 Place = ticket.Place,
                 Row = ticket.Row,
                 Guid = ticket.Guid,
-                SeatTypeId = _unitOfWork.SeanceRepository.GetSeatType(ticket.Seance.PlaneId, ticket.Row, ticket.Place),
+                SeatTypeId = _unitOfWork.FlightRepository.GetSeatType(ticket.Flight.PlaneId, ticket.Row, ticket.Place),
             }));
-            ticketModels.ForEach(
-                x => x.Price = _unitOfWork.SeanceRepository.GetPriceBySeatTypeId(x.SeatTypeId, seanceId));
-            List<string> pathes =
-                tickets.Select(x => serverPath + ConfigurationManager.AppSettings[TICKETS_DIRECTORY_KEY] +
+
+            ticketModels.ForEach(x => x.Price = _unitOfWork.FlightRepository.GetPriceBySeatTypeId(x.SeatTypeId, flightId));
+
+            List<string> pathes = tickets.Select(x => serverPath + ConfigurationManager.AppSettings[TICKETS_DIRECTORY_KEY] +
                                     $"\\Ticket-{x.Guid}.pdf").ToList();
             ticketModels.ForEach(x => PDFManager.CreateTicket(x, serverPath));
             EmailManager.TicketEmail(pathes, profile.Email,
                 $"{profile.Name} {profile.Surname}");
         }
 
-        public List<Seance> GetSeancesThisWeek()
+        public List<Flight> GetFlightsThisWeek()
         {
-            return _unitOfWork.SeanceRepository.GetSeancesThisWeek();
+            return _unitOfWork.FlightRepository.GetFlightsThisWeek();
         }
 
-        public void RemoveTicketPreOrdersForUser(int seanceId, int profileId)
+        public void RemoveTicketPreOrdersForUser(int flightId, int profileId)
         {
-            List<TicketPreOrder> ticketPreOrders = GetSeanceTicketPreOrdersForCurrentUser(seanceId, profileId);
-            ticketPreOrders.ForEach(x => _unitOfWork.SeanceRepository.RemoveTicketPreOrder(x));
+            List<TicketPreOrder> ticketPreOrders = GetFlightTicketPreOrdersForCurrentUser(flightId, profileId);
+            ticketPreOrders.ForEach(x => _unitOfWork.FlightRepository.RemoveTicketPreOrder(x));
         }
 
         public List<Ticket> GetTicketsForUser(int profileId)
         {
-            return _unitOfWork.SeanceRepository.GetTicketsForUser(profileId);
+            return _unitOfWork.FlightRepository.GetTicketsForUser(profileId);
         }
 
         public int GetSeatType(int planeId, int row, int place)
         {
-            return _unitOfWork.SeanceRepository.GetSeatType(planeId, row, place);
+            return _unitOfWork.FlightRepository.GetSeatType(planeId, row, place);
         }
 
         public List<Plane> GetAllPlanes()
         {
-            return _unitOfWork.SeanceRepository.GetAllPlanes();
+            return _unitOfWork.FlightRepository.GetAllPlanes();
         }
 
-        public bool IsAvailableSeanceTime(int planeId, DateTime dateTime, int movieLength)
+        public void AddFlight(Flight flight)
         {
-            return _unitOfWork.SeanceRepository.IsAvailableSeanceTime(planeId, dateTime, movieLength);
-        }
-
-        public void AddSeance(Seance seance)
-        {
-            _unitOfWork.SeanceRepository.Add(seance);
+            _unitOfWork.FlightRepository.Add(flight);
         }
 
         public List<int> GetSeatTypesForPlane(int planeId)
         {
-            return _unitOfWork.SeanceRepository.GetSeatTypesForPlane(planeId);
+            return _unitOfWork.FlightRepository.GetSeatTypesForPlane(planeId);
         }
 
         protected virtual void Dispose(bool disposing)

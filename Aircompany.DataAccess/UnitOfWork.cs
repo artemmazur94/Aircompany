@@ -9,26 +9,22 @@ namespace Aircompany.DataAccess
 
         public IAccountRepository AccountRepository { get; set; }
 
-        public IGenreRepository GenreRepository { get; set; }
+        public IAirportRepository AirportRepository { get; set; }
 
-        public IMovieRepository MovieRepository { get; set; }
-
-        public IPersonRepository PersonRepository { get; set; }
-
-        public ISeanceRepository SeanceRepository { get; set; }
+        public IFlightRepository FlightRepository { get; set; }
 
         public ISecurityTokenRepository SecurityTokenRepository { get; set; }
 
-        public UnitOfWork(AircompanyContext context, IAccountRepository accountRepository,
-            IGenreRepository genreRepository, IMovieRepository movieRepository, IPersonRepository personRepository,
-            ISeanceRepository seanceRepository, ISecurityTokenRepository securityTokenRepository)
+        public UnitOfWork(AircompanyContext context, 
+            IAccountRepository accountRepository,
+            IAirportRepository airportRepository, 
+            IFlightRepository flightRepository, 
+            ISecurityTokenRepository securityTokenRepository)
         {
             _context = context;
             AccountRepository = accountRepository;
-            GenreRepository = genreRepository;
-            MovieRepository = movieRepository;
-            PersonRepository = personRepository;
-            SeanceRepository = seanceRepository;
+            AirportRepository = airportRepository;
+            FlightRepository = flightRepository;
             SecurityTokenRepository = securityTokenRepository;
         }
 

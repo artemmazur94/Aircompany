@@ -1,6 +1,6 @@
 ﻿@using Aircompany.DataAccess.Entities
-@using SeatType = Aircompany.Web.Helpers.SeatType
-@model Aircompany.Web.Models.Booking.SeanceViewModel
+@using Aircompany.DataAccess.Enums
+@model Aircompany.Web.Models.Booking.FlightViewModel
 
 @{
     ViewBag.Title = "Book tickets";
@@ -10,28 +10,36 @@
 <script src="~/Scripts/Custom/book_tickets.js"></script>
 <script type="text/javascript">
     var ActionUrl = '@Url.Action("ChangePlaceStatus", "Booking")';
-    var seanceId = @Model.Id;
+    var flight = @Model.Id;
 </script>
 
 <br />
 <div class="jumbotron">
-    <h2>Book tickets on movie: @Model.MovieName</h2>
+    <h2>Book tickets on flight: @Model.DepartureAirportCode -> @Model.ArivingAirportCode</h2>
     <hr/>
     <div class="row">
         <div class="col-sm-4">
             <h3>
-                <strong>Seance information: </strong>
+                <strong>Flight information: </strong>
             </h3>
         </div>
         <div class="col-sm-8">
             <br/>
             <div class="col-sm-6">
-                @Html.LabelFor(x => x.Date)
-                @Model.Date.ToShortDateString()
+                @Html.LabelFor(x => x.DepartureDate)
+                @Model.DepartureDate.ToShortDateString()
             </div>
             <div class="col-sm-6">
-                @Html.LabelFor(x => x.Time)
-                @Model.Time.ToString()
+                @Html.LabelFor(x => x.DepartureTime)
+                @Model.DepartureTime.ToString()
+            </div>
+            <div class="col-sm-6">
+                @Html.LabelFor(x => x.ArivingDate)
+                @Model.ArivingDate.ToShortDateString()
+            </div>
+            <div class="col-sm-6">
+                @Html.LabelFor(x => x.ArivingTime)
+                @Model.ArivingTime.ToString()
             </div>
             <div class="col-sm-6">
                 @Html.LabelFor(x => x.PlaneModel)
@@ -39,7 +47,7 @@
             </div>
             <div class="col-sm-6">
                 @Html.LabelFor(x => x.Prices)
-                @String.Join(", ", Model.Prices.Select(x => $"{x.Price:0.00}")) (UAH)
+                @String.Join(", ", Model.Prices.Select(x => string.Format("{0:0.00}", x.Price))) (UAH)
             </div>
         </div>
     </div>
@@ -105,13 +113,13 @@
                                 {
                                     switch (type)
                                     {
-                                        case (int) SeatType.Single:
+                                        case (int) SeatType.Econom:
                                             <button type="button" class="btn btn-primary seat selected-seat" data-row="@i" data-place="@j" data-type="@type">@j</button>
                                             break;
-                                        case (int) SeatType.Double:
+                                        case (int) SeatType.Business:
                                             <button type="button" class="btn btn-info seat selected-seat" data-row="@i" data-place="@j" data-type="@type">@j</button>
                                             break;
-                                        case (int) SeatType.Single4D:
+                                        case (int) SeatType.First:
                                             <button type="button" class="btn btn-danger seat selected-seat" data-row="@i" data-place="@j" data-type="@type">@j</button>
                                             break;
                                     }
@@ -128,23 +136,23 @@
                     <div class="col-sm-3">
                         @switch (price.SeatTypeId)
                         {
-                            case (int) SeatType.Single:
+                            case (int) SeatType.Econom:
                                 <button type="button" class="btn btn-primary seat"></button>
                                 break;
-                            case (int) SeatType.Double:
+                            case (int) SeatType.Business:
                                 <button type="button" class="btn btn-info seat"></button>
                                 break;
-                            case (int) SeatType.Single4D:
+                            case (int) SeatType.First:
                                 <button type="button" class="btn btn-danger seat"></button>
                                 break;
                         }
-                        <span> - @($"{price.Price:0.00} (UAH)")</span>
+                        <span> - @string.Format("{0:0.00} (UAH)", price.Price)</span>
                     </div>
                 }
             </div>
             <hr/>
             <div class="row pull-right">
-                <input type="button" class="btn btn-danger" value="Cancel selected tickets" onclick="location.href = '@Url.Action("CancelSelectedSeats", "Booking", new {seanceId = Model.Id})'"/>
+                <input type="button" class="btn btn-danger" value="Cancel selected tickets" onclick="location.href = '@Url.Action("CancelSelectedSeats", "Booking", new {flight = Model.Id})'"/>
                 <input type="button" class="btn btn-success" value="Book selected seats" onclick="location.href = '@Url.Action("ConfirmSelectedSeats", "Booking", new {id = Model.Id})'"/>
             </div>
 

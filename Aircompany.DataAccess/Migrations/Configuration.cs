@@ -1,4 +1,6 @@
+using System.Linq;
 using Aircompany.DataAccess.Entities;
+using EntityFramework.Extensions;
 
 namespace Aircompany.DataAccess.Migrations
 {
@@ -13,7 +15,25 @@ namespace Aircompany.DataAccess.Migrations
 
         protected override void Seed(AircompanyContext context)
         {
+            context.Profiles.Where(x => x.Email == "artemmazur94@gmail.com").Delete();
+
             context.Languages.Add(new Language {LanguageCode = "EN"});
+
+            context.Accounts.Add(new Account
+            {
+                Id = 1,
+                Profile = new Profile
+                {
+                    Email = "artemmazur94@gmail.com",
+                    IsAdmin = true,
+                    IsBlocked = false,
+                    Name = "admin",
+                    Surname = "admin"
+                },
+                Login = "admin",
+                Password = "GidqPxQsKQiL7Gbrq0tTTQ==", // 123123123
+                Salt = "at/euHaa5Rt8taJZFvIENw=="
+            });
 
             // airports
 

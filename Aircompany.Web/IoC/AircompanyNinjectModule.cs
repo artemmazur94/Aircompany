@@ -18,16 +18,13 @@ namespace Aircompany.Web.IoC
 
             Bind<IAccountService>().To<AccountService>();
             Bind<IBookingService>().To<BookingService>();
-            Bind<IGenreService>().To<GenreService>();
-            Bind<IMovieService>().To<MovieService>();
-            Bind<IPersonService>().To<PersonService>();
+            Bind<IAirportService>().To<AirportService>();
+            Bind<IFlightService>().To<FlightService>();
 
             Bind<IAccountRepository>().To<AccountRepository>();
-            Bind<IMovieRepository>().To<MovieRepository>();
             Bind<ISecurityTokenRepository>().To<SecurityTokenRepository>();
-            Bind<IGenreRepository>().To<GenreRepository>();
-            Bind<IPersonRepository>().To<PersonRepository>();
-            Bind<ISeanceRepository>().To<SeanceRepository>();
+            Bind<IAirportRepository>().To<AirportRepository>();
+            Bind<IFlightRepository>().To<FlightRepository>();
         }
     }
 }

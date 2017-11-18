@@ -10,7 +10,7 @@ namespace Aircompany.DataAccess.EntityMappings
             HasKey(x => x.Id);
 
             HasRequired(x => x.Profile).WithMany(x => x.TicketPreOrders).HasForeignKey(x => x.ProfileId);
-            HasRequired(x => x.Seance).WithMany(x => x.TicketPreOrders).HasForeignKey(x => x.SeanceId);
+            HasRequired(x => x.Flight).WithMany(x => x.TicketPreOrders).HasForeignKey(x => x.FlightId);
         }
     }
 }

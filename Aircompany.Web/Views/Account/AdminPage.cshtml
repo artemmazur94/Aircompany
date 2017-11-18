@@ -9,51 +9,34 @@
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <h3>Avarage number of booked tickets on seance: <strong>@Model.AvarageNumberOfBookedTickets</strong></h3>
+        <h3>Avarage number of booked tickets on flight: <strong>@Model.AvarageNumberOfBookedTickets</strong></h3>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <h3>Number of seances this week: <strong>@Model.NumberOfSeancesThisWeek</strong>
+        <h3>Number of flight this week: <strong>@Model.NumberOfFlightsThisWeek</strong>
         </h3>
     </div>
 </div>
 <div class="row">
     <div class="col-sm-12">
-        <h3>Movies this week:</h3>
-        @if (Model.MoviesThisWeek.Count > 0)
+        <h3>Flights this week:</h3>
+        @if (Model.FlightsThisWeek.Count > 0)
         {
-            <ul class="list-group col-sm-5 col-sm-offset-1">
-                @foreach (var movie in Model.MoviesThisWeek)
-                {
-                    <li><h4>@movie</h4></li>
-                }
-            </ul>
-        }
-        else
-        {
-            <p>There is no movies this week.</p>
-        }
-    </div>
-</div>
-<div class="row">
-    <div class="col-sm-12">
-        <h3>Seances this week:</h3>
-        @if (Model.SeancesThisWeek.Count > 0)
-        {
-            foreach (var seance in Model.SeancesThisWeek)
+            foreach (var flight in Model.FlightsThisWeek)
             {
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading text-center">
-                            @seance.MovieName
+                            @string.Format("{0} -> {1}", flight.DepartureAirportCode, flight.ArivingAirportCode)
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-sm-12"><strong>Seance id:</strong> @seance.Id</div>
+                                <div class="col-sm-12"><strong>Flight id:</strong> @flight.Id</div>
                             </div>
                             <div class="row">
-                                <div class="col-sm-12"><strong>Datetime:</strong> @seance.Date.ToShortDateString() @seance.Time</div>
+                                <div class="col-sm-12"><strong>Datetime:</strong> @flight.DepartureDate.ToShortDateString() @flight.DepartureTime</div>
+                                <div class="col-sm-12"><strong>Datetime:</strong> @flight.ArivingDate.ToShortDateString() @flight.ArivingTime</div>
                             </div>
                         </div>
                     </div>
@@ -62,7 +45,7 @@
         }
         else
         {
-            <p>There is no movies this week.</p>
+            <p>There is no flights this week.</p>
         }
     </div>
 </div>

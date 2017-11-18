@@ -28,7 +28,7 @@ namespace Aircompany.Web.Controllers
     {
         private readonly IAccountService _accountService;
         private readonly IBookingService _bookingService;
-        private readonly IMovieService _movieService;
+        private readonly IFlightService _flightService;
 
         private const string MESSAGE_KEY = "Message";
         private const string FACEBOOK_GET_KEY = "FacebookGetPath";
@@ -51,18 +51,18 @@ namespace Aircompany.Web.Controllers
             LanguageHelper.InitializeCulture(HttpContext);
         }
 
-        public AccountController(IAccountService accountService, IBookingService bookingService, IMovieService movieService)
+        public AccountController(IAccountService accountService, IBookingService bookingService, IFlightService flightService)
         {
             _accountService = accountService;
             _bookingService = bookingService;
-            _movieService = movieService;
+            _flightService = flightService;
         }
 
         public ActionResult Register()
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Movie");
+                return RedirectToAction("Index", "Flight");
             }
             return View();
         }
@@ -92,7 +92,7 @@ namespace Aircompany.Web.Controllers
                     _accountService.AddAccount(account);
                     _accountService.Commit();
                     SignIn(account.Profile, true);
-                    return RedirectToAction("Index", "Movie");
+                    return RedirectToAction("Index", "Flight");
                 }
                 ModelState.AddModelError("", "User with this email already exists");
                 return View(model);
@@ -106,7 +106,7 @@ namespace Aircompany.Web.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Movie");
+                return RedirectToAction("Index", "Flight");
             }
             ViewBag.ReturnUrl = returnUrl;
             return View();
@@ -138,7 +138,7 @@ namespace Aircompany.Web.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Movie");
+                return RedirectToAction("Index", "Flight");
             }
             return View();
         }
@@ -149,7 +149,7 @@ namespace Aircompany.Web.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Movie");
+                return RedirectToAction("Index", "Flight");
             }
             if (ModelState.IsValid)
             {
@@ -170,7 +170,7 @@ namespace Aircompany.Web.Controllers
         {
             Session.Abandon();
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Movie");
+            return RedirectToAction("Index", "Flight");
         }
 
         [AllowAnonymous]
@@ -178,7 +178,7 @@ namespace Aircompany.Web.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Movie");
+                return RedirectToAction("Index", "Flight");
             }
             Guid guid;
             if (!Guid.TryParse(token, out guid))
@@ -206,7 +206,7 @@ namespace Aircompany.Web.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Movie");
+                return RedirectToAction("Index", "Flight");
             }
             if (ModelState.IsValid)
             {
@@ -223,7 +223,7 @@ namespace Aircompany.Web.Controllers
         {
             if (Session[MESSAGE_KEY] == null)
             {
-                return RedirectToAction("Index", "Movie");
+                return RedirectToAction("Index", "Flight");
             }
             string message = (string)Session[MESSAGE_KEY];
             Session[MESSAGE_KEY] = null;
@@ -331,38 +331,36 @@ namespace Aircompany.Web.Controllers
             int profileId = IdentityManager.GetProfileIdFromAuthCookie(HttpContext);
 
             List<Ticket> tickets = _bookingService.GetTicketsForUser(profileId);
-            List<int> movieIds = (from ticket in tickets select ticket.Seance.MovieId).Distinct().ToList();
-            List<MovieLocalization> movieLocalizations = _movieService.GetMovieLocalizations(movieIds, LanguageHelper.CurrnetCulture);
 
             List<TicketViewModel> ticketViewModels = 
                 (from ticket in tickets
-                let type = _bookingService.GetSeatType(ticket.Seance.PlaneId, ticket.Row, ticket.Place)
-                select new TicketViewModel()
+                let type = _bookingService.GetSeatType(ticket.Flight.PlaneId, ticket.Row, ticket.Place)
+                select new TicketViewModel
                 {
-                    Date = ticket.Seance.DateTime.ToLocalTime().Date,
-                    Time = ticket.Seance.DateTime.ToLocalTime().TimeOfDay,
-                    PlaneModel = $"{ticket.Seance.Plane.Manufacturer} {ticket.Seance.Plane.Model}",
+                    DepartureDate = ticket.Flight.DepartureDateTime,
+                    ArivingDate = ticket.Flight.ArivingDateTime,
+                    PlaneModel = $"{ticket.Flight.Plane.Manufacturer} {ticket.Flight.Plane.Model}",
                     Id = ticket.Id,
-                    MovieName = (from movieLocalization in movieLocalizations
-                        where ticket.Seance.MovieId == movieLocalization.MovieId
-                        select movieLocalization.Name).First(),
-                    Price = ticket.Seance.SectorTypePrices.FirstOrDefault(x => x.SeatTypeId == type).Price,
+                    Price = ticket.Flight.SectorTypePrices.First(x => x.SeatTypeId == type).Price,
                     Seat = new PlaneSeat
                     {
                         Row = ticket.Row,
                         Place = ticket.Place,
                         Type = type
                     },
+                    DepartureAirportCode = ticket.Flight.DepartureAirport.Code,
+                    ArivingAirportCode = ticket.Flight.ArivingAirport.Code
                 }).ToList();
+
             MyTicketsViewModel model = new MyTicketsViewModel()
             {
                 PastTickets =
                     (from ticketViewModel in ticketViewModels
-                     where ticketViewModel.Date < DateTime.UtcNow
+                     where ticketViewModel.DepartureDate < DateTime.UtcNow
                      select ticketViewModel).ToList(),
                 UpcomingTickets =
                     (from ticketViewModel in ticketViewModels
-                     where ticketViewModel.Date >= DateTime.UtcNow
+                     where ticketViewModel.DepartureDate >= DateTime.UtcNow
                      select ticketViewModel).ToList()
             };
             return View(model);
@@ -419,7 +417,7 @@ namespace Aircompany.Web.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Movie");
+                return RedirectToAction("Index", "Flight");
             }
             return View();
         }
@@ -441,7 +439,7 @@ namespace Aircompany.Web.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Movie");
+                return RedirectToAction("Index", "Flight");
             }
             if (ModelState.IsValid)
             {
@@ -470,17 +468,21 @@ namespace Aircompany.Web.Controllers
         {
             var model = new AdminPageViewModel()
             {
-                //AvarageNumberOfBookedTickets = _bookingService.GetAvarageNumberOfBookedTickets(),
-                //NumberOfSeancesThisWeek = _bookingService.GetNumberOfSeancesThisWeek(),
-                //MoviesThisWeek = _bookingService.GetMoviesThisWeek(),
-                SeancesThisWeek = new List<SeanceViewModel>()
+                FlightsThisWeek = new List<FlightViewModel>()
             };
-            _bookingService.GetSeancesThisWeek().ForEach(x => model.SeancesThisWeek.Add(new SeanceViewModel()
+            _bookingService.GetFlightsThisWeek().ForEach(x => model.FlightsThisWeek.Add(new FlightViewModel
             {
                 Id = x.Id,
-                Date = x.DateTime.ToLocalTime().Date,
-                Time = x.DateTime.ToLocalTime().TimeOfDay,
-                MovieName = _movieService.GetMovieLocalization(x.MovieId, LanguageHelper.CurrnetCulture).Name
+                DepartureDate = x.DepartureDateTime.ToLocalTime().Date,
+                DepartureTime = x.DepartureDateTime.ToLocalTime().TimeOfDay,
+                ArivingDate = x.ArivingDateTime.ToLocalTime().Date,
+                ArivingTime = x.ArivingDateTime.ToLocalTime().TimeOfDay,
+                DepartureAirportCode = x.DepartureAirport.Code,
+                DepartureAirportCity = x.DepartureAirport.City,
+                DepartureAirportCountry = x.DepartureAirport.Country,
+                ArivingAirportCode = x.ArivingAirport.Code,
+                ArivingAirportCity = x.ArivingAirport.City,
+                ArivingAirportCountry = x.ArivingAirport.Country
             }));
             return View(model);
         }
@@ -598,7 +600,7 @@ namespace Aircompany.Web.Controllers
             {
                 return Redirect(returnUrl);
             }
-            return RedirectToAction("Index", "Movie");
+            return RedirectToAction("Index", "Flight");
         }
 
         private void UpdateAuthTicket(string fullName, string id, bool isAdmin)
@@ -617,7 +619,7 @@ namespace Aircompany.Web.Controllers
             {
                 _accountService.Dispose();
                 _bookingService.Dispose();
-                _movieService.Dispose();
+                _flightService.Dispose();
             }
             base.Dispose(disposing);
         }

@@ -7,7 +7,7 @@
             data: {
                 'row': $this.data('row'),
                 'place': $this.data('place'),
-                'seanceId': seanceId
+                'flightId': flightId
             },
             accept: 'application/json',
             success: function(data) {

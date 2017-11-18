@@ -7,17 +7,20 @@ namespace Aircompany.Web.Models.Booking
     {
         public int Id { get; set; }
 
-        [Display(Name = "Movie name: ")]
-        public string MovieName { get; set; }
-
         [Display(Name = "Plane model: ")]
         public string PlaneModel { get; set; }
 
-        [Display(Name = "Date: ")]
-        public DateTime Date { get; set; }
+        [Display(Name = "Departure date: ")]
+        public DateTime DepartureDate { get; set; }
 
-        [Display(Name = "Time: ")]
-        public TimeSpan Time { get; set; }
+        [Display(Name = "Ariving date: ")]
+        public DateTime ArivingDate { get; set; }
+
+        [Display(Name = "Departure airport code: ")]
+        public string DepartureAirportCode { get; set; }
+
+        [Display(Name = "Ariving airport code: ")]
+        public string ArivingAirportCode { get; set; }
 
         [Display(Name = "Price: ")]
         public decimal Price { get; set; }
