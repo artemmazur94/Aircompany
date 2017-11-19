@@ -4,7 +4,7 @@ namespace Aircompany.Web.Models.Plane
 {
     public class PlaneViewModel
     {
-        public int Id { get; set; }
+        public int? Id { get; set; }
 
         [Required]
         [Display(Name = "Model: ")]

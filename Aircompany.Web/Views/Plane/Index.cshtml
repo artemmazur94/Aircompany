@@ -1,4 +1,5 @@
-﻿@model List<Aircompany.Web.Models.Plane.PlaneViewModel>
+﻿@using Aircompany.Web.Helpers
+@model List<Aircompany.Web.Models.Plane.PlaneViewModel>
 
 @{
     ViewBag.Title = "Planes";
@@ -8,8 +9,14 @@
     <h1>Planes</h1>
 </div>
 
+@if (User.IsAdmin())
+{
+    <a href="@Url.Action("Create", "Plane")"><span class="glyphicon glyphicon-plus"></span> Add plane</a>
+}
+
 @if (!Model.Any())
 {
+    <hr />
     <h4>There are no planes.</h4>
 }
 else

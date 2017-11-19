@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Aircompany.Services.Services.Contracts;
@@ -41,6 +40,18 @@ namespace Aircompany.Web.Controllers
             }).ToList();
 
             return View(model);
+        }
+
+        [HttpGet]
+        [AuthorizeAdmin]
+        public ActionResult Create()
+        {
+            return View("CreateEdit", new PlaneViewModel());
+        }
+
+        public ActionResult CreateEdit()
+        {
+            throw new System.NotImplementedException();
         }
     }
 }
