@@ -1,0 +1,28 @@
+﻿@model List<Aircompany.Web.Models.Plane.PlaneViewModel>
+
+@{
+    ViewBag.Title = "Planes";
+}
+
+<div class="page-header">
+    <h1>Planes</h1>
+</div>
+
+@if (!Model.Any())
+{
+    <h4>There are no planes.</h4>
+}
+else
+{
+    foreach (var item in Model)
+    {
+        <hr/>
+        <div class="row">
+            <div class="col-sm-8">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <h4>@item.Name</h4>
+                </div>
+            </div>
+        </div>
+    }
+}

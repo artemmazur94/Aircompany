@@ -15,17 +15,21 @@ namespace Aircompany.DataAccess
 
         public ISecurityTokenRepository SecurityTokenRepository { get; set; }
 
+        public IPlaneRepository PlaneRepository { get; set; }
+
         public UnitOfWork(AircompanyContext context, 
             IAccountRepository accountRepository,
             IAirportRepository airportRepository, 
             IFlightRepository flightRepository, 
-            ISecurityTokenRepository securityTokenRepository)
+            ISecurityTokenRepository securityTokenRepository,
+            IPlaneRepository planeRepository)
         {
             _context = context;
             AccountRepository = accountRepository;
             AirportRepository = airportRepository;
             FlightRepository = flightRepository;
             SecurityTokenRepository = securityTokenRepository;
+            PlaneRepository = planeRepository;
         }
 
         public void Commit()

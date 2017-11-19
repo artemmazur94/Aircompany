@@ -20,11 +20,13 @@ namespace Aircompany.Web.IoC
             Bind<IBookingService>().To<BookingService>();
             Bind<IAirportService>().To<AirportService>();
             Bind<IFlightService>().To<FlightService>();
+            Bind<IPlaneService>().To<PlaneService>();
 
             Bind<IAccountRepository>().To<AccountRepository>();
             Bind<ISecurityTokenRepository>().To<SecurityTokenRepository>();
             Bind<IAirportRepository>().To<AirportRepository>();
             Bind<IFlightRepository>().To<FlightRepository>();
+            Bind<IPlaneRepository>().To<PlaneRepository>();
         }
     }
 }

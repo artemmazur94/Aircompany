@@ -57,7 +57,7 @@ namespace Aircompany.Services.Services
                 Directory.CreateDirectory(Path.GetDirectoryName(absolutePath));
             }
             poster.SaveAs(absolutePath);
-            var photo = new Photo()
+            var photo = new Photo
             {
                 Filename = poster.FileName,
                 Guid = guid,

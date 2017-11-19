@@ -57,7 +57,9 @@
     <Compile Include="Services\Contracts\IAirportService.cs" />
     <Compile Include="Services\Contracts\IFlightService.cs" />
     <Compile Include="Services\AirportService.cs" />
+    <Compile Include="Services\Contracts\IPlaneService.cs" />
     <Compile Include="Services\FlightService.cs" />
+    <Compile Include="Services\PlaneService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

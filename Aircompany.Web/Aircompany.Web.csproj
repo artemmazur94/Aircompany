@@ -273,6 +273,7 @@
     <Compile Include="Controllers\BookingController.cs" />
     <Compile Include="Controllers\AirportController.cs" />
     <Compile Include="Controllers\FlightController.cs" />
+    <Compile Include="Controllers\PlaneController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -308,6 +309,7 @@
     <Compile Include="Models\Airport\AirportViewModel.cs" />
     <Compile Include="Models\Flight\FlightDetailsViewModel.cs" />
     <Compile Include="Models\Flight\FlightListItemViewModel.cs" />
+    <Compile Include="Models\Plane\PlaneViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -458,6 +460,7 @@
     <Content Include="Views\Flight\Index.cshtml" />
     <Content Include="Views\Shared\FormValidation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Plane\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

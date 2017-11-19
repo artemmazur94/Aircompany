@@ -99,12 +99,14 @@
     <Compile Include="Repositories\AccountRepository.cs" />
     <Compile Include="Repositories\Contracts\IAccountRepository.cs" />
     <Compile Include="Repositories\Contracts\IAirportRepository.cs" />
+    <Compile Include="Repositories\Contracts\IPlaneRepository.cs" />
     <Compile Include="Repositories\Contracts\IRepository.cs" />
     <Compile Include="Repositories\Contracts\IFlightRepository.cs" />
     <Compile Include="Repositories\Contracts\ISecurityTokenRepository.cs" />
     <Compile Include="Repositories\GenericRepository.cs" />
     <Compile Include="Repositories\AirportRepository.cs" />
     <Compile Include="Repositories\FlightRepository.cs" />
+    <Compile Include="Repositories\PlaneRepository.cs" />
     <Compile Include="Repositories\SecurityTokenRepository.cs" />
     <Compile Include="UnitOfWork.cs" />
   </ItemGroup>

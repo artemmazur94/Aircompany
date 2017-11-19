@@ -12,7 +12,9 @@ namespace Aircompany.DataAccess
         IFlightRepository FlightRepository { get; }
 
         ISecurityTokenRepository SecurityTokenRepository { get; }
-        
+
+        IPlaneRepository PlaneRepository { get; }
+
         void Commit();
     }
 }

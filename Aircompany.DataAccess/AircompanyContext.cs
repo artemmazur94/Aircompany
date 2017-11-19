@@ -40,6 +40,7 @@ namespace Aircompany.DataAccess
         public virtual DbSet<AirportLocalization> AirportLocalizations { get; set; }
         public virtual DbSet<Airport> Airports { get; set; }
         public virtual DbSet<Plane> Planes { get; set; }
+        public virtual DbSet<PlaneLocalization> PlaneLocalizations { get; set; }
         public virtual DbSet<Language> Languages { get; set; }
         public virtual DbSet<Photo> Photos { get; set; }
         public virtual DbSet<Profile> Profiles { get; set; }
