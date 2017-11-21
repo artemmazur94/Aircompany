@@ -190,7 +190,7 @@ namespace Aircompany.DataAccess.Migrations
                                 SeatTypeId =context.SeatTypeClasses.First(x => x.Type == SeatType.Econom.ToString()).Id,
                                 FromPlace = 1,
                                 ToPlace = 10,
-                                FromRow = 15,
+                                FromRow = 16,
                                 ToRow = 20
                             }
                         }
