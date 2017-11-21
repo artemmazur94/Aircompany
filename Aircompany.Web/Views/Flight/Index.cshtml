@@ -19,7 +19,7 @@
     <div class="row">
         <div class="col-sm-2">
             @*todo: change to plane placeholder*@
-            <img class="img-responsive" src="@Url.Content("~/Content/images/default_movie_image.png")"/>
+            <img class="img-responsive" src="@Url.Content("~/Content/images/default_direction_image.png")"/>
         </div>
         <div class="col-sm-10">
             <div class="row" style="display: flex">
@@ -28,7 +28,7 @@
                     </h3>
                 </div>
                 <div class="col-sm-4 pull-right" style="margin: auto">
-                    <button class="btn btn-primary" onclick="location.href='@Url.Action("BookTickets", "Booking", new { id = item.FlightId})'"><span class="glyphicon glyphicon-th-list"></span> Flight</button>
+                    <button class="btn btn-primary" onclick="location.href='@Url.Action("BookTickets", "Booking", new { flightId = item.FlightId})'"><span class="glyphicon glyphicon-th-list"></span> Flight</button>
                 </div>
             </div>
             <hr/>

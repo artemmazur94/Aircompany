@@ -326,6 +326,7 @@
     <Content Include="Scripts\ai.0.15.0-build58334.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\Custom\add_flight.js" />
     <Content Include="Scripts\Custom\book_tickets.js" />
@@ -462,6 +463,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Plane\Index.cshtml" />
     <Content Include="Views\Plane\CreateEdit.cshtml" />
+    <Content Include="Views\Plane\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

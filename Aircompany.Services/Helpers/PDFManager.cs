@@ -13,10 +13,15 @@ namespace Aircompany.Services.Helpers
 
         public static void CreateTicket(TicketPDFModel ticket, string serverPath)
         {
+            if (!Directory.Exists(serverPath + ConfigurationManager.AppSettings[TICKETS_DIRECTORY_KEY]))
+            {
+                Directory.CreateDirectory(Path.GetDirectoryName(serverPath + ConfigurationManager.AppSettings[TICKETS_DIRECTORY_KEY]));
+            }
+
             using (var fileStream = new FileStream(serverPath + ConfigurationManager.AppSettings[TICKETS_DIRECTORY_KEY] +
                     $"\\Ticket-{ticket.Guid}.pdf", FileMode.Create))
             {
-                using (var document = new Document(PageSize.A6.Rotate()))
+                using (var document = new Document(PageSize.A5.Rotate()))
                 {
                     using (PdfWriter writer = PdfWriter.GetInstance(document, fileStream))
                     {

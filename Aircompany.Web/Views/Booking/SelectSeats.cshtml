@@ -10,7 +10,7 @@
 <script src="~/Scripts/Custom/book_tickets.js"></script>
 <script type="text/javascript">
     var ActionUrl = '@Url.Action("ChangePlaceStatus", "Booking")';
-    var flight = @Model.Id;
+    var flightId = @Model.Id;
 </script>
 
 <br />
@@ -71,15 +71,15 @@
             <div class="row">
                 <div class="col-sm-2 row">
                     <button type="button" class="btn btn-primary seat"></button>
-                    <span> - single seats</span>
+                    <span> - econom class</span>
                 </div>
                 <div class="col-sm-2 row">
                     <button type="button" class="btn btn-info seat"></button>
-                    <span> - double seats</span>
+                    <span> - business class</span>
                 </div>
                 <div class="col-sm-2 row">
                     <button type="button" class="btn btn-danger seat"></button>
-                    <span> - 4D seats</span>
+                    <span> - first class</span>
                 </div>
                 <div class="col-sm-2 row">
                     <button type="button" class="btn btn-default seat"></button>

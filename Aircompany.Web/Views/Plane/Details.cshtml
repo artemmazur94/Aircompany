@@ -1,0 +1,52 @@
+﻿@model Aircompany.Web.Models.Plane.PlaneViewModel
+
+@{
+    ViewBag.Title = "Plane details";
+}
+
+<div class="page-header">
+    <h1>@(String.IsNullOrEmpty(Model.Name) ? Model.Name : $"{Model.Manufacturer} {Model.Model}")</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-3">
+        @if (String.IsNullOrEmpty(Model.PhotoPath))
+        {
+            <img class="img-responsive" src="@Url.Content("~/Content/images/default_plane_image.png")"/>
+        }
+        else
+        {
+            <img class="img-responsive" src="@Url.Content($"~/uploadFiles/{Model.PhotoPath}")" />
+        }
+    </div>
+    <div class="col-sm-9">
+        <div class="row">
+            @Html.LabelFor(x => x.Name, new { @class = "control-label col-sm-2" })
+            @Model.Name
+        </div>
+        <div class="row">
+            @Html.LabelFor(x => x.Manufacturer, new { @class = "control-label col-sm-2" })
+            @Model.Manufacturer
+        </div>
+        <div class="row">
+            @Html.LabelFor(x => x.Model, new { @class = "control-label col-sm-2" })
+            @Model.Model
+        </div>
+        <div class="row">
+            @Html.LabelFor(x => x.MaxSpeed, new { @class = "control-label col-sm-2" })
+            @Model.MaxSpeed km/h
+        </div>
+        <div class="row">
+            @Html.LabelFor(x => x.Description, new { @class = "control-label col-sm-2" })
+            <div class="col-sm-10">
+                @Model.Description
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-sm-2 right">
+                <a href="@Url.Action("Index", "Plane")">< Back to Planes</a>
+            </div>
+        </div>
+    </div>
+</div>

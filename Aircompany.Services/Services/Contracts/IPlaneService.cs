@@ -10,5 +10,7 @@ namespace Aircompany.Services.Services.Contracts
 
         List<Plane> GetAllPlanes();
         List<PlaneLocalization> GetAllPlaneLocalizations(int languageId);
+        Plane GetPlane(int id);
+        PlaneLocalization GetPlaneLocalization(int id, int languageId);
     }
 }

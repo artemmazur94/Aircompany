@@ -1,0 +1,64 @@
+
+Log entry:
+11/21/2017 22:01:08
+
+Profile id: 1
+
+Exception type: System.IO.DirectoryNotFoundException
+
+Exception message: Could not find a part of the path 'H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Tickets\Ticket-7e577150-90f8-4de6-888f-d62c34489e8e.pdf'.
+
+Strack trace: 
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 16
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass17_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 123
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 123
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 288
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/21/2017 22:01:08
+
+Profile id: 1
+
+Exception type: System.IO.DirectoryNotFoundException
+
+Exception message: Could not find a part of the path 'H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Tickets\Ticket-7e577150-90f8-4de6-888f-d62c34489e8e.pdf'.
+
+Strack trace: 
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 16
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass17_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 123
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 123
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 288
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================

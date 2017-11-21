@@ -26,6 +26,16 @@ namespace Aircompany.Services.Services
             return _unitOfWork.PlaneRepository.GetAllPlaneLocalizations(languageId);
         }
 
+        public Plane GetPlane(int id)
+        {
+            return _unitOfWork.PlaneRepository.Get(id);
+        }
+
+        public PlaneLocalization GetPlaneLocalization(int id, int languageId)
+        {
+            return _unitOfWork.PlaneRepository.GetPlaneLocalization(id, languageId);
+        }
+
         public void Commit()
         {
             _unitOfWork.Commit();

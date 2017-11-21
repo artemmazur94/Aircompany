@@ -5,7 +5,7 @@
 
     $("#submit-btn").click(function() {
         if (validateInputs()) {
-            $("#add-seance-form").submit();
+            $("#add-flight-form").submit();
         }
     });
 
@@ -22,9 +22,14 @@
 
 function validateInputs() {
     var valid = true;
-    if (!validateDate($("#Date").val())) {
-        $("#Date").parent().addClass("has-error");
-        $("#date-label").removeClass("hidden");
+    if (!validateDate($("#DepartureDate").val())) {
+        $("#DepartureDate").parent().addClass("has-error");
+        $("#departure-date-label").removeClass("hidden");
+        valid = false;
+    }
+    if (!validateDate($("#ArivingDate").val())) {
+        $("#ArivingDate").parent().addClass("has-error");
+        $("#ariving-date-label").removeClass("hidden");
         valid = false;
     }
     $(".price-input").each(function() {

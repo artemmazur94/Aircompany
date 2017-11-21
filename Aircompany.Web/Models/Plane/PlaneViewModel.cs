@@ -26,7 +26,6 @@ namespace Aircompany.Web.Models.Plane
         [Display(Name = "Description: ")]
         public string Description { get; set; }
 
-
-        // todo: photo
+        public string PhotoPath { get; set; }
     }
 }

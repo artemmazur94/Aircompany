@@ -24,7 +24,7 @@
             <div class="form-group">
                 @Html.LabelFor(x => x.DepartureDate, new { @class = "control-label col-sm-2" })
                 @Html.TextBoxFor(x => x.DepartureDate, "{0:d}", new { @class = "form-control col-sm-4" })
-                <span class="help-block col-sm-6 hidden" id="date-label">Date is not valid.</span>
+                <span class="help-block col-sm-6 hidden" id="departure-date-label">Date is not valid.</span>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2">Departure time: </label>
@@ -35,7 +35,7 @@
             <div class="form-group">
                 @Html.LabelFor(x => x.ArivingDate, new { @class = "control-label col-sm-2" })
                 @Html.TextBoxFor(x => x.ArivingDate, "{0:d}", new { @class = "form-control col-sm-4" })
-                <span class="help-block col-sm-6 hidden" id="date-label">Date is not valid.</span>
+                <span class="help-block col-sm-6 hidden" id="ariving-date-label">Date is not valid.</span>
             </div>
             <div class="form-group">
                 <label class="control-label col-sm-2">Ariving time: </label>

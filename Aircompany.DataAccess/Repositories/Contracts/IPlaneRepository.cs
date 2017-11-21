@@ -7,5 +7,6 @@ namespace Aircompany.DataAccess.Repositories.Contracts
     public interface IPlaneRepository : IDisposable, IRepository<Plane>
     {
         List<PlaneLocalization> GetAllPlaneLocalizations(int languageId);
+        PlaneLocalization GetPlaneLocalization(int id, int languageId);
     }
 }

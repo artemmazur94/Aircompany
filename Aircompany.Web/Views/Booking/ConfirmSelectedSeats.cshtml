@@ -105,7 +105,7 @@ else
     <div class="row">
         <div class="col-sm-4 pull-right">
             <input type="button" class="btn btn-danger" value="Cancel selected tickets" onclick="location.href = '@Url.Action("CancelSelectedSeats", "Booking", new {flight = Model.Id})'" />
-            <input type="button" class="btn btn-success" value="Book tickets" onclick="location.href = '@Url.Action("BookTickets", new {flight = Model.Id})'" />
+            <input type="button" class="btn btn-success" value="Book tickets" onclick="location.href = '@Url.Action("BookTickets", new {flightId = Model.Id})'" />
         </div>
     </div>
 }

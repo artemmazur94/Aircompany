@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Aircompany.Services.Helpers.EmailManager">
+    <Position X="7.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAACAAAAAAAAABEAAAAAAAgAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\EmailManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aircompany.Services.Helpers.PasswordManager">
+    <Position X="4" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Helpers\PasswordManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aircompany.Services.Helpers.PDFManager">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Helpers\PDFManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aircompany.Services.Models.TicketPDFModel">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAARAAAAAAAAEQAAAIIAAABgARAEgAAAEAAQA=</HashCode>
+      <FileName>Models\TicketPDFModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Aircompany.Services.Services.AccountService" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAAEUEAACAAgABAAgAgAAAAIAAAASmAIAACAIMAAQA=</HashCode>
+      <FileName>Services\AccountService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Aircompany.Services.Services.AirportService" BaseTypeListCollapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACEAACCAAAAAAAgAAAAgAAAAAAAAAAAAEAAAAAgA=</HashCode>
+      <FileName>Services\AirportService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Aircompany.Services.Services.BookingService" BaseTypeListCollapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBABEAAQiASAAAAggACAEAAAAAAAgAABADAkIAAAAQ=</HashCode>
+      <FileName>Services\BookingService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Aircompany.Services.Services.FlightService" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAEAAASCAAAAAAiAAAgAAAAAAAgQAAAAAAACAAAE=</HashCode>
+      <FileName>Services\FlightService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Aircompany.Services.Services.PlaneService" BaseTypeListCollapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAQCAAAAAAggAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\PlaneService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

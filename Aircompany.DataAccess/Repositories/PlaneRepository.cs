@@ -17,5 +17,10 @@ namespace Aircompany.DataAccess.Repositories
         {
             return PlaneContext.PlaneLocalizations.Where(x => x.LanguageId == languageId).ToList();
         }
+
+        public PlaneLocalization GetPlaneLocalization(int id, int languageId)
+        {
+            return PlaneContext.PlaneLocalizations.FirstOrDefault(x => x.PlaneId == id && x.LanguageId == languageId);
+        }
     }
 }

@@ -25,10 +25,32 @@ else
     {
         <hr/>
         <div class="row">
-            <div class="col-sm-8">
-                <div class="col-sm-8 col-sm-offset-2">
-                    <h4>@item.Name</h4>
+            <div class="col-sm-2">
+                @if (String.IsNullOrEmpty(item.PhotoPath))
+                {
+                    <img class="img-responsive" src="@Url.Content("~/Content/images/default_plane_image.png")"/>
+                }
+                else
+                {
+                    <img class="img-responsive" src="@Url.Content($"~/uploadFiles/{item.PhotoPath}")" />
+                }
+            </div>
+            <div class="col-sm-10">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <h4>@item.Name</h4>
+                    </div>
                 </div>
+                
+                @if (User.IsAdmin())
+                {
+                    <hr/>
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <a href="@Url.Action("Details", "Plane", new {id = item.Id})"><span class="glyphicon glyphicon-share"></span> Details</a>
+                        </div>
+                    </div>
+                }
             </div>
         </div>
     }
