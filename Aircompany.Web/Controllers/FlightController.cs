@@ -41,7 +41,10 @@ namespace Aircompany.Web.Controllers
 
             ApplyAirports(airports);
 
-            var flights = _flightService.GetAllActiveFlights().OrderBy(x => x.DepartureDateTime).ToList();
+            var flights = _flightService.GetAllActiveFlights()
+                .Take(10)
+                .OrderBy(x => x.DepartureDateTime)
+                .ToList();
 
             ApplyFlights(flights);
 
