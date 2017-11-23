@@ -6,6 +6,7 @@ namespace Aircompany.Web.Models.Booking
     public class FlightsViewModel
     {
         public int DepartureAirportId { get; set; }
+        public int ArivingAirportId { get; set; }
 
         [Required]
         [Display(Name = "Flights")]

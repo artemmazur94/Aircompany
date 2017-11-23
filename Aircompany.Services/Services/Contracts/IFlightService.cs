@@ -9,6 +9,7 @@ namespace Aircompany.Services.Services.Contracts
     {
         void Commit();
         List<Flight> GetAllFlights();
+        List<Flight> GetAllActiveFlights();
         Flight GetFlight(int id);
         string GetAirportLocalizationName(int airportId, int languageId);
         List<AirportLocalization> GetAllAirportLocalizations(int languageId);

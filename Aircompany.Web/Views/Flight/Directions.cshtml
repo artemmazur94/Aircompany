@@ -1,0 +1,78 @@
+﻿@using Aircompany.Web.Helpers
+@model IEnumerable<Aircompany.Web.Models.Flight.FlightListItemViewModel>
+
+@{
+    ViewBag.Title = "Flights";
+}
+
+<div class="page-header">
+    <h1>Flights</h1>
+</div>
+@if (User.IsAdmin())
+{
+    <a href="@Url.Action("AddFlight", "Booking")"><span class="glyphicon glyphicon-plus"></span> Add flight</a>
+}
+
+@foreach (var item in Model)
+{
+    <hr/>
+    <div class="row">
+        <div class="col-sm-2">
+            @*todo: change to plane placeholder*@
+            <img class="img-responsive" src="@Url.Content("~/Content/images/default_direction_image.png")"/>
+        </div>
+        <div class="col-sm-10">
+            <div class="row" style="display: flex">
+                <div class="col-sm-4">
+                    <h3><strong>@item.DepartureAirportCode -> @item.ArivingAirportCode</strong>
+                    </h3>
+                </div>
+                <div class="col-sm-4 pull-right" style="margin: auto">
+                    <button class="btn btn-primary" onclick="location.href='@Url.Action("BookTickets", "Booking", new { flightId = item.FlightId})'"><span class="glyphicon glyphicon-th-list"></span> Flight</button>
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-sm-4">
+                    @Html.LabelFor(x => item.DepartureAirportCode)
+                    @item.DepartureDateTime
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    @Html.LabelFor(x => item.ArivingAirportCode)
+                    @item.ArivingAirportCode
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    @Html.LabelFor(x => item.DepartureDateTime)
+                    @item.DepartureDateTime
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4">
+                    @Html.LabelFor(x => item.ArivingDateTime)
+                    @item.ArivingDateTime
+                </div>
+            </div>
+            <hr/>
+            <div class="row">
+                <div class="col-sm-2">
+                    <a href="@Url.Action("Details", "Flight", new {id = item.FlightId})"><span class="glyphicon glyphicon-share"></span> Details</a>
+                </div>
+                @*todo: do later*@
+                @*@if (User.IsAdmin())
+                {
+                    <div class="col-sm-2">
+                        <a href="@Url.Action("Edit", "Flight", new {id = item.MovieId})"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                    </div>
+                    <div class="col-sm-2">
+                        <a href="@Url.Action("Delete", "Flight", new {id = item.MovieId})"><span class="glyphicon glyphicon-remove"></span> Remove</a>
+                    </div>
+                }*@
+                
+            </div>
+        </div>
+    </div>
+}

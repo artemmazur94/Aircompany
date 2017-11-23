@@ -1,78 +1,72 @@
-﻿@using Aircompany.Web.Helpers
-@model IEnumerable<Aircompany.Web.Models.Flight.FlightListItemViewModel>
+﻿@using Aircompany.DataAccess.Entities
+@model Aircompany.Web.Models.Flight.DirectionsViewModel
 
 @{
-    ViewBag.Title = "Flights";
+    ViewBag.Title = "Index";
 }
 
 <div class="page-header">
-    <h1>Flights</h1>
-</div>
-@if (User.IsAdmin())
-{
-    <a href="@Url.Action("AddFlight", "Booking")"><span class="glyphicon glyphicon-plus"></span> Add flight</a>
-}
-
-@foreach (var item in Model)
-{
-    <hr/>
     <div class="row">
-        <div class="col-sm-2">
-            @*todo: change to plane placeholder*@
-            <img class="img-responsive" src="@Url.Content("~/Content/images/default_direction_image.png")"/>
-        </div>
-        <div class="col-sm-10">
-            <div class="row" style="display: flex">
-                <div class="col-sm-4">
-                    <h3><strong>@item.DepartureAirportCode -> @item.ArivingAirportCode</strong>
-                    </h3>
-                </div>
-                <div class="col-sm-4 pull-right" style="margin: auto">
-                    <button class="btn btn-primary" onclick="location.href='@Url.Action("BookTickets", "Booking", new { flightId = item.FlightId})'"><span class="glyphicon glyphicon-th-list"></span> Flight</button>
-                </div>
-            </div>
-            <hr/>
-            <div class="row">
-                <div class="col-sm-4">
-                    @Html.LabelFor(x => item.DepartureAirportCode)
-                    @item.DepartureDateTime
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    @Html.LabelFor(x => item.ArivingAirportCode)
-                    @item.ArivingAirportCode
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    @Html.LabelFor(x => item.DepartureDateTime)
-                    @item.DepartureDateTime
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-4">
-                    @Html.LabelFor(x => item.ArivingDateTime)
-                    @item.ArivingDateTime
-                </div>
-            </div>
-            <hr/>
-            <div class="row">
-                <div class="col-sm-2">
-                    <a href="@Url.Action("Details", "Flight", new {id = item.FlightId})"><span class="glyphicon glyphicon-share"></span> Details</a>
-                </div>
-                @*todo: do later*@
-                @*@if (User.IsAdmin())
-                {
-                    <div class="col-sm-2">
-                        <a href="@Url.Action("Edit", "Flight", new {id = item.MovieId})"><span class="glyphicon glyphicon-edit"></span> Edit</a>
-                    </div>
-                    <div class="col-sm-2">
-                        <a href="@Url.Action("Delete", "Flight", new {id = item.MovieId})"><span class="glyphicon glyphicon-remove"></span> Remove</a>
-                    </div>
-                }*@
-                
-            </div>
+        <div class="col-sm-4 col-sm-offset-4">
+            <h1>Chose direction</h1>
         </div>
     </div>
+</div>
+
+<div class="jumbotron">
+    <div class="row">
+        <div class="col-sm-12">
+            @using (Html.BeginForm("Index", "Flight", FormMethod.Post, new {@class = "form-horizontal", id = "add-flight-form"}))
+            {
+                @Html.AntiForgeryToken()
+
+                @Html.Partial("FormValidation")
+
+                <div class="row">
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.DepartureAirportId, new {@class = "control-label col-sm-3"})
+                            @Html.DropDownListFor(x => x.DepartureAirportId, (SelectList) ViewBag.DepartureAirports, new {@class = "form-control col-sm-3"})
+                        </div>
+                    </div>
+                    <div class="col-sm-5">
+                        <div class="form-group">
+                            @Html.LabelFor(x => x.ArivingAirportId, new { @class = "control-label col-sm-3" })
+                            @Html.DropDownListFor(x => x.ArivingAirportId, (SelectList)ViewBag.ArivingAirports, new { @class = "form-control col-sm-3" })
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <input class="btn btn-success" type="submit" value="Search" id="submit-btn"/>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@{
+    if (ViewBag.Flights != null)
+    {
+        var flights = (List<Flight>) ViewBag.Flights;
+        if (flights.Any())
+        {
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Nearest flights</h2>
+                </div>
+            </div>
+
+            foreach (var flight in flights)
+            {
+                <hr/>
+                <div class="panel panel-default">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            @flight.DepartureDateTime
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    }
 }

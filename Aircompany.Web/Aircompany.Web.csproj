@@ -307,6 +307,7 @@
     <Compile Include="Models\DeleteViewModel.cs" />
     <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\Airport\AirportViewModel.cs" />
+    <Compile Include="Models\Flight\DirectionsViewModel.cs" />
     <Compile Include="Models\Flight\FlightDetailsViewModel.cs" />
     <Compile Include="Models\Flight\FlightListItemViewModel.cs" />
     <Compile Include="Models\Plane\PlaneViewModel.cs" />
@@ -316,6 +317,11 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\background.jpg" />
+    <Content Include="Content\images\default_direction_image.png" />
+    <Content Include="Content\images\default_movie_image.png" />
+    <Content Include="Content\images\default_person_image.png" />
+    <Content Include="Content\images\default_plane_image.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -458,12 +464,13 @@
     <Content Include="Views\Airport\Delete.cshtml" />
     <Content Include="Views\Airport\Index.cshtml" />
     <Content Include="Views\Flight\Details.cshtml" />
-    <Content Include="Views\Flight\Index.cshtml" />
+    <Content Include="Views\Flight\Directions.cshtml" />
     <Content Include="Views\Shared\FormValidation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Plane\Index.cshtml" />
     <Content Include="Views\Plane\CreateEdit.cshtml" />
     <Content Include="Views\Plane\Details.cshtml" />
+    <Content Include="Views\Flight\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

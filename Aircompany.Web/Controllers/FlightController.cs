@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -18,6 +19,8 @@ namespace Aircompany.Web.Controllers
 
         private const string NAME_COLUMN = "Name";
         private const string AIRPORT_ID_COLUMN = "AirportId";
+        private const string AIRPORT_CODE_COLUMN = "Code";
+        private const string FLIGHT_ID_COLUMN = "Id";
 
         public FlightController(IFlightService flightService, IAirportService airportService)
         {
@@ -31,8 +34,52 @@ namespace Aircompany.Web.Controllers
             LanguageHelper.InitializeCulture(HttpContext);
         }
 
-        // GET: Flights
-        public ActionResult Index(int? departureAirportId, int? arivingAirportId)
+        [HttpGet]
+        public ActionResult Index()
+        {
+            var airports = _airportService.GetAllAirports();
+
+            ApplyAirports(airports);
+
+            var flights = _flightService.GetAllActiveFlights().OrderBy(x => x.DepartureDateTime).ToList();
+
+            ApplyFlights(flights);
+
+            var model = new DirectionsViewModel();
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Index(DirectionsViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ApplyAirports(_airportService.GetAllAirports());
+
+                return View(model);
+            }
+
+            if (model.DepartureAirportId == model.ArivingAirportId)
+            {
+                ApplyAirports(_airportService.GetAllAirports());
+
+                ModelState.AddModelError(String.Empty, "Departure and araving airports must be different.");
+                return View(model);
+            }
+
+            return RedirectToAction("Flights", "Booking", 
+                new
+                {
+                    departureAirportId = model.DepartureAirportId,
+                    arivingAirportId = model.ArivingAirportId
+                });
+        }
+
+
+        [HttpGet]
+        public ActionResult Directions(int? departureAirportId, int? arivingAirportId)
         {
             List<Flight> flights = _flightService.GetAllFlights();
 
@@ -94,6 +141,24 @@ namespace Aircompany.Web.Controllers
             };
 
             return View(model);
+        }
+
+        private void ApplyAirports(List<Airport> airports)
+        {
+            ViewBag.DepartureAirports = new SelectList(
+                airports.Select(x => new { AirportId = x.Id, Code = $"{x.Code}, {x.City}, {x.Country}" }),
+                AIRPORT_ID_COLUMN,
+                AIRPORT_CODE_COLUMN);
+
+            ViewBag.ArivingAirports = new SelectList(
+                airports.Select(x => new { AirportId = x.Id, Code = $"{x.Code}, {x.City}, {x.Country}" }),
+                AIRPORT_ID_COLUMN,
+                AIRPORT_CODE_COLUMN);
+        }
+
+        private void ApplyFlights(List<Flight> flights)
+        {
+            ViewBag.Flights = flights;
         }
 
         protected override void Dispose(bool disposing)

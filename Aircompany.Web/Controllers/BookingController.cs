@@ -81,6 +81,7 @@ namespace Aircompany.Web.Controllers
             var model = new FlightsViewModel
             {
                 DepartureAirportId = departureAirportId.Value,
+                ArivingAirportId = arivingAirport.Id,
                 Flights = flightModels,
                 DepartureAirportName = departureAirportLocalization.Name,
                 DepartureAirportCode = departureAirport.Code,

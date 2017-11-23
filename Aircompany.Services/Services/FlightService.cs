@@ -31,6 +31,13 @@ namespace Aircompany.Services.Services
             return _unitOfWork.FlightRepository.Find(x => x.IsDeleted == false).ToList();
         }
 
+        public List<Flight> GetAllActiveFlights()
+        {
+            return _unitOfWork.FlightRepository
+                .Find(x => x.IsDeleted == false && x.DepartureDateTime > DateTime.UtcNow)
+                .ToList();
+        }
+
         public Flight GetFlight(int id)
         {
             return _unitOfWork.FlightRepository.Find(x => x.Id == id && x.IsDeleted == false).FirstOrDefault();
