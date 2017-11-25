@@ -23,18 +23,37 @@
                 @Html.Partial("FormValidation")
 
                 <div class="row">
-                    <div class="col-sm-5">
-                        <div class="form-group">
-                            @Html.LabelFor(x => x.DepartureAirportId, new {@class = "control-label col-sm-3"})
-                            @Html.DropDownListFor(x => x.DepartureAirportId, (SelectList) ViewBag.DepartureAirports, new {@class = "form-control col-sm-3"})
+                    <div class="col-sm-10">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.DepartureAirportId, new {@class = "control-label col-sm-3"})
+                                    @Html.DropDownListFor(x => x.DepartureAirportId, (SelectList) ViewBag.DepartureAirports, new {@class = "form-control col-sm-3"})
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.ArivingAirportId, new {@class = "control-label col-sm-3"})
+                                    @Html.DropDownListFor(x => x.ArivingAirportId, (SelectList) ViewBag.ArivingAirports, new {@class = "form-control col-sm-3"})
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.FromDate, new { @class = "control-label col-sm-3" })
+                                    @Html.TextBoxFor(x => x.FromDate, "{0:d}", new { @class = "form-control col-sm-3"})
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    @Html.LabelFor(x => x.ToDate, new { @class = "control-label col-sm-3" })
+                                    @Html.TextBoxFor(x => x.ToDate, "{0:d}", new { @class = "form-control col-sm-3" })
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-sm-5">
-                        <div class="form-group">
-                            @Html.LabelFor(x => x.ArivingAirportId, new { @class = "control-label col-sm-3" })
-                            @Html.DropDownListFor(x => x.ArivingAirportId, (SelectList)ViewBag.ArivingAirports, new { @class = "form-control col-sm-3" })
-                        </div>
-                    </div>
+                    
                     <div class="col-sm-2">
                         <input class="btn btn-success" type="submit" value="Search" id="submit-btn"/>
                     </div>
@@ -59,10 +78,28 @@
             foreach (var flight in flights)
             {
                 <hr/>
-                <div class="panel panel-default">
+                <div class="panel panel-default panel-body">
                     <div class="row">
-                        <div class="col-sm-12">
-                            @flight.DepartureDateTime
+                        <div class="col-sm-11">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <b>Departure place:</b> @flight.DepartureAirport.Code, @flight.DepartureAirport.City, @flight.DepartureAirport.Country
+                                </div>
+                                <div class="col-sm-6">
+                                    <b>Ariving place:</b> @flight.ArivingAirport.Code, @flight.ArivingAirport.City, @flight.ArivingAirport.Country
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <b>Departure date:</b> @flight.DepartureDateTime
+                                </div>
+                                <div class="col-sm-6">
+                                    <b>Ariving date:</b> @flight.ArivingDateTime
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-1">
+                            <button onclick="location.href = '@Url.Action("SelectSeats", "Booking", new { id = flight.Id})'" class="btn btn-primary pull-right " type="button"><span class="glyphicon glyphicon-tags"></span>Book tickets</button>
                         </div>
                     </div>
                 </div>

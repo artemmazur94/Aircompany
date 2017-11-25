@@ -5,7 +5,7 @@
 }
 
 <div class="page-header">
-    <h1>@(String.IsNullOrEmpty(Model.Name) ? Model.Name : $"{Model.Manufacturer} {Model.Model}")</h1>
+    <h1>@(String.IsNullOrEmpty(Model.Name) ? Model.Name : $"{Model.Manufacturer} {Model.PlaneModel}")</h1>
 </div>
 
 <div class="row">
@@ -29,8 +29,8 @@
             @Model.Manufacturer
         </div>
         <div class="row">
-            @Html.LabelFor(x => x.Model, new { @class = "control-label col-sm-2" })
-            @Model.Model
+            @Html.LabelFor(x => x.PlaneModel, new { @class = "control-label col-sm-2" })
+            @Model.PlaneModel
         </div>
         <div class="row">
             @Html.LabelFor(x => x.MaxSpeed, new { @class = "control-label col-sm-2" })

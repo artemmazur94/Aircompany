@@ -1,0 +1,135 @@
+﻿@model Aircompany.Web.Models.Plane.PlaneViewModel
+
+@{
+    var operation = Model.Id == null ? "Create" : "Edit";
+    ViewBag.Title = operation + " plane";
+}
+
+<div class="page-header">
+    <h1>@operation plane</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        @using (Html.BeginForm("AddPlane", "Plane", FormMethod.Post, new {@class = "form-horizontal", id = "plane-create-edit-form"}))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.Partial("FormValidation")
+
+            @Html.HiddenFor(x => x.Id)
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Name, new {@class = "control-label col-sm-2"})
+                @Html.TextBoxFor(x => x.Name, new {@class = "form-control col-sm-4"})
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.PlaneModel, new {@class = "control-label col-sm-2"})
+                @Html.TextBoxFor(x => x.PlaneModel, new {@class = "form-control col-sm-4"})
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Manufacturer, new {@class = "control-label col-sm-2"})
+                @Html.TextBoxFor(x => x.Manufacturer, new {@class = "form-control col-sm-4"})
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Name, new {@class = "control-label col-sm-2"})
+                @Html.TextBoxFor(x => x.Name, new {@class = "form-control col-sm-4"})
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.MaxSpeed, new {@class = "control-label col-sm-2"})
+                @Html.TextBoxFor(x => x.MaxSpeed, new {@class = "form-control col-sm-4"})
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.Description, new {@class = "control-label col-sm-2"})
+                @Html.TextAreaFor(x => x.Description, new {@class = "form-control col-sm-4"})
+            </div>
+
+            // todo: add photo
+
+            <hr/>
+            <h2>Places map</h2>
+            <hr/>
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.EconomSector.IsIncluded, "Include econom class places:", new { @class = "control-label col-sm-3" })
+                    @Html.CheckBoxFor(x => x.EconomSector.IsIncluded, new { @class = "checkbox col-sm-1" })
+                </div>
+            </div>
+            <div class="row" id="econom-secction">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.EconomSector.FromRow, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.EconomSector.FromRow, new { @class = "form-control col-sm-4" })
+                    @Html.LabelFor(x => x.EconomSector.ToRow, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.EconomSector.ToRow, new { @class = "form-control col-sm-4" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.EconomSector.FromPlace, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.EconomSector.FromPlace, new { @class = "form-control col-sm-4" })
+                    @Html.LabelFor(x => x.EconomSector.ToPlace, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.EconomSector.ToPlace, new { @class = "form-control col-sm-4" })
+                </div>
+            </div>
+
+            <hr />
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.BusinessSector.IsIncluded, "Include business class places:", new { @class = "control-label col-sm-3" })
+                    @Html.CheckBoxFor(x => x.BusinessSector.IsIncluded, new { @class = "checkbox col-sm-1" })
+                </div>
+            </div>
+            <div class="row" id="business-secction">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.BusinessSector.FromRow, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.BusinessSector.FromRow, new { @class = "form-control col-sm-4" })
+                    @Html.LabelFor(x => x.BusinessSector.ToRow, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.BusinessSector.ToRow, new { @class = "form-control col-sm-4" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.BusinessSector.FromPlace, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.BusinessSector.FromPlace, new { @class = "form-control col-sm-4" })
+                    @Html.LabelFor(x => x.BusinessSector.ToPlace, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.BusinessSector.ToPlace, new { @class = "form-control col-sm-4" })
+                </div>
+            </div>
+
+            <hr />
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.FirstClassSector.IsIncluded, "Include first class places:", new { @class = "control-label col-sm-3" })
+                    @Html.CheckBoxFor(x => x.FirstClassSector.IsIncluded, new { @class = "checkbox col-sm-1" })
+                </div>
+            </div>
+            <div class="row" id="business-secction">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.FirstClassSector.FromRow, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.FirstClassSector.FromRow, new { @class = "form-control col-sm-4" })
+                    @Html.LabelFor(x => x.FirstClassSector.ToRow, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.FirstClassSector.ToRow, new { @class = "form-control col-sm-4" })
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    @Html.LabelFor(x => x.FirstClassSector.FromPlace, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.FirstClassSector.FromPlace, new { @class = "form-control col-sm-4" })
+                    @Html.LabelFor(x => x.FirstClassSector.ToPlace, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.FirstClassSector.ToPlace, new { @class = "form-control col-sm-4" })
+                </div>
+            </div>
+            <hr/>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input class="btn btn-lg btn-success" type="submit" value="Add plane" id="submit-btn" />
+                </div>
+            </div>
+        }
+    </div>
+</div>

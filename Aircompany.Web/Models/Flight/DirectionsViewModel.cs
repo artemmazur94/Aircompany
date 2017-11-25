@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Aircompany.Web.Models.Flight
 {
@@ -11,5 +12,11 @@ namespace Aircompany.Web.Models.Flight
         [Required]
         [Display(Name = "Ariving: ")]
         public int ArivingAirportId { get; set; }
+
+        [Display(Name = "From: ")]
+        public DateTime FromDate { get; set; }
+
+        [Display(Name = "To: ")]
+        public DateTime ToDate { get; set; } 
     }
 }

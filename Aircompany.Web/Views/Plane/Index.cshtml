@@ -11,7 +11,7 @@
 
 @if (User.IsAdmin())
 {
-    <a href="@Url.Action("Create", "Plane")"><span class="glyphicon glyphicon-plus"></span> Add plane</a>
+    <a href="@Url.Action("AddPlane", "Plane")"><span class="glyphicon glyphicon-plus"></span> Add plane</a>
 }
 
 @if (!Model.Any())

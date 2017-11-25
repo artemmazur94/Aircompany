@@ -468,7 +468,7 @@
     <Content Include="Views\Shared\FormValidation.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Plane\Index.cshtml" />
-    <Content Include="Views\Plane\CreateEdit.cshtml" />
+    <Content Include="Views\Plane\AddPlane.cshtml" />
     <Content Include="Views\Plane\Details.cshtml" />
     <Content Include="Views\Flight\Index.cshtml" />
   </ItemGroup>

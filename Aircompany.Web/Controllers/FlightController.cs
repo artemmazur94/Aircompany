@@ -17,10 +17,8 @@ namespace Aircompany.Web.Controllers
         private readonly IFlightService _flightService;
         private readonly IAirportService _airportService;
 
-        private const string NAME_COLUMN = "Name";
         private const string AIRPORT_ID_COLUMN = "AirportId";
         private const string AIRPORT_CODE_COLUMN = "Code";
-        private const string FLIGHT_ID_COLUMN = "Id";
 
         public FlightController(IFlightService flightService, IAirportService airportService)
         {
@@ -48,7 +46,11 @@ namespace Aircompany.Web.Controllers
 
             ApplyFlights(flights);
 
-            var model = new DirectionsViewModel();
+            var model = new DirectionsViewModel
+            {
+                FromDate = DateTime.UtcNow.Date,
+                ToDate =  DateTime.UtcNow.Date
+            };
 
             return View(model);
         }
@@ -60,6 +62,7 @@ namespace Aircompany.Web.Controllers
             if (!ModelState.IsValid)
             {
                 ApplyAirports(_airportService.GetAllAirports());
+                ApplyFlights(_flightService.GetAllActiveFlights());
 
                 return View(model);
             }
@@ -67,8 +70,18 @@ namespace Aircompany.Web.Controllers
             if (model.DepartureAirportId == model.ArivingAirportId)
             {
                 ApplyAirports(_airportService.GetAllAirports());
+                ApplyFlights(_flightService.GetAllActiveFlights());
+
 
                 ModelState.AddModelError(String.Empty, "Departure and araving airports must be different.");
+                return View(model);
+            }
+
+            if (model.FromDate.Date > model.ToDate.Date)
+            {
+                ApplyAirports(_airportService.GetAllAirports());
+
+                ModelState.AddModelError(String.Empty, "From date cannot be grater than to date.");
                 return View(model);
             }
 
@@ -76,7 +89,9 @@ namespace Aircompany.Web.Controllers
                 new
                 {
                     departureAirportId = model.DepartureAirportId,
-                    arivingAirportId = model.ArivingAirportId
+                    arivingAirportId = model.ArivingAirportId,
+                    fromDate = model.FromDate,
+                    toDate = model.ToDate
                 });
         }
 

@@ -48,7 +48,7 @@ namespace Aircompany.Web.Controllers
         }
 
         // GET: Booking/Flight/5
-        public ActionResult Flights(int? departureAirportId, int? arivingAirportId)
+        public ActionResult Flights(int? departureAirportId, int? arivingAirportId, DateTime? fromDate, DateTime? toDate)
         {
             if (departureAirportId == null || arivingAirportId == null)
             {
@@ -62,6 +62,17 @@ namespace Aircompany.Web.Controllers
             var arivingAirportLocalization = _airportService.GetAirportLocalization(arivingAirportId.Value, LanguageHelper.CurrnetCulture);
 
             List<Flight> flights = _bookingService.GetActiveFlightsByDepartureAirportId(departureAirportId.Value);
+
+            if (fromDate != null)
+            {
+                flights = flights.Where(x => x.DepartureDateTime.Date >= fromDate.Value.Date).ToList();
+            }
+
+            if (toDate != null)
+            {
+                flights = flights.Where(x => x.DepartureDateTime.Date <= toDate.Value.Date).ToList();
+            }
+
             var flightModels = flights.Select(flight => new FlightViewModel
             {
                 Id = flight.Id,
