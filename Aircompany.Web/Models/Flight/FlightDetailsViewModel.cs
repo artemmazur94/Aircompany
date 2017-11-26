@@ -7,6 +7,9 @@ namespace Aircompany.Web.Models.Flight
     {
         public int FlightId { get; set; }
 
+        [Display(Name = "Flight code:")]
+        public string FlightCode { get; set; }
+
         public int DepartureAirportId { get; set; }
         public int ArivingAirportId { get; set; }
 

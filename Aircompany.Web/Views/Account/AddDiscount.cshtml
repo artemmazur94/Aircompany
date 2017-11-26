@@ -1,0 +1,109 @@
+﻿@using Aircompany.Web.Models.Account
+@model DiscountViewModel
+
+@{
+    ViewBag.Title = "Disccounts";
+}
+
+<div class="page-header">
+    <h1>Discounts</h1>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        @using (Html.BeginForm("AddDiscount", "Account", FormMethod.Post, new { @class = "form-horizontal"}))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.Partial("FormValidation")
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.StartDate, new {@class = "control-label col-sm-2"})
+                @Html.TextBoxFor(x => x.StartDate, "{0:d}", new { @class = "form-control col-sm-3" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.EndDate, new { @class = "control-label col-sm-2" })
+                @Html.TextBoxFor(x => x.EndDate, "{0:d}", new { @class = "form-control col-sm-3" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(x => x.PercentageAmount, new { @class = "control-label col-sm-2" })
+                <div class="input-group col-sm-2" style="float: left;">
+                    @Html.TextBoxFor(x => Model.PercentageAmount, new { @class = "form-control col-sm-2", type = "number" })
+                    <span class="input-group-addon">(%)</span>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input class="btn btn-success" type="submit" value="Add discount" id="submit-btn" />
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@{
+    if (ViewBag.Discounts != null)
+    {
+        var discounts = (DiscountsViewModel) ViewBag.Discounts;
+
+        <hr/>
+        if (!discounts.ActiveDiscounts.Any())
+        {
+            <h3>There are no active discounts.</h3>
+        }
+        else
+        {
+            <h3>Active discounts:</h3>
+            foreach (var item in discounts.ActiveDiscounts)
+            {
+                <div class="panel panel-default panel-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <b>Start date:</b> @item.StartDate
+                        </div>
+                        <div class="col-sm-4">
+                            <b>End date:</b> @item.EndDate
+                        </div>
+                        <div class="col-sm-4">
+                            <b>Percentage discount:</b> @item.PercentageAmount %
+                        </div>
+                    </div>
+                </div>
+
+            }
+        }
+
+        <hr/>
+
+        if (!discounts.UpcomingDiscounts.Any())
+        {
+            <h3>There are no upcoming discounts.</h3>
+        }
+        else
+        {
+            <h3>Upcoming discounts:</h3>
+            foreach (var item in discounts.UpcomingDiscounts)
+            {
+                <div class="panel panel-default panel-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <b>Start date:</b> @item.StartDate
+                        </div>
+                        <div class="col-sm-4">
+                            <b>End date:</b> @item.EndDate
+                        </div>
+                        <div class="col-sm-4">
+                            <b>Percentage discount:</b> @item.PercentageAmount %
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+    }
+}
+
+<hr />
+@Html.ActionLink("< Back to profile page", "MyProfile")

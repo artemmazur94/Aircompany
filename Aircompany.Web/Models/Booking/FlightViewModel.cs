@@ -8,6 +8,9 @@ namespace Aircompany.Web.Models.Booking
     public class FlightViewModel
     {
         public int Id { get; set; }
+
+        [Display(Name = "Flight code:")]
+        public string Code { get; set; }
         
         [Display(Name = "Departure date: ")]
         public DateTime DepartureDate { get; set; }
@@ -38,6 +41,12 @@ namespace Aircompany.Web.Models.Booking
         public string ArivingAirportCity { get; set; }
         [Display(Name = "Ariving airport country: ")]
         public string ArivingAirportCountry { get; set; }
+
+        [Display(Name = "Hand luggage weight: ")]
+        public int HandLuggage { get; set; }
+
+        [Display(Name = "Luggage weight: ")]
+        public int Luggage { get; set; }
 
         public Dictionary<int, Dictionary<int ,int>> PlanePlan { get; set; }
 

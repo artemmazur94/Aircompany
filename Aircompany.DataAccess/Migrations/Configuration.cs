@@ -42,6 +42,15 @@ namespace Aircompany.DataAccess.Migrations
                 context.SaveChanges();
             }
 
+            if (!context.ExternalProviders.Any())
+            {
+                context.ExternalProviders.AddRange(new List<ExternalProvider>
+                {
+                    new ExternalProvider {Id = 1, Name = "Facebook"},
+                    new ExternalProvider {Id = 2, Name = "Google"}
+                });
+            }
+
             if (!context.SeatTypeClasses.Any())
             {
                 context.SeatTypeClasses.AddRange(new List<SeatTypeClass>

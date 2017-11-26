@@ -15,7 +15,7 @@
 
 <br />
 <div class="jumbotron">
-    <h2>Book tickets on flight: @Model.DepartureAirportCode -> @Model.ArivingAirportCode</h2>
+    <h2>Book tickets on flight: <b>@Model.Code</b></h2>
     <hr/>
     <div class="row">
         <div class="col-sm-4">
@@ -25,6 +25,14 @@
         </div>
         <div class="col-sm-8">
             <br/>
+            <div class="col-sm-12">
+                @Html.LabelFor(x => x.DepartureAirportCode)
+                @Model.DepartureAirportCode, @Model.DepartureAirportCity, @Model.DepartureAirportCountry
+            </div>
+            <div class="col-sm-12">
+                @Html.LabelFor(x => x.ArivingAirportCode)
+                @Model.ArivingAirportCode, @Model.ArivingAirportCity, @Model.ArivingAirportCountry
+            </div>
             <div class="col-sm-6">
                 @Html.LabelFor(x => x.DepartureDate)
                 @Model.DepartureDate.ToShortDateString()
@@ -42,6 +50,14 @@
                 @Model.ArivingTime.ToString()
             </div>
             <div class="col-sm-6">
+                @Html.LabelFor(x => x.HandLuggage)
+                @Model.HandLuggage kg
+            </div>
+            <div class="col-sm-6">
+                @Html.LabelFor(x => x.Luggage)
+                @Model.Luggage kg
+            </div>
+            <div class="col-sm-6">
                 @Html.LabelFor(x => x.PlaneModel)
                 @Model.PlaneModel
             </div>
@@ -52,6 +68,16 @@
         </div>
     </div>
 </div>
+
+@if (ViewBag.Discount != null)
+{
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="alert alert-info">Current discount: @ViewBag.Discount %</div>
+        </div>
+    </div>
+}
+
 @if (ViewBag.Message != null)
 {
     <div class="panel panel-warning">
@@ -69,23 +95,25 @@
             </div>*@
             <hr/>
             <div class="row">
-                <div class="col-sm-2 row">
+                <div class="col-sm-3">
                     <button type="button" class="btn btn-primary seat"></button>
                     <span> - econom class</span>
                 </div>
-                <div class="col-sm-2 row">
+                <div class="col-sm-3">
                     <button type="button" class="btn btn-info seat"></button>
                     <span> - business class</span>
                 </div>
-                <div class="col-sm-2 row">
+                <div class="col-sm-3">
                     <button type="button" class="btn btn-danger seat"></button>
                     <span> - first class</span>
                 </div>
-                <div class="col-sm-2 row">
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
                     <button type="button" class="btn btn-default seat"></button>
                     <span> - booked seats</span>
                 </div>
-                <div class="col-sm-2 row">
+                <div class="col-sm-3">
                     <button type="button" class="btn btn-success seat"></button>
                     <span> - selected seats</span>
                 </div>
@@ -152,7 +180,7 @@
             </div>
             <hr/>
             <div class="row pull-right">
-                <input type="button" class="btn btn-danger" value="Cancel selected tickets" onclick="location.href = '@Url.Action("CancelSelectedSeats", "Booking", new {flight = Model.Id})'"/>
+                <input type="button" class="btn btn-danger" value="Cancel selected tickets" onclick="location.href = '@Url.Action("CancelSelectedSeats", "Booking", new {flightId = Model.Id})'"/>
                 <input type="button" class="btn btn-success" value="Book selected seats" onclick="location.href = '@Url.Action("ConfirmSelectedSeats", "Booking", new {id = Model.Id})'"/>
             </div>
 

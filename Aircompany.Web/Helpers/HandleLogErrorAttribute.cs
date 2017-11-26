@@ -25,7 +25,7 @@ namespace Aircompany.Web.Helpers
             using (StreamWriter streamWriter = File.AppendText(fullPath))
             {
                 streamWriter.WriteLine("\r\nLog entry:");
-                streamWriter.WriteLine(DateTime.UtcNow.ToString(CultureInfo.InvariantCulture));
+                streamWriter.WriteLine(DateTime.Now.ToString(CultureInfo.InvariantCulture));
                 if (exceptionContext.HttpContext.User.Identity.IsAuthenticated)
                 {
                     streamWriter.WriteLine("\nProfile id: " + IdentityManager.GetProfileIdFromAuthCookie(exceptionContext.HttpContext));

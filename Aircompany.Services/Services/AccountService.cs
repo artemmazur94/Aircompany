@@ -61,7 +61,7 @@ namespace Aircompany.Services.Services
             {
                 AccountId = account.Id,
                 Id = guid,
-                ResetRequestDateTime = DateTime.UtcNow
+                ResetRequestDateTime = DateTime.Now
             });
             var restoreUrl = CombineRestoreUrl(restoreDomain, guid.ToString());
             EmailManager.RestorePasswordEmail(restoreUrl, email,$"{account.Profile.Name} {account.Profile.Surname}");
@@ -141,6 +141,21 @@ namespace Aircompany.Services.Services
         {
             return _unitOfWork.AccountRepository.IsAttachedExternalAccountToCurrentProfile(
                 userIdentity, externalProviderId, profileId);
+        }
+
+        public List<Discount> GetActiveDiscounts()
+        {
+            return _unitOfWork.AccountRepository.GetActiveDiscounts();
+        }
+
+        public void AddDiscount(Discount discount)
+        {
+            _unitOfWork.AccountRepository.AddDiscount(discount);
+        }
+
+        public int? GetActiveDiscountPercentage()
+        {
+            return _unitOfWork.AccountRepository.GetCurrentDiscount();
         }
 
         protected virtual void Dispose(bool disposing)

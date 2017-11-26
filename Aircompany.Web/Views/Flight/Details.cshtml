@@ -5,18 +5,22 @@
 }
 <br>
 <div class="jumbotron">
-    <h1 class="text-center">@Model.DepartureAirportCode -> @Model.ArivingAirportCode</h1>
+    <h1 class="text-center">@Model.FlightCode</h1>
 </div>
 
 <div class="row">
-    <div class="col-sm-8">
+    <div class="col-sm-12">
+        <div class="row">
+            <div class="col-sm-4">
+                @Html.LabelFor(x => x.FlightCode)
+                @Model.FlightCode
+            </div>
+        </div>
         <div class="row">
             <div class="col-sm-4">
                 @Html.LabelFor(x => x.DepartureAirportCode)
                 @Model.DepartureAirportCode
             </div>
-        </div>
-        <div class="row">
             <div class="col-sm-4">
                 @Html.LabelFor(x => x.ArivingAirportCode)
                 @Model.ArivingAirportCode
@@ -27,8 +31,6 @@
                 @Html.LabelFor(x => x.DepartureDateTime)
                 @Model.DepartureDateTime
             </div>
-        </div>
-        <div class="row">
             <div class="col-sm-4">
                 @Html.LabelFor(x => x.ArivingDateTime)
                 @Model.ArivingDateTime
@@ -39,14 +41,10 @@
                 @Html.LabelFor(x => x.DepartureAirportName)
                 @Model.DepartureAirportName
             </div>
-        </div>
-        <div class="row">
             <div class="col-sm-4">
                 @Html.LabelFor(x => x.DepartureAirportCity)
                 @Model.DepartureAirportCity
             </div>
-        </div>
-        <div class="row">
             <div class="col-sm-4">
                 @Html.LabelFor(x => x.DepartureAirportCountry)
                 @Model.DepartureAirportCountry
@@ -57,17 +55,19 @@
                 @Html.LabelFor(x => x.ArivingAirportName)
                 @Model.ArivingAirportName
             </div>
-        </div>
-        <div class="row">
             <div class="col-sm-4">
                 @Html.LabelFor(x => x.ArivingAirportCity)
                 @Model.ArivingAirportCity
             </div>
-        </div>
-        <div class="row">
             <div class="col-sm-4">
                 @Html.LabelFor(x => x.ArivingAirportCountry)
                 @Model.ArivingAirportCountry
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="col-sm-4">
+                <button onclick="location.href = '@Url.Action("SelectSeats", "Booking", new { id = Model.FlightId})'" class="btn btn-primary" type="button"><span class="glyphicon glyphicon-tags"></span> Book tickets</button>
             </div>
         </div>
         <hr/>
@@ -82,8 +82,8 @@
                     <a href="@Url.Action("Delete", "Flight", new {id = Model.MovieId})"><span class="glyphicon glyphicon-remove"></span> Remove</a>
                 </div>
             }*@
-            <div class="col-sm-2 right">
-                <a href="@Url.Action("Flights", "Booking", new {departureAirportId = Model.DepartureAirportId, arivingAirportId  = Model.ArivingAirportId})"><span class="glyphicon glyphicon-th-list"></span> Flight</a>
+            <div class="col-sm-4 right">
+                <a href="@Url.Action("Flights", "Booking", new {departureAirportId = Model.DepartureAirportId, arivingAirportId = Model.ArivingAirportId})"><span class="glyphicon glyphicon-th-list"></span> Other flights on this direction</a>
             </div>
         </div>
     </div>

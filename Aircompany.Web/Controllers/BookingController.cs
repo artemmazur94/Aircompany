@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -18,6 +19,7 @@ namespace Aircompany.Web.Controllers
         private readonly IFlightService _flightService;
         private readonly IAccountService _accountService;
         private readonly IAirportService _airportService;
+        private readonly string _airlinesCode;
 
         private const string MESSAGE_KEY = "Message";
         private const string PLANE_ID_COLUMN = "Id";
@@ -39,6 +41,7 @@ namespace Aircompany.Web.Controllers
             _flightService = flightService;
             _accountService = accountService;
             _airportService = airportService;
+            _airlinesCode = ConfigurationManager.AppSettings["FlightCode"];
         }
 
         protected override void Initialize(RequestContext requestContext)
@@ -61,7 +64,7 @@ namespace Aircompany.Web.Controllers
             var arivingAirport = _airportService.GetAirport(arivingAirportId.Value);
             var arivingAirportLocalization = _airportService.GetAirportLocalization(arivingAirportId.Value, LanguageHelper.CurrnetCulture);
 
-            List<Flight> flights = _bookingService.GetActiveFlightsByDepartureAirportId(departureAirportId.Value);
+            List<Flight> flights = _bookingService.GetActiveFlightsByAirportIds(departureAirportId.Value, arivingAirportId.Value);
 
             if (fromDate != null)
             {
@@ -76,6 +79,7 @@ namespace Aircompany.Web.Controllers
             var flightModels = flights.Select(flight => new FlightViewModel
             {
                 Id = flight.Id,
+                Code = $"{_airlinesCode} {flight.Id:D4}",
                 DepartureDate = flight.DepartureDateTime.ToLocalTime().Date,
                 DepartureTime = flight.DepartureDateTime.ToLocalTime().TimeOfDay,
                 ArivingDate = flight.ArivingDateTime.ToLocalTime().Date,
@@ -87,7 +91,9 @@ namespace Aircompany.Web.Controllers
                 DepartureAirportCountry = flight.DepartureAirport.Country,
                 ArivingAirportCode = flight.ArivingAirport.Code,
                 ArivingAirportCity = flight.ArivingAirport.City,
-                ArivingAirportCountry = flight.ArivingAirport.Country
+                ArivingAirportCountry = flight.ArivingAirport.Country,
+                HandLuggage = flight.HandLuggage,
+                Luggage = flight.Luggage
             }).ToList();
             var model = new FlightsViewModel
             {
@@ -125,6 +131,7 @@ namespace Aircompany.Web.Controllers
             var model = new FlightViewModel
             {
                 Id = flight.Id,
+                Code = $"{_airlinesCode} {flight.Id:D4}",
                 DepartureDate = flight.DepartureDateTime.ToLocalTime().Date,
                 DepartureTime = flight.DepartureDateTime.ToLocalTime().TimeOfDay,
                 ArivingDate = flight.ArivingDateTime.ToLocalTime().Date,
@@ -136,8 +143,18 @@ namespace Aircompany.Web.Controllers
                 DepartureAirportCountry = flight.DepartureAirport.Country,
                 ArivingAirportCode = flight.ArivingAirport.Code,
                 ArivingAirportCity = flight.ArivingAirport.City,
-                ArivingAirportCountry = flight.ArivingAirport.Country
+                ArivingAirportCountry = flight.ArivingAirport.Country,
+                HandLuggage = flight.HandLuggage,
+                Luggage = flight.Luggage
             };
+
+            var discount = _accountService.GetActiveDiscountPercentage();
+            if (discount != null)
+            {
+                ViewBag.Discount = discount;
+                model.Prices.ForEach(x => x.Price = (x.Price * (1 - ((decimal)discount / 100m))));
+            }
+
             List<Sector> sectors = _bookingService.GetSectorsByPlaneId(flight.PlaneId);
             if (sectors.Count > 0)
             {
@@ -174,7 +191,7 @@ namespace Aircompany.Web.Controllers
                 }
                 var ticketPreOrder = new TicketPreOrder
                 {
-                    DateTime = DateTime.UtcNow,
+                    DateTime = DateTime.Now,
                     Place = place,
                     Row = row,
                     FlightId = flightId
@@ -238,6 +255,7 @@ namespace Aircompany.Web.Controllers
             var model = new FlightViewModel
             {
                 Id = flight.Id,
+                Code = $"{_airlinesCode} {flight.Id:D4}",
                 DepartureDate = flight.DepartureDateTime.ToLocalTime().Date,
                 DepartureTime = flight.DepartureDateTime.ToLocalTime().TimeOfDay,
                 ArivingDate = flight.ArivingDateTime.ToLocalTime().Date,
@@ -252,8 +270,17 @@ namespace Aircompany.Web.Controllers
                 DepartureAirportCountry = flight.DepartureAirport.Country,
                 ArivingAirportCode = flight.ArivingAirport.Code,
                 ArivingAirportCity = flight.ArivingAirport.City,
-                ArivingAirportCountry = flight.ArivingAirport.Country
+                ArivingAirportCountry = flight.ArivingAirport.Country,
+                HandLuggage = flight.HandLuggage,
+                Luggage = flight.Luggage
             };
+
+            var discount = _accountService.GetActiveDiscountPercentage();
+            if (discount != null)
+            {
+                ViewBag.Discount = discount;
+                model.Prices.ForEach(x => x.Price = (x.Price * (1 - ((decimal)discount / 100m))));
+            }
 
             List<Sector> sectors = _bookingService.GetSectorsByPlaneId(flight.PlaneId);
             PlaneSeat.SetSeatTypes(model.SelectedSeats, sectors);
@@ -290,7 +317,7 @@ namespace Aircompany.Web.Controllers
             {
                 Place = x.Place,
                 Row = x.Row,
-                SaleDate = DateTime.UtcNow,
+                SaleDate = DateTime.Now,
                 Flight = flight,
                 ProfileId = profileId
             }).ToList();
@@ -367,7 +394,7 @@ namespace Aircompany.Web.Controllers
                     return View(model);
                 }
 
-                if (departureDateTime <= DateTime.UtcNow)
+                if (departureDateTime <= DateTime.Now)
                 {
                     ModelState.AddModelError(String.Empty, "Added flight can't be in the past.");
                     return View(model);
@@ -382,7 +409,9 @@ namespace Aircompany.Web.Controllers
                     IsDeleted = false,
                     PlaneId = model.PlaneId,
                     RemoveExecutorId = null,
-                    SectorTypePrices = model.SeatTypePrices
+                    SectorTypePrices = model.SeatTypePrices,
+                    HandLuggage = model.HandLuggage,
+                    Luggage = model.Luggage
                 });
                 _bookingService.Commit();
 

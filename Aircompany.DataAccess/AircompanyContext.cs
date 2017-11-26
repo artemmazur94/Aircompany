@@ -32,6 +32,7 @@ namespace Aircompany.DataAccess
             modelBuilder.Configurations.Add(new TicketMap());
             modelBuilder.Configurations.Add(new TicketPreOrderMap());
             modelBuilder.Configurations.Add(new TicketPreOrdersDeletedMap());
+            modelBuilder.Configurations.Add(new DiscountMap());
         }
 
         public virtual DbSet<Account> Accounts { get; set; }
@@ -52,5 +53,6 @@ namespace Aircompany.DataAccess
         public virtual DbSet<TicketPreOrder> TicketPreOrders { get; set; }
         public virtual DbSet<TicketPreOrdersDeleted> TicketPreOrdersDeleted { get; set; }
         public virtual DbSet<Ticket> Tickets { get; set; }
+        public virtual DbSet<Discount> Discounts { get; set; }
     }
 }

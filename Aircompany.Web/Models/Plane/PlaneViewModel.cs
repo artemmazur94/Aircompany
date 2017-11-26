@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace Aircompany.Web.Models.Plane
 {
@@ -40,17 +41,13 @@ namespace Aircompany.Web.Models.Plane
 
     public class SectorViewModel
     {
-        [Display(Name = "From row: ")]
-        public int FromRow { get; set; }
+        [Display(Name = "Number of rows: ")]
+        [Range(0, Int32.MaxValue)]
+        public int NumberOfRows { get; set; }
 
-        [Display(Name = "To row: ")]
-        public int ToRow { get; set; }
-
-        [Display(Name = "From place: ")]
-        public int FromPlace { get; set; }
-
-        [Display(Name = "To place: ")]
-        public int ToPlace { get; set; }
+        [Display(Name = "Number of places: ")]
+        [Range(0, Int32.MaxValue)]
+        public int NumberOfPlaces { get; set; }
 
         [Display(Name = "Include: ")]
         public bool IsIncluded { get; set; } = false;

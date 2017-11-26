@@ -38,7 +38,7 @@ namespace Aircompany.Web
             {
                 AppId = ConfigurationManager.AppSettings[APP_FACEBOOK_ID_KEY],
                 AppSecret = ConfigurationManager.AppSettings[APP_FACEBOOK_SECRET_KEY],
-                Provider = new FacebookAuthenticationProvider()
+                Provider = new FacebookAuthenticationProvider
                 {
                     OnAuthenticated = async context => context.Identity.AddClaim(new Claim(FACEBOOK_ACCESS_TOKEN, context.AccessToken))
                 }
@@ -51,7 +51,7 @@ namespace Aircompany.Web
             {
                 ClientId = ConfigurationManager.AppSettings[APP_GOOGLE_ID_KEY],
                 ClientSecret = ConfigurationManager.AppSettings[APP_GOOGLE_SECRET_KEY],
-                Provider = new GoogleOAuth2AuthenticationProvider()
+                Provider = new GoogleOAuth2AuthenticationProvider
                 {
                     OnAuthenticated = async context => context.Identity.AddClaim(new Claim(GOOGLE_ACCESS_TOKEN, context.AccessToken))
                 }

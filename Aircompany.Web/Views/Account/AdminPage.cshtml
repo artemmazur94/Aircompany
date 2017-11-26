@@ -28,11 +28,11 @@
                 <div class="col-sm-4">
                     <div class="panel panel-primary">
                         <div class="panel-heading text-center">
-                            @string.Format("{0} -> {1}", flight.DepartureAirportCode, flight.ArivingAirportCode)
+                            @flight.Code
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-sm-12"><strong>Flight id:</strong> @flight.Id</div>
+                                <div class="col-sm-12"><strong>Flight direction:</strong> @($"{flight.DepartureAirportCode} -> {flight.ArivingAirportCode}")</div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-12"><strong>Datetime:</strong> @flight.DepartureDate.ToShortDateString() @flight.DepartureTime</div>

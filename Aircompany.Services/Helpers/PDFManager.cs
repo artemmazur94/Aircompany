@@ -1,4 +1,5 @@
-﻿using System.Configuration;
+﻿using System;
+using System.Configuration;
 using System.IO;
 using Aircompany.DataAccess.Enums;
 using Aircompany.Services.Models;
@@ -19,14 +20,20 @@ namespace Aircompany.Services.Helpers
             }
 
             using (var fileStream = new FileStream(serverPath + ConfigurationManager.AppSettings[TICKETS_DIRECTORY_KEY] +
-                    $"\\Ticket-{ticket.Guid}.pdf", FileMode.Create))
+                    $"\\Ticket-{ticket.Guid}.pdf", FileMode.OpenOrCreate))
             {
                 using (var document = new Document(PageSize.A5.Rotate()))
                 {
-                    using (PdfWriter writer = PdfWriter.GetInstance(document, fileStream))
+                    PdfWriter writer = PdfWriter.GetInstance(document, fileStream);
                     {
                         document.Open();
+                        document.NewPage();
+                        
+                        document.Add(CreateBarcode(ticket.Guid).PlaceBarcode(writer.DirectContentUnder, null, null));
+
                         document.Add(new Paragraph("FLIGHT TICKET"));
+                        document.Add(Chunk.NEWLINE);
+                        document.Add(new Paragraph($"Flight code: {ticket.FlightCode}"));
                         document.Add(new Paragraph($"Departure airport code: {ticket.DepartureAirportCode}"));
                         document.Add(new Paragraph($"Departure airport city: {ticket.DepartureCity}"));
                         document.Add(new Paragraph($"Departure airport country: {ticket.DepartureCountry}"));
@@ -35,15 +42,26 @@ namespace Aircompany.Services.Helpers
                         document.Add(new Paragraph($"Ariving airport country: {ticket.ArivingCountry}"));
                         document.Add(new Paragraph($"Date: {ticket.Date.ToShortDateString()}"));
                         document.Add(new Paragraph($"Time: {ticket.Time}"));
+                        document.Add(new Paragraph($"Hand luggage: {ticket.HandLuggage} kg, luggage {ticket.Luggage} kg"));
                         document.Add(new Paragraph($"Plane model: {ticket.PlaneModel}"));
                         document.Add(new Paragraph($"Row: {ticket.Row}   Place: {ticket.Place}"));
                         document.Add(new Paragraph($"Price: {ticket.Price}"));
                         document.Add(new Paragraph($"Seat type class: {(SeatType) ticket.SeatTypeId}"));
                         document.Add(new Paragraph($"Ticket identifier: {ticket.Guid}"));
-                        document.Close();
                     }
+                    document.Close();
                 }
             }
+        }
+
+        private static Barcode128 CreateBarcode(Guid guid)
+        {
+            return new Barcode128
+            {
+                Code = guid.ToString(),
+                Font = null,
+                BarHeight = 50,
+            };
         }
     }
 }

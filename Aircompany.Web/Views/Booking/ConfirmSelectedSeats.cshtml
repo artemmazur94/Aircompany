@@ -11,18 +11,35 @@
 </div>
 
 <br />
+
+@if (ViewBag.Discount != null)
+{
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="alert alert-info">Current discount: @ViewBag.Discount %</div>
+        </div>
+    </div>
+}
 <div class="jumbotron">
     <h2>Confirm selected seats</h2>
     <hr />
-    <h2>Flight: @Model.DepartureAirportCode -> @Model.ArivingAirportCode</h2>
+    <h2>Flight: <b>@Model.Code</b></h2>
     <div class="row">
         <div class="col-sm-4">
             <h3>
-                <strong>flight information: </strong>
+                <strong>Flight information: </strong>
             </h3>
         </div>
         <div class="col-sm-8">
             <br />
+            <div class="col-sm-12">
+                @Html.LabelFor(x => x.DepartureAirportCode)
+                @Model.DepartureAirportCode, @Model.DepartureAirportCity, @Model.DepartureAirportCountry
+            </div>
+            <div class="col-sm-12">
+                @Html.LabelFor(x => x.ArivingAirportCode)
+                @Model.ArivingAirportCode, @Model.ArivingAirportCity, @Model.ArivingAirportCountry
+            </div>
             <div class="col-sm-6">
                 @Html.LabelFor(x => x.DepartureDate)
                 @Model.DepartureDate.ToShortDateString()
@@ -38,6 +55,14 @@
             <div class="col-sm-6">
                 @Html.LabelFor(x => x.ArivingTime)
                 @Model.ArivingTime.ToString()
+            </div>
+            <div class="col-sm-6">
+                @Html.LabelFor(x => x.HandLuggage)
+                @Model.HandLuggage kg
+            </div>
+            <div class="col-sm-6">
+                @Html.LabelFor(x => x.Luggage)
+                @Model.Luggage kg
             </div>
             <div class="col-sm-6">
                 @Html.LabelFor(x => x.PlaneModel)
@@ -93,7 +118,7 @@ else
                         <br/>
                         <strong>Palce: </strong>@seat.Place
                         <br/>
-                        <strong>Type: </strong>@type
+                        <strong>Class: </strong>@type
                     </div>
                     <div class="panel-footer">
                         <strong>Price: </strong>@price
@@ -104,7 +129,7 @@ else
     </div>
     <div class="row">
         <div class="col-sm-4 pull-right">
-            <input type="button" class="btn btn-danger" value="Cancel selected tickets" onclick="location.href = '@Url.Action("CancelSelectedSeats", "Booking", new {flight = Model.Id})'" />
+            <input type="button" class="btn btn-danger" value="Cancel selected tickets" onclick="location.href = '@Url.Action("CancelSelectedSeats", "Booking", new {flightId = Model.Id})'" />
             <input type="button" class="btn btn-success" value="Book tickets" onclick="location.href = '@Url.Action("BookTickets", new {flightId = Model.Id})'" />
         </div>
     </div>

@@ -41,7 +41,10 @@
 
             <div class="form-group">
                 @Html.LabelFor(x => x.MaxSpeed, new {@class = "control-label col-sm-2"})
-                @Html.TextBoxFor(x => x.MaxSpeed, new {@class = "form-control col-sm-4"})
+                <div class="input-group col-sm-2" style="float: left;">
+                    @Html.TextBoxFor(x => Model.MaxSpeed, new { @class = "form-control col-sm-2", type = "number" })
+                    <span class="input-group-addon">(km/h)</span>
+                </div>
             </div>
 
             <div class="form-group">
@@ -62,18 +65,10 @@
             </div>
             <div class="row" id="econom-secction">
                 <div class="form-group">
-                    @Html.LabelFor(x => x.EconomSector.FromRow, new { @class = "control-label col-sm-2" })
-                    @Html.TextBoxFor(x => x.EconomSector.FromRow, new { @class = "form-control col-sm-4" })
-                    @Html.LabelFor(x => x.EconomSector.ToRow, new { @class = "control-label col-sm-2" })
-                    @Html.TextBoxFor(x => x.EconomSector.ToRow, new { @class = "form-control col-sm-4" })
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
-                    @Html.LabelFor(x => x.EconomSector.FromPlace, new { @class = "control-label col-sm-2" })
-                    @Html.TextBoxFor(x => x.EconomSector.FromPlace, new { @class = "form-control col-sm-4" })
-                    @Html.LabelFor(x => x.EconomSector.ToPlace, new { @class = "control-label col-sm-2" })
-                    @Html.TextBoxFor(x => x.EconomSector.ToPlace, new { @class = "form-control col-sm-4" })
+                    @Html.LabelFor(x => x.EconomSector.NumberOfRows, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.EconomSector.NumberOfRows, new { @class = "form-control col-sm-4" })
+                    @Html.LabelFor(x => x.EconomSector.NumberOfPlaces, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.EconomSector.NumberOfPlaces, new { @class = "form-control col-sm-4" })
                 </div>
             </div>
 
@@ -86,18 +81,10 @@
             </div>
             <div class="row" id="business-secction">
                 <div class="form-group">
-                    @Html.LabelFor(x => x.BusinessSector.FromRow, new { @class = "control-label col-sm-2" })
-                    @Html.TextBoxFor(x => x.BusinessSector.FromRow, new { @class = "form-control col-sm-4" })
-                    @Html.LabelFor(x => x.BusinessSector.ToRow, new { @class = "control-label col-sm-2" })
-                    @Html.TextBoxFor(x => x.BusinessSector.ToRow, new { @class = "form-control col-sm-4" })
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
-                    @Html.LabelFor(x => x.BusinessSector.FromPlace, new { @class = "control-label col-sm-2" })
-                    @Html.TextBoxFor(x => x.BusinessSector.FromPlace, new { @class = "form-control col-sm-4" })
-                    @Html.LabelFor(x => x.BusinessSector.ToPlace, new { @class = "control-label col-sm-2" })
-                    @Html.TextBoxFor(x => x.BusinessSector.ToPlace, new { @class = "form-control col-sm-4" })
+                    @Html.LabelFor(x => x.BusinessSector.NumberOfRows, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.BusinessSector.NumberOfRows, new { @class = "form-control col-sm-4" })
+                    @Html.LabelFor(x => x.BusinessSector.NumberOfPlaces, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.BusinessSector.NumberOfPlaces, new { @class = "form-control col-sm-4" })
                 </div>
             </div>
 
@@ -110,18 +97,10 @@
             </div>
             <div class="row" id="business-secction">
                 <div class="form-group">
-                    @Html.LabelFor(x => x.FirstClassSector.FromRow, new { @class = "control-label col-sm-2" })
-                    @Html.TextBoxFor(x => x.FirstClassSector.FromRow, new { @class = "form-control col-sm-4" })
-                    @Html.LabelFor(x => x.FirstClassSector.ToRow, new { @class = "control-label col-sm-2" })
-                    @Html.TextBoxFor(x => x.FirstClassSector.ToRow, new { @class = "form-control col-sm-4" })
-                </div>
-            </div>
-            <div class="row">
-                <div class="form-group">
-                    @Html.LabelFor(x => x.FirstClassSector.FromPlace, new { @class = "control-label col-sm-2" })
-                    @Html.TextBoxFor(x => x.FirstClassSector.FromPlace, new { @class = "form-control col-sm-4" })
-                    @Html.LabelFor(x => x.FirstClassSector.ToPlace, new { @class = "control-label col-sm-2" })
-                    @Html.TextBoxFor(x => x.FirstClassSector.ToPlace, new { @class = "form-control col-sm-4" })
+                    @Html.LabelFor(x => x.FirstClassSector.NumberOfRows, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.FirstClassSector.NumberOfRows, new { @class = "form-control col-sm-4" })
+                    @Html.LabelFor(x => x.FirstClassSector.NumberOfPlaces, new { @class = "control-label col-sm-2" })
+                    @Html.TextBoxFor(x => x.FirstClassSector.NumberOfPlaces, new { @class = "form-control col-sm-4" })
                 </div>
             </div>
             <hr/>

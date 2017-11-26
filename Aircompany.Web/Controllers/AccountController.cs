@@ -11,6 +11,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using Aircompany.DataAccess.Entities;
+using Aircompany.DataAccess.Helpers;
 using Aircompany.Services.Services.Contracts;
 using Aircompany.Web.Helpers;
 using Aircompany.Web.Models.Account;
@@ -29,6 +30,7 @@ namespace Aircompany.Web.Controllers
         private readonly IAccountService _accountService;
         private readonly IBookingService _bookingService;
         private readonly IFlightService _flightService;
+        private readonly string _airlinesCode;
 
         private const string MESSAGE_KEY = "Message";
         private const string FACEBOOK_GET_KEY = "FacebookGetPath";
@@ -56,6 +58,8 @@ namespace Aircompany.Web.Controllers
             _accountService = accountService;
             _bookingService = bookingService;
             _flightService = flightService;
+
+            _airlinesCode = ConfigurationManager.AppSettings["FlightCode"];
         }
 
         public ActionResult Register()
@@ -349,18 +353,25 @@ namespace Aircompany.Web.Controllers
                         Type = type
                     },
                     DepartureAirportCode = ticket.Flight.DepartureAirport.Code,
-                    ArivingAirportCode = ticket.Flight.ArivingAirport.Code
+                    DepartureAirportCity = ticket.Flight.DepartureAirport.City,
+                    DepartureAirportCountry = ticket.Flight.DepartureAirport.Country,
+                    ArivingAirportCode = ticket.Flight.ArivingAirport.Code,
+                    ArivingAirportCity = ticket.Flight.ArivingAirport.City,
+                    ArivingAirportCountry = ticket.Flight.ArivingAirport.Country,
+                    Code = $"{_airlinesCode} {ticket.Flight.Id:D4}",
+                    HandLuggage = ticket.Flight.HandLuggage,
+                    Luggage = ticket.Flight.Luggage
                 }).ToList();
 
             MyTicketsViewModel model = new MyTicketsViewModel()
             {
                 PastTickets =
                     (from ticketViewModel in ticketViewModels
-                     where ticketViewModel.DepartureDate < DateTime.UtcNow
+                     where ticketViewModel.DepartureDate < DateTime.Now
                      select ticketViewModel).ToList(),
                 UpcomingTickets =
                     (from ticketViewModel in ticketViewModels
-                     where ticketViewModel.DepartureDate >= DateTime.UtcNow
+                     where ticketViewModel.DepartureDate >= DateTime.Now
                      select ticketViewModel).ToList()
             };
             return View(model);
@@ -466,13 +477,14 @@ namespace Aircompany.Web.Controllers
         [AuthorizeAdmin]
         public ActionResult AdminPage()
         {
-            var model = new AdminPageViewModel()
+            var model = new AdminPageViewModel
             {
                 FlightsThisWeek = new List<FlightViewModel>()
             };
             _bookingService.GetFlightsThisWeek().ForEach(x => model.FlightsThisWeek.Add(new FlightViewModel
             {
                 Id = x.Id,
+                Code = $"{_airlinesCode} {x.Id:D4}",
                 DepartureDate = x.DepartureDateTime.ToLocalTime().Date,
                 DepartureTime = x.DepartureDateTime.ToLocalTime().TimeOfDay,
                 ArivingDate = x.ArivingDateTime.ToLocalTime().Date,
@@ -482,9 +494,101 @@ namespace Aircompany.Web.Controllers
                 DepartureAirportCountry = x.DepartureAirport.Country,
                 ArivingAirportCode = x.ArivingAirport.Code,
                 ArivingAirportCity = x.ArivingAirport.City,
-                ArivingAirportCountry = x.ArivingAirport.Country
+                ArivingAirportCountry = x.ArivingAirport.Country,
+                HandLuggage = x.HandLuggage,
+                Luggage = x.Luggage
             }));
             return View(model);
+        }
+
+        [AuthorizeAdmin]
+        [HttpGet]
+        public ActionResult AddDiscount()
+        {
+            ApplyDiscountsList();
+
+            var date = DateTime.Now;
+
+            var model = new DiscountViewModel
+            {
+                StartDate = date,
+                EndDate = date,
+                PercentageAmount = 1
+            };
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [AuthorizeAdmin]
+        [ValidateAntiForgeryToken]
+        public ActionResult AddDiscount(DiscountViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                ApplyDiscountsList();
+                return View(model);
+            }
+
+            if (model.StartDate < DateTime.Now || model.StartDate > model.EndDate)
+            {
+                ApplyDiscountsList();
+                ModelState.AddModelError("", "Invalid dates.");
+                return View(model);
+            }
+
+            var currentRange = new DateTimeRange
+            {
+                Start = model.StartDate,
+                End = model.EndDate
+            };
+
+            var discounts = _accountService.GetActiveDiscounts();
+            foreach (var discount in discounts)
+            {
+                var range = new DateTimeRange
+                {
+                    Start = discount.StartDate,
+                    End = discount.EndDate
+                };
+
+                if (range.Intersects(currentRange))
+                {
+                    ApplyDiscountsList();
+                    ModelState.AddModelError("", "Discount cannot intersects with other discounts.");
+                    return View(model);
+                }
+            }
+
+            _accountService.AddDiscount(new Discount
+            {
+                StartDate = model.StartDate,
+                EndDate = model.EndDate,
+                PercentageAmount = model.PercentageAmount
+            });
+            _accountService.Commit();
+
+            ApplyDiscountsList();
+
+            return View();
+        }
+
+        private void ApplyDiscountsList()
+        {
+            var discounts = _accountService.GetActiveDiscounts().Select(x => new DiscountViewModel
+            {
+                StartDate = x.StartDate,
+                EndDate = x.EndDate,
+                PercentageAmount = x.PercentageAmount
+            }).ToList();
+
+            var date = DateTime.Now;
+
+            ViewBag.Discounts = new DiscountsViewModel
+            {
+                ActiveDiscounts = discounts.Where(x => x.StartDate <= date).ToList(),
+                UpcomingDiscounts = discounts.Where(x => x.StartDate > date).ToList()
+            };
         }
 
         private bool IsEmailProvided(ExternalAccount externalAccount, string imageUrl)
@@ -585,8 +689,8 @@ namespace Aircompany.Web.Controllers
             FormsAuthenticationTicket ticket = new FormsAuthenticationTicket(
                 1,
                 username,
-                DateTime.UtcNow,
-                DateTime.UtcNow.AddMinutes(AUTH_COOKIE_EXPIRATION_MIN),
+                DateTime.Now,
+                DateTime.Now.AddMinutes(AUTH_COOKIE_EXPIRATION_MIN),
                 rememberMe,
                 $"{profile.IsAdmin} {profile.Id}");
             string encTicket = FormsAuthentication.Encrypt(ticket);

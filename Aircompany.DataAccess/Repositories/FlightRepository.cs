@@ -100,7 +100,7 @@ namespace Aircompany.DataAccess.Repositories
             ticketPreOrders.ForEach(x => ticketPreOrdersDeleted.Add(new TicketPreOrdersDeleted()
             {
                 ProfileId = profileId,
-                DateTime = DateTime.UtcNow,
+                DateTime = DateTime.Now,
                 Place = x.Place,
                 Row = x.Row,
                 FlightId = x.FlightId
@@ -161,7 +161,7 @@ namespace Aircompany.DataAccess.Repositories
 
         public List<Flight> GetFlightsThisWeek()
         {
-            var dateFrom = DateTime.UtcNow;
+            var dateFrom = DateTime.Now;
             var dateTo = dateFrom.AddDays(7);
 
             return FlightContext.Flights.Where(x => 

@@ -15,10 +15,13 @@ namespace Aircompany.Services.Services
         private const string TICKETS_DIRECTORY_KEY = "TicketsDirectory";
         
         private readonly IUnitOfWork _unitOfWork;
+        private readonly string _airlinesCode;
 
         public BookingService(IUnitOfWork unitOfWork)
         {
             _unitOfWork = unitOfWork;
+
+            _airlinesCode = ConfigurationManager.AppSettings["FlightCode"];
         }
 
         public void Commit()
@@ -26,11 +29,12 @@ namespace Aircompany.Services.Services
             _unitOfWork.Commit();
         }
 
-        public List<Flight> GetActiveFlightsByDepartureAirportId(int departureAirportId)
+        public List<Flight> GetActiveFlightsByAirportIds(int departureAirportId, int arivingAirportId)
         {
             return _unitOfWork.FlightRepository.Find(x => 
                 x.DepartureAirportId == departureAirportId 
-                && x.DepartureDateTime > DateTime.UtcNow).ToList();
+                && x.ArivingAirportId == arivingAirportId
+                && x.DepartureDateTime > DateTime.Now).ToList();
         }
 
         public Flight GetFlight(int id)
@@ -101,6 +105,7 @@ namespace Aircompany.Services.Services
             int flightId = tickets.First().FlightId;
             tickets.ForEach(ticket => ticketModels.Add(new TicketPDFModel
             {
+                FlightCode = $"{_airlinesCode} {ticket.FlightId:D4}",
                 Date = ticket.Flight.DepartureDateTime.ToLocalTime().Date,
                 Time = ticket.Flight.DepartureDateTime.ToLocalTime().TimeOfDay,
                 PlaneModel = $"{ticket.Flight.Plane.Manufacturer} {ticket.Flight.Plane.Model}",
@@ -114,9 +119,17 @@ namespace Aircompany.Services.Services
                 Row = ticket.Row,
                 Guid = ticket.Guid,
                 SeatTypeId = _unitOfWork.FlightRepository.GetSeatType(ticket.Flight.PlaneId, ticket.Row, ticket.Place),
+                HandLuggage = ticket.Flight.HandLuggage,
+                Luggage = ticket.Flight.Luggage
             }));
 
             ticketModels.ForEach(x => x.Price = _unitOfWork.FlightRepository.GetPriceBySeatTypeId(x.SeatTypeId, flightId));
+
+            var discount = _unitOfWork.AccountRepository.GetCurrentDiscount();
+            if (discount != null)
+            {
+                ticketModels.ForEach(x => x.Price = (x.Price * (1 - ((decimal)discount / 100))));
+            }
 
             List<string> pathes = tickets.Select(x => serverPath + ConfigurationManager.AppSettings[TICKETS_DIRECTORY_KEY] +
                                     $"\\Ticket-{x.Guid}.pdf").ToList();

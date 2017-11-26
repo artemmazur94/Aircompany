@@ -8,7 +8,7 @@ namespace Aircompany.Services.Services.Contracts
     {
         void Commit();
 
-        List<Flight> GetActiveFlightsByDepartureAirportId(int departureAirportId);
+        List<Flight> GetActiveFlightsByAirportIds(int departureAirportId, int arivingAirportId);
 
         Flight GetFlight(int id);
 

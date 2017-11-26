@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="AircompanyContext.cs" />
     <Compile Include="Entities\Account.cs" />
+    <Compile Include="Entities\Discount.cs" />
     <Compile Include="Entities\ExternalAccount.cs" />
     <Compile Include="Entities\ExternalProvider.cs" />
     <Compile Include="Entities\Airport.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="Entities\TicketPreOrder.cs" />
     <Compile Include="Entities\TicketPreOrdersDeleted.cs" />
     <Compile Include="EntityMappings\AccountMap.cs" />
+    <Compile Include="EntityMappings\DiscountMap.cs" />
     <Compile Include="EntityMappings\ExternalAccountMap.cs" />
     <Compile Include="EntityMappings\ExternalProviderMap.cs" />
     <Compile Include="EntityMappings\AirportLocalizationMap.cs" />
@@ -94,6 +96,14 @@
     <Compile Include="Migrations\201711182037185_Init.Designer.cs">
       <DependentUpon>201711182037185_Init.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201711261324542_AddLuggage.cs" />
+    <Compile Include="Migrations\201711261324542_AddLuggage.Designer.cs">
+      <DependentUpon>201711261324542_AddLuggage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711261451337_AddDiscounts.cs" />
+    <Compile Include="Migrations\201711261451337_AddDiscounts.Designer.cs">
+      <DependentUpon>201711261451337_AddDiscounts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\AccountRepository.cs" />
@@ -116,6 +126,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201711182037185_Init.resx">
       <DependentUpon>201711182037185_Init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711261324542_AddLuggage.resx">
+      <DependentUpon>201711261324542_AddLuggage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711261451337_AddDiscounts.resx">
+      <DependentUpon>201711261451337_AddDiscounts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

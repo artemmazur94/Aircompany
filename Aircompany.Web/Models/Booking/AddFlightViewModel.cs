@@ -34,6 +34,14 @@ namespace Aircompany.Web.Models.Booking
         public int ArivingAirportId { get; set; }
 
         [Required]
+        [Range(0, 20)]
+        public int HandLuggage { get; set; }
+
+        [Required]
+        [Range(0, 50)]
+        public int Luggage { get; set; }
+
+        [Required]
         public List<SectorTypePrice> SeatTypePrices { get; set; } 
     }
 }

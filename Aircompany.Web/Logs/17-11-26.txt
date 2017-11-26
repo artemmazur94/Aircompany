@@ -1,0 +1,1780 @@
+
+Log entry:
+11/26/2017 11:07:02
+
+Profile id: 1
+
+Exception type: System.InvalidCastException
+
+Exception message: Unable to cast object of type 'WhereSelectListIterator`2[Aircompany.DataAccess.Entities.Flight,Aircompany.DataAccess.Entities.Flight]' to type 'System.Collections.Generic.List`1[Aircompany.Web.Models.Flight.FlightWithCodeViewModel]'.
+
+Strack trace: 
+   at Aircompany.Web.Controllers.FlightController.ApplyFlights(List`1 flights) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\FlightController.cs:line 185
+   at Aircompany.Web.Controllers.FlightController.Index() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\FlightController.cs:line 52
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 11:07:02
+
+Profile id: 1
+
+Exception type: System.InvalidCastException
+
+Exception message: Unable to cast object of type 'WhereSelectListIterator`2[Aircompany.DataAccess.Entities.Flight,Aircompany.DataAccess.Entities.Flight]' to type 'System.Collections.Generic.List`1[Aircompany.Web.Models.Flight.FlightWithCodeViewModel]'.
+
+Strack trace: 
+   at Aircompany.Web.Controllers.FlightController.ApplyFlights(List`1 flights) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\FlightController.cs:line 185
+   at Aircompany.Web.Controllers.FlightController.Index() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\FlightController.cs:line 52
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 11:13:20
+
+Profile id: 1
+
+Exception type: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException
+
+Exception message: Cannot convert type 'System.Collections.Generic.List<Aircompany.DataAccess.Entities.Flight>' to 'System.Collections.Generic.List<Aircompany.Web.Models.Flight.FlightWithCodeViewModel>'
+
+Strack trace: 
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at ASP._Page_Views_Flight_Index_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Flight\Index.cshtml:line 82
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 11:13:20
+
+Profile id: 1
+
+Exception type: Microsoft.CSharp.RuntimeBinder.RuntimeBinderException
+
+Exception message: Cannot convert type 'System.Collections.Generic.List<Aircompany.DataAccess.Entities.Flight>' to 'System.Collections.Generic.List<Aircompany.Web.Models.Flight.FlightWithCodeViewModel>'
+
+Strack trace: 
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at ASP._Page_Views_Flight_Index_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Flight\Index.cshtml:line 82
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:00:44
+
+Profile id: 1
+
+Exception type: System.Web.HttpCompileException
+
+Exception message: H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\AdminPage.cshtml(31): error CS1061: 'FlightViewModel' does not contain a definition for 'Code' and no extension method 'Code' accepting a first argument of type 'FlightViewModel' could be found (are you missing a using directive or an assembly reference?)
+
+Strack trace: 
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:00:44
+
+Profile id: 1
+
+Exception type: System.Web.HttpCompileException
+
+Exception message: H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\AdminPage.cshtml(31): error CS1061: 'FlightViewModel' does not contain a definition for 'Code' and no extension method 'Code' accepting a first argument of type 'FlightViewModel' could be found (are you missing a using directive or an assembly reference?)
+
+Strack trace: 
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:33:10
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 49
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:33:10
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 49
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:34:19
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 47
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:34:19
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 47
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:35:44
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 47
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:35:45
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 47
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:36:23
+
+Profile id: 1
+
+Exception type: System.IO.IOException
+
+Exception message: The document has no pages.
+
+Strack trace: 
+   at iTextSharp.text.pdf.PdfPages.WritePageTree()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 48
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:36:23
+
+Profile id: 1
+
+Exception type: System.IO.IOException
+
+Exception message: The document has no pages.
+
+Strack trace: 
+   at iTextSharp.text.pdf.PdfPages.WritePageTree()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 48
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:41:29
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 49
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:41:29
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 49
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:42:00
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 52
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:42:00
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 52
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:43:19
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 48
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:43:19
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 48
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:45:22
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 53
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:45:22
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 53
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:47:40
+
+Profile id: 1
+
+Exception type: System.IO.IOException
+
+Exception message: The document has no pages.
+
+Strack trace: 
+   at iTextSharp.text.pdf.PdfPages.WritePageTree()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at iTextSharp.text.Document.Close()
+   at iTextSharp.text.Document.Dispose()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 55
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:47:40
+
+Profile id: 1
+
+Exception type: System.IO.IOException
+
+Exception message: The document has no pages.
+
+Strack trace: 
+   at iTextSharp.text.pdf.PdfPages.WritePageTree()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at iTextSharp.text.Document.Close()
+   at iTextSharp.text.Document.Dispose()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 55
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:49:11
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 53
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:49:11
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 53
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:50:03
+
+Profile id: 1
+
+Exception type: System.IO.IOException
+
+Exception message: The document has no pages.
+
+Strack trace: 
+   at iTextSharp.text.pdf.PdfPages.WritePageTree()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 53
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:50:03
+
+Profile id: 1
+
+Exception type: System.IO.IOException
+
+Exception message: The document has no pages.
+
+Strack trace: 
+   at iTextSharp.text.pdf.PdfPages.WritePageTree()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 53
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:50:29
+
+Profile id: 1
+
+Exception type: System.IO.IOException
+
+Exception message: The document has no pages.
+
+Strack trace: 
+   at iTextSharp.text.pdf.PdfPages.WritePageTree()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 53
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:50:29
+
+Profile id: 1
+
+Exception type: System.IO.IOException
+
+Exception message: The document has no pages.
+
+Strack trace: 
+   at iTextSharp.text.pdf.PdfPages.WritePageTree()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 53
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:52:08
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 54
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:52:08
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 54
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:53:33
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 51
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:53:33
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 51
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:54:09
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 51
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 12:54:09
+
+Profile id: 1
+
+Exception type: System.ObjectDisposedException
+
+Exception message: Cannot access a closed file.
+
+Strack trace: 
+   at System.IO.__Error.FileNotOpen()
+   at System.IO.FileStream.Write(Byte[] array, Int32 offset, Int32 count)
+   at iTextSharp.text.pdf.PdfIndirectObject.WriteTo(Stream os)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Write(PdfIndirectObject indirect, Int32 refNumber, Int32 generation)
+   at iTextSharp.text.pdf.PdfWriter.PdfBody.Add(PdfObject objecta, Int32 refNumber, Int32 generation, Boolean inObjStm)
+   at iTextSharp.text.pdf.PdfWriter.AddToBody(PdfObject objecta, PdfIndirectReference refa)
+   at iTextSharp.text.pdf.PdfWriter.AddSharedObjectsToBody()
+   at iTextSharp.text.pdf.PdfWriter.Close()
+   at Aircompany.Services.Helpers.PDFManager.CreateTicket(TicketPDFModel ticket, String serverPath) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Helpers\PDFManager.cs:line 51
+   at Aircompany.Services.Services.BookingService.<>c__DisplayClass18_0.<SendTickets>b__3(TicketPDFModel x) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at System.Collections.Generic.List`1.ForEach(Action`1 action)
+   at Aircompany.Services.Services.BookingService.SendTickets(List`1 tickets, String serverPath, Profile profile) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\BookingService.cs:line 128
+   at Aircompany.Web.Controllers.BookingController.BookTickets(Nullable`1 flightId) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\BookingController.cs:line 306
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 13:19:56
+
+Profile id: 1
+
+Exception type: System.Web.HttpCompileException
+
+Exception message: H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Booking\SelectSeats.cshtml(53): error CS1061: 'FlightViewModel' does not contain a definition for 'HandLuggage' and no extension method 'HandLuggage' accepting a first argument of type 'FlightViewModel' could be found (are you missing a using directive or an assembly reference?)
+
+Strack trace: 
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 13:19:56
+
+Profile id: 1
+
+Exception type: System.Web.HttpCompileException
+
+Exception message: H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Booking\SelectSeats.cshtml(53): error CS1061: 'FlightViewModel' does not contain a definition for 'HandLuggage' and no extension method 'HandLuggage' accepting a first argument of type 'FlightViewModel' could be found (are you missing a using directive or an assembly reference?)
+
+Strack trace: 
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 14:02:37
+
+Profile id: 1
+
+Exception type: System.Web.HttpCompileException
+
+Exception message: H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\TicketList.cshtml(70): error CS1061: 'TicketViewModel' does not contain a definition for 'HandLuggage' and no extension method 'HandLuggage' accepting a first argument of type 'TicketViewModel' could be found (are you missing a using directive or an assembly reference?)
+
+Strack trace: 
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Account_MyTickets_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\MyTickets.cshtml:line 23
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 14:02:37
+
+Profile id: 1
+
+Exception type: System.Web.HttpCompileException
+
+Exception message: H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\TicketList.cshtml(70): error CS1061: 'TicketViewModel' does not contain a definition for 'HandLuggage' and no extension method 'HandLuggage' accepting a first argument of type 'TicketViewModel' could be found (are you missing a using directive or an assembly reference?)
+
+Strack trace: 
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.Html.PartialExtensions.Partial(HtmlHelper htmlHelper, String partialViewName, Object model, ViewDataDictionary viewData)
+   at ASP._Page_Views_Account_MyTickets_cshtml.Execute() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\MyTickets.cshtml:line 23
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()
+   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()
+   at System.Web.WebPages.StartPage.ExecutePageHierarchy()
+   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 14:49:31
+
+Profile id: 1
+
+Exception type: System.InvalidOperationException
+
+Exception message: The model backing the 'AircompanyContext' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269).
+
+Strack trace: 
+   at System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Aircompany.DataAccess.Repositories.AccountRepository.GetActiveDiscounts() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.DataAccess\Repositories\AccountRepository.cs:line 95
+   at Aircompany.Services.Services.AccountService.GetActiveDiscounts() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\AccountService.cs:line 148
+   at Aircompany.Web.Controllers.AccountController.Discounts() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\AccountController.cs:line 507
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 14:49:31
+
+Profile id: 1
+
+Exception type: System.InvalidOperationException
+
+Exception message: The model backing the 'AircompanyContext' context has changed since the database was created. Consider using Code First Migrations to update the database (http://go.microsoft.com/fwlink/?LinkId=238269).
+
+Strack trace: 
+   at System.Data.Entity.CreateDatabaseIfNotExists`1.InitializeDatabase(TContext context)
+   at System.Data.Entity.Internal.InternalContext.PerformInitializationAction(Action action)
+   at System.Data.Entity.Internal.InternalContext.PerformDatabaseInitialization()
+   at System.Data.Entity.Internal.RetryAction`1.PerformAction(TInput input)
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeDatabaseAction(Action`1 action)
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.Where[TSource](IQueryable`1 source, Expression`1 predicate)
+   at Aircompany.DataAccess.Repositories.AccountRepository.GetActiveDiscounts() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.DataAccess\Repositories\AccountRepository.cs:line 95
+   at Aircompany.Services.Services.AccountService.GetActiveDiscounts() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\AccountService.cs:line 148
+   at Aircompany.Web.Controllers.AccountController.Discounts() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\AccountController.cs:line 507
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 14:57:01
+
+Profile id: 1
+
+Exception type: System.NotSupportedException
+
+Exception message: The specified type member 'Date' is not supported in LINQ to Entities. Only initializers, entity members, and entity navigation properties are supported.
+
+Strack trace: 
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MemberAccessTranslator.TypedTranslate(ExpressionConverter parent, MemberExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Aircompany.DataAccess.Repositories.AccountRepository.GetActiveDiscounts() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.DataAccess\Repositories\AccountRepository.cs:line 95
+   at Aircompany.Services.Services.AccountService.GetActiveDiscounts() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\AccountService.cs:line 148
+   at Aircompany.Web.Controllers.AccountController.Discounts()
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 14:57:02
+
+Profile id: 1
+
+Exception type: System.NotSupportedException
+
+Exception message: The specified type member 'Date' is not supported in LINQ to Entities. Only initializers, entity members, and entity navigation properties are supported.
+
+Strack trace: 
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MemberAccessTranslator.TypedTranslate(ExpressionConverter parent, MemberExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.BinaryTranslator.TypedTranslate(ExpressionConverter parent, BinaryExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateLambda(LambdaExpression lambda, DbExpression input)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression& source, DbExpressionBinding& sourceBinding, DbExpression& lambda)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at Aircompany.DataAccess.Repositories.AccountRepository.GetActiveDiscounts() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.DataAccess\Repositories\AccountRepository.cs:line 95
+   at Aircompany.Services.Services.AccountService.GetActiveDiscounts() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\AccountService.cs:line 148
+   at Aircompany.Web.Controllers.AccountController.Discounts()
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 14:58:03
+
+Profile id: 1
+
+Exception type: System.InvalidOperationException
+
+Exception message: The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[Aircompany.Web.Models.Account.DiscountViewModel]', but this dictionary requires a model item of type 'Aircompany.Web.Models.Account.DiscountsViewModel'.
+
+Strack trace: 
+   at System.Web.Mvc.ViewDataDictionary`1.SetModel(Object value)
+   at System.Web.Mvc.ViewDataDictionary..ctor(ViewDataDictionary dictionary)
+   at System.Web.Mvc.WebViewPage`1.SetViewData(ViewDataDictionary viewData)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 14:58:03
+
+Profile id: 1
+
+Exception type: System.InvalidOperationException
+
+Exception message: The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[Aircompany.Web.Models.Account.DiscountViewModel]', but this dictionary requires a model item of type 'Aircompany.Web.Models.Account.DiscountsViewModel'.
+
+Strack trace: 
+   at System.Web.Mvc.ViewDataDictionary`1.SetModel(Object value)
+   at System.Web.Mvc.ViewDataDictionary..ctor(ViewDataDictionary dictionary)
+   at System.Web.Mvc.WebViewPage`1.SetViewData(ViewDataDictionary viewData)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 14:59:43
+
+Profile id: 1
+
+Exception type: System.InvalidOperationException
+
+Exception message: The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[Aircompany.Web.Models.Account.DiscountViewModel]', but this dictionary requires a model item of type 'Aircompany.Web.Models.Account.DiscountsViewModel'.
+
+Strack trace: 
+   at System.Web.Mvc.ViewDataDictionary`1.SetModel(Object value)
+   at System.Web.Mvc.ViewDataDictionary..ctor(ViewDataDictionary dictionary)
+   at System.Web.Mvc.WebViewPage`1.SetViewData(ViewDataDictionary viewData)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 14:59:43
+
+Profile id: 1
+
+Exception type: System.InvalidOperationException
+
+Exception message: The model item passed into the dictionary is of type 'System.Collections.Generic.List`1[Aircompany.Web.Models.Account.DiscountViewModel]', but this dictionary requires a model item of type 'Aircompany.Web.Models.Account.DiscountsViewModel'.
+
+Strack trace: 
+   at System.Web.Mvc.ViewDataDictionary`1.SetModel(Object value)
+   at System.Web.Mvc.ViewDataDictionary..ctor(ViewDataDictionary dictionary)
+   at System.Web.Mvc.WebViewPage`1.SetViewData(ViewDataDictionary viewData)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 15:09:40
+
+Profile id: 1
+
+Exception type: System.InvalidOperationException
+
+Exception message: The model item passed into the dictionary is of type 'Aircompany.Web.Models.Account.DiscountsViewModel', but this dictionary requires a model item of type 'Aircompany.Web.Models.Account.DiscountViewModel'.
+
+Strack trace: 
+   at System.Web.Mvc.ViewDataDictionary`1.SetModel(Object value)
+   at System.Web.Mvc.ViewDataDictionary..ctor(ViewDataDictionary dictionary)
+   at System.Web.Mvc.WebViewPage`1.SetViewData(ViewDataDictionary viewData)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 15:09:40
+
+Profile id: 1
+
+Exception type: System.InvalidOperationException
+
+Exception message: The model item passed into the dictionary is of type 'Aircompany.Web.Models.Account.DiscountsViewModel', but this dictionary requires a model item of type 'Aircompany.Web.Models.Account.DiscountViewModel'.
+
+Strack trace: 
+   at System.Web.Mvc.ViewDataDictionary`1.SetModel(Object value)
+   at System.Web.Mvc.ViewDataDictionary..ctor(ViewDataDictionary dictionary)
+   at System.Web.Mvc.WebViewPage`1.SetViewData(ViewDataDictionary viewData)
+   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 15:10:18
+
+Profile id: 1
+
+Exception type: System.Web.HttpCompileException
+
+Exception message: H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Discounts.cshtml(16): error CS1003: Syntax error, ',' expected
+
+Strack trace: 
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 15:10:18
+
+Profile id: 1
+
+Exception type: System.Web.HttpCompileException
+
+Exception message: H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Views\Account\Discounts.cshtml(16): error CS1003: Syntax error, ',' expected
+
+Strack trace: 
+   at System.Web.Compilation.AssemblyBuilder.Compile()
+   at System.Web.Compilation.BuildProvidersCompiler.PerformBuild()
+   at System.Web.Compilation.BuildManager.CompileWebFile(VirtualPath virtualPath)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultInternal(VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVPathBuildResultWithNoAssert(HttpContext context, VirtualPath virtualPath, Boolean noBuild, Boolean allowCrossApp, Boolean allowBuildInPrecompile, Boolean throwIfNotFound, Boolean ensureIsUpToDate)
+   at System.Web.Compilation.BuildManager.GetVirtualPathObjectFactory(VirtualPath virtualPath, HttpContext context, Boolean allowCrossApp, Boolean throwIfNotFound)
+   at System.Web.Compilation.BuildManager.GetCompiledType(VirtualPath virtualPath)
+   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)
+   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 15:22:08
+
+Profile id: 1
+
+Exception type: System.NotImplementedException
+
+Exception message: The method or operation is not implemented.
+
+Strack trace: 
+   at Aircompany.Web.Controllers.AccountController.AddDiscount() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\AccountController.cs:line 534
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 15:22:08
+
+Profile id: 1
+
+Exception type: System.NotImplementedException
+
+Exception message: The method or operation is not implemented.
+
+Strack trace: 
+   at Aircompany.Web.Controllers.AccountController.AddDiscount() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\AccountController.cs:line 534
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 17:29:12
+
+Profile id: 1
+
+Exception type: System.Web.Mvc.HttpAntiForgeryException
+
+Exception message: The required anti-forgery form field "__RequestVerificationToken" is not present.
+
+Strack trace: 
+   at System.Web.Helpers.AntiXsrf.TokenValidator.ValidateTokens(HttpContextBase httpContext, IIdentity identity, AntiForgeryToken sessionToken, AntiForgeryToken fieldToken)
+   at System.Web.Helpers.AntiXsrf.AntiForgeryWorker.Validate(HttpContextBase httpContext)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+============================================================================================================
+
+Log entry:
+11/26/2017 17:29:12
+
+Profile id: 1
+
+Exception type: System.Web.Mvc.HttpAntiForgeryException
+
+Exception message: The required anti-forgery form field "__RequestVerificationToken" is not present.
+
+Strack trace: 
+   at System.Web.Helpers.AntiXsrf.TokenValidator.ValidateTokens(HttpContextBase httpContext, IIdentity identity, AntiForgeryToken sessionToken, AntiForgeryToken fieldToken)
+   at System.Web.Helpers.AntiXsrf.AntiForgeryWorker.Validate(HttpContextBase httpContext)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeAuthorizationFilters(ControllerContext controllerContext, IList`1 filters, ActionDescriptor actionDescriptor)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__19(AsyncCallback asyncCallback, Object asyncState)
+============================================================================================================
+
+Log entry:
+11/26/2017 18:25:10
+
+Exception type: System.Data.Entity.Infrastructure.DbUpdateException
+
+Exception message: An error occurred while updating the entries. See the inner exception for details.
+
+Strack trace: 
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Aircompany.DataAccess.UnitOfWork.Commit() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.DataAccess\UnitOfWork.cs:line 37
+   at Aircompany.Services.Services.AccountService.Commit() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\AccountService.cs:line 25
+   at Aircompany.Web.Controllers.AccountController.ExternalLoginCallback(String returnUrl) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\AccountController.cs:line 421
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================
+
+Log entry:
+11/26/2017 18:25:10
+
+Exception type: System.Data.Entity.Infrastructure.DbUpdateException
+
+Exception message: An error occurred while updating the entries. See the inner exception for details.
+
+Strack trace: 
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at Aircompany.DataAccess.UnitOfWork.Commit() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.DataAccess\UnitOfWork.cs:line 37
+   at Aircompany.Services.Services.AccountService.Commit() in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Services\Services\AccountService.cs:line 25
+   at Aircompany.Web.Controllers.AccountController.ExternalLoginCallback(String returnUrl) in H:\Aircompany\src\Aircompany\Aircompany\Aircompany.Web\Controllers\AccountController.cs:line 421
+   at lambda_method(Closure , ControllerBase , Object[] )
+   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)
+   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<BeginInvokeSynchronousActionMethod>b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)
+   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3d()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.<>c__DisplayClass46.<InvokeActionMethodFilterAsynchronouslyRecursive>b__3f()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<>c__DisplayClass2b.<BeginInvokeAction>b__1c()
+   at System.Web.Mvc.Async.AsyncControllerActionInvoker.<>c__DisplayClass21.<BeginInvokeAction>b__1e(IAsyncResult asyncResult)
+============================================================================================================

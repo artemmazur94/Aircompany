@@ -13,6 +13,8 @@ namespace Aircompany.DataAccess.Entities
         public int PlaneId { get; set; }
         public bool IsDeleted { get; set; }
         public int? RemoveExecutorId { get; set; }
+        public int HandLuggage { get; set; }
+        public int Luggage { get; set; }
 
         public virtual Plane Plane { get; set; }
         public virtual Airport DepartureAirport { get; set; }

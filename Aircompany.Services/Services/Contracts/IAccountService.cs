@@ -43,5 +43,8 @@ namespace Aircompany.Services.Services.Contracts
         bool IsAttachedExternalAccount(int profileId, int externalProviderId);
 
         bool IsAttachedExternalAccountToCurrentProfile(string userIdentity, int externalProviderId, int profileId);
+        List<Discount> GetActiveDiscounts();
+        void AddDiscount(Discount discount);
+        int? GetActiveDiscountPercentage();
     }
 }

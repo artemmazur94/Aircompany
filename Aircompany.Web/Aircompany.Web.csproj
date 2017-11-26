@@ -291,6 +291,8 @@
     <Compile Include="IoC\AircompanyNinjectModule.cs" />
     <Compile Include="Models\Account\AdminPageViewModel.cs" />
     <Compile Include="Models\Account\ChangePasswordViewModel.cs" />
+    <Compile Include="Models\Account\DiscountsViewModel.cs" />
+    <Compile Include="Models\Account\DiscountViewModel.cs" />
     <Compile Include="Models\Account\EmailViewModel.cs" />
     <Compile Include="Models\Account\ExternalLoginListViewModel.cs" />
     <Compile Include="Models\Account\ExternalProvidersViewModel.cs" />
@@ -310,6 +312,7 @@
     <Compile Include="Models\Flight\DirectionsViewModel.cs" />
     <Compile Include="Models\Flight\FlightDetailsViewModel.cs" />
     <Compile Include="Models\Flight\FlightListItemViewModel.cs" />
+    <Compile Include="Models\Flight\FlightWithCodeViewModel.cs" />
     <Compile Include="Models\Plane\PlaneViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -471,6 +474,7 @@
     <Content Include="Views\Plane\AddPlane.cshtml" />
     <Content Include="Views\Plane\Details.cshtml" />
     <Content Include="Views\Flight\Index.cshtml" />
+    <Content Include="Views\Account\AddDiscount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -34,7 +34,7 @@ namespace Aircompany.Services.Services
         public List<Flight> GetAllActiveFlights()
         {
             return _unitOfWork.FlightRepository
-                .Find(x => x.IsDeleted == false && x.DepartureDateTime > DateTime.UtcNow)
+                .Find(x => x.IsDeleted == false && x.DepartureDateTime > DateTime.Now)
                 .ToList();
         }
 

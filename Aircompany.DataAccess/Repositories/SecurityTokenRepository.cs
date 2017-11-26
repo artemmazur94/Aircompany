@@ -15,7 +15,7 @@ namespace Aircompany.DataAccess.Repositories
 
         public string GetUsernameByToken(Guid token)
         {
-            DateTime datetime = DateTime.UtcNow.AddDays(-1);
+            DateTime datetime = DateTime.Now.AddDays(-1);
             var securityToken = SecurityTokenContext.SecurityTokens.FirstOrDefault
                 (
                     x => x.Id == token &&

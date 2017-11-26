@@ -6,6 +6,7 @@ namespace Aircompany.Services.Models
     {
         public Guid Guid { get; set; }
 
+        public string FlightCode { get; set; }
         public string DepartureAirportCode { get; set; }
         public string DepartureCity { get; set; }
         public string DepartureCountry { get; set; }
@@ -27,5 +28,8 @@ namespace Aircompany.Services.Models
         public decimal Price { get; set; }
 
         public int SeatTypeId { get; set; }
+
+        public int HandLuggage { get; set; }
+        public int Luggage { get; set; }
     }
 }

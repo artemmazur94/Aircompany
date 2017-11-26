@@ -36,34 +36,54 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-sm-12">
-                            <h3>Flight: @ticket.DepartureAirportCode -> @ticket.ArivingAirportCode</h3>
+                            <h3>Flight: @ticket.Code</h3>
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <b>Departure airport:</b> @ticket.DepartureAirportCode, @ticket.DepartureAirportCity, @ticket.DepartureAirportCountry
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <b>Ariving airport:</b> @ticket.ArivingAirportCode, @ticket.ArivingAirportCity, @ticket.ArivingAirportCountry
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <b>Departure date:</b> @ticket.DepartureDate
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <b>Ariving date:</b> @ticket.ArivingDate
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <b>Plane model:</b> @ticket.PlaneModel
+                        </div>
+                    </div>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <b>Hand luggage:</b> @ticket.HandLuggage kg.
+                        </div>
+                        <div class="col-sm-6">
+                            <b>Luggage:</b> @ticket.Luggage kg.
                         </div>
                     </div>
                     <hr/>
                     <div class="row">
                         <div class="col-sm-4">
-                            Departure date: @ticket.DepartureDate.ToShortDateString()
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            Ariving date: @ticket.ArivingDate.ToShortDateString()
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            Plane model: @ticket.PlaneModel
+                            <b>Class:</b> @type
                         </div>
                         <div class="col-sm-4">
-                            Type: @type
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-sm-4">
-                            Place: @ticket.Seat.Place
+                            <b>Place:</b> @ticket.Seat.Place
                         </div>
                         <div class="col-sm-4">
-                            Row: @ticket.Seat.Row
+                            <b>Row:</b> @ticket.Seat.Row
                         </div>
                     </div>
                 </div>

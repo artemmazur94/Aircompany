@@ -4,6 +4,8 @@ using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Aircompany.DataAccess.Entities;
+using Aircompany.DataAccess.Enums;
 using Aircompany.Services.Services.Contracts;
 using Aircompany.Web.Helpers;
 using Aircompany.Web.Models.Plane;
@@ -77,18 +79,27 @@ namespace Aircompany.Web.Controllers
                 return View(model);
             }
 
-            var sectors = new List<SectorViewModel>();
+            var sectors = CreatePlaceSectors(model);
 
-            if(model.EconomSector.IsIncluded) sectors.Add(model.EconomSector);
-            if(model.BusinessSector.IsIncluded) sectors.Add(model.BusinessSector);
-            if(model.FirstClassSector.IsIncluded) sectors.Add(model.FirstClassSector);
-
-            if (!ValidateSectors(sectors))
+            var plane = new Plane
             {
-                return View(model);
-            }
+                Manufacturer = model.Manufacturer,
+                Model = model.PlaneModel,
+                MaxSpeed = model.MaxSpeed,
+                Sectors = sectors,
+                PlaneLocalizations = new List<PlaneLocalization>
+                {
+                    new PlaneLocalization
+                    {
+                        Name = model.Name,
+                        Description = model.Description,
+                        LanguageId = LanguageHelper.CurrnetCulture
+                    }
+                }
+            };
 
-
+            _planeService.AddPlane(plane);
+            _planeService.Commit();
 
             return RedirectToAction("Details", new {id = 2});
         }
@@ -129,30 +140,49 @@ namespace Aircompany.Web.Controllers
                 return true;
             }
 
-            if (sector.FromPlace < 1 || sector.FromRow < 1)
+            if (sector.NumberOfRows <= 0)
             {
-                ModelState.AddModelError(String.Empty, "Number of begining place or row cannot be less than 1.");
+                ModelState.AddModelError(String.Empty, "Number of rows must be positive number.");
                 return false;
             }
 
-            if (sector.FromPlace >= sector.ToPlace)
+            if (sector.NumberOfPlaces <= 0)
             {
-                ModelState.AddModelError(String.Empty, "'To' sector place must be greated than 'From' sector place.");
-                return false;
-            }
-
-            if (sector.FromRow >= sector.ToRow)
-            {
-                ModelState.AddModelError(String.Empty, "'To' sector row must be greated than 'From' sector row.");
+                ModelState.AddModelError(String.Empty, "Number of places must be positive number.");
                 return false;
             }
 
             return true;
         }
 
-        private bool ValidateSectors(List<SectorViewModel> sectors)
+        private List<Sector> CreatePlaceSectors(PlaneViewModel model)
         {
-            
+            var result = new List<Sector>();
+
+            AddSector(result, model.FirstClassSector, SeatType.First);
+            AddSector(result, model.BusinessSector, SeatType.Business);
+            AddSector(result, model.EconomSector, SeatType.Econom);
+
+            return result;
+        }
+
+        private void AddSector(List<Sector> result, SectorViewModel sector, SeatType seatType)
+        {
+            if (!sector.IsIncluded)
+            {
+                return;
+            }
+
+            int row = !result.Any() ? 1 : result.Max(x => x.ToRow) + 1;
+
+            result.Add(new Sector
+            {
+                SeatTypeId = (int)seatType,
+                FromPlace = 1,
+                ToPlace = sector.NumberOfPlaces,
+                FromRow = row,
+                ToRow = row + sector.NumberOfRows
+            });
         }
     }
 }

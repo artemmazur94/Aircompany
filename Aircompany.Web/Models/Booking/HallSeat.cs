@@ -13,7 +13,7 @@ namespace Aircompany.Web.Models.Booking
         [Display(Name = "Place: ")]
         public int Place { get; set; }
 
-        [Display(Name = "Seat type: ")]
+        [Display(Name = "Seat class: ")]
         public int Type { get; set; }
 
         public static List<PlaneSeat> GetAllSeats(List<Ticket> tickets, List<TicketPreOrder> ticketPreOrders)

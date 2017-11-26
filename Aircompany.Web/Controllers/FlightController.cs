@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -20,10 +21,14 @@ namespace Aircompany.Web.Controllers
         private const string AIRPORT_ID_COLUMN = "AirportId";
         private const string AIRPORT_CODE_COLUMN = "Code";
 
+        private readonly string _airlinesCode;
+
         public FlightController(IFlightService flightService, IAirportService airportService)
         {
             _flightService = flightService;
             _airportService = airportService;
+
+            _airlinesCode = ConfigurationManager.AppSettings["FlightCode"];
         }
 
         protected override void Initialize(RequestContext requestContext)
@@ -48,8 +53,8 @@ namespace Aircompany.Web.Controllers
 
             var model = new DirectionsViewModel
             {
-                FromDate = DateTime.UtcNow.Date,
-                ToDate =  DateTime.UtcNow.Date
+                FromDate = DateTime.Now.Date,
+                ToDate =  DateTime.Now.Date
             };
 
             return View(model);
@@ -144,6 +149,7 @@ namespace Aircompany.Web.Controllers
             var model = new FlightDetailsViewModel
             {
                 FlightId = flight.Id,
+                FlightCode = $"{_airlinesCode} {flight.Id:D4}",
                 DepartureAirportId = flight.DepartureAirportId,
                 ArivingAirportId = flight.ArivingAirportId,
                 DepartureDateTime = flight.DepartureDateTime,
@@ -176,7 +182,11 @@ namespace Aircompany.Web.Controllers
 
         private void ApplyFlights(List<Flight> flights)
         {
-            ViewBag.Flights = flights;
+            var flightModels = flights.Select(x => new FlightWithCodeViewModel(x)).ToList();
+
+            flightModels.ForEach(x => x.Code = $"{_airlinesCode} {x.Id:D4}");
+
+            ViewBag.Flights = flightModels;
         }
 
         protected override void Dispose(bool disposing)

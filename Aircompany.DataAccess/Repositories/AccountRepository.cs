@@ -88,5 +88,25 @@ namespace Aircompany.DataAccess.Repositories
                         x.ProfileId == profileId &&
                         x.ExternalProviderId == externalProviderId) != null;
         }
+
+        public List<Discount> GetActiveDiscounts()
+        {
+            var dateTime = DateTime.Now.Date;
+            return AccountContext.Discounts
+                .Where(x => (x.StartDate <= dateTime && x.EndDate >= dateTime)
+                    || (x.StartDate > dateTime))
+                .ToList();
+        }
+
+        public void AddDiscount(Discount discount)
+        {
+            AccountContext.Discounts.Add(discount);
+        }
+
+        public int? GetCurrentDiscount()
+        {
+            return AccountContext.Discounts
+                .FirstOrDefault(x => x.StartDate <= DateTime.Now && x.EndDate >= DateTime.Now)?.PercentageAmount;
+        }
     }
 }

@@ -1,4 +1,6 @@
 ﻿@using Aircompany.DataAccess.Entities
+@using Aircompany.Web.Helpers
+@using Aircompany.Web.Models.Flight
 @model Aircompany.Web.Models.Flight.DirectionsViewModel
 
 @{
@@ -63,10 +65,21 @@
     </div>
 </div>
 
+@if (User.IsAdmin())
+{
+    <hr/>
+    <div class="row">
+        <div class="col-sm-10">
+            <a href="@Url.Action("AddFlight", "Booking")"><span class="glyphicon glyphicon-plus"></span> Add flight</a>
+        </div>
+    </div>
+    <hr />
+}
+
 @{
     if (ViewBag.Flights != null)
     {
-        var flights = (List<Flight>) ViewBag.Flights;
+        var flights = (List<FlightWithCodeViewModel>) ViewBag.Flights;
         if (flights.Any())
         {
             <div class="row">
@@ -80,7 +93,10 @@
                 <hr/>
                 <div class="panel panel-default panel-body">
                     <div class="row">
-                        <div class="col-sm-11">
+                        <div class="col-sm-2">
+                           <h4><b>@flight.Code</b></h4>
+                        </div>
+                        <div class="col-sm-9">
                             <div class="row">
                                 <div class="col-sm-6">
                                     <b>Departure place:</b> @flight.DepartureAirport.Code, @flight.DepartureAirport.City, @flight.DepartureAirport.Country
@@ -99,7 +115,7 @@
                             </div>
                         </div>
                         <div class="col-sm-1">
-                            <button onclick="location.href = '@Url.Action("SelectSeats", "Booking", new { id = flight.Id})'" class="btn btn-primary pull-right " type="button"><span class="glyphicon glyphicon-tags"></span>Book tickets</button>
+                            <button onclick="location.href = '@Url.Action("SelectSeats", "Booking", new {id = flight.Id})'" class="btn btn-primary pull-right " type="button"><span class="glyphicon glyphicon-tags"></span>Book tickets</button>
                         </div>
                     </div>
                 </div>
