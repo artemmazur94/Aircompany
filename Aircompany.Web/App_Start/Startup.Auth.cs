@@ -34,17 +34,17 @@ namespace Aircompany.Web
 
             //todo: 
 
-            var facebookOptions = new FacebookAuthenticationOptions()
-            {
-                AppId = ConfigurationManager.AppSettings[APP_FACEBOOK_ID_KEY],
-                AppSecret = ConfigurationManager.AppSettings[APP_FACEBOOK_SECRET_KEY],
-                Provider = new FacebookAuthenticationProvider
-                {
-                    OnAuthenticated = async context => context.Identity.AddClaim(new Claim(FACEBOOK_ACCESS_TOKEN, context.AccessToken))
-                }
-            };
-            facebookOptions.Scope.Add(EMAIL_SCOPE);
-            app.UseFacebookAuthentication(facebookOptions);
+            //var facebookOptions = new FacebookAuthenticationOptions()
+            //{
+            //    AppId = ConfigurationManager.AppSettings[APP_FACEBOOK_ID_KEY],
+            //    AppSecret = ConfigurationManager.AppSettings[APP_FACEBOOK_SECRET_KEY],
+            //    Provider = new FacebookAuthenticationProvider
+            //    {
+            //        OnAuthenticated = async context => context.Identity.AddClaim(new Claim(FACEBOOK_ACCESS_TOKEN, context.AccessToken))
+            //    }
+            //};
+            //facebookOptions.Scope.Add(EMAIL_SCOPE);
+            //app.UseFacebookAuthentication(facebookOptions);
 
 
             var googleOptions = new GoogleOAuth2AuthenticationOptions()
