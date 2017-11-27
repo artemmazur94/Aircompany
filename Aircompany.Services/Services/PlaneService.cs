@@ -28,7 +28,13 @@ namespace Aircompany.Services.Services
 
         public Plane GetPlane(int id)
         {
-            return _unitOfWork.PlaneRepository.Get(id);
+            var plane = _unitOfWork.PlaneRepository.Get(id);
+            if (plane.PhotoId.HasValue)
+            {
+                plane.Photo = _unitOfWork.PlaneRepository.GetPhoto(plane.PhotoId.Value);
+            }
+
+            return plane;
         }
 
         public PlaneLocalization GetPlaneLocalization(int id, int languageId)
@@ -39,6 +45,11 @@ namespace Aircompany.Services.Services
         public void AddPlane(Plane plane)
         {
             _unitOfWork.PlaneRepository.Add(plane);
+        }
+
+        public Photo GetPhoto(int photoId)
+        {
+            return _unitOfWork.PlaneRepository.GetPhoto(photoId);
         }
 
         public void Commit()

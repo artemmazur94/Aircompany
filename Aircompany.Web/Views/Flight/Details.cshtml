@@ -72,16 +72,6 @@
         </div>
         <hr/>
         <div class="row">
-            @* todo: do later *@
-            @*@if (User.IsAdmin())
-            {
-                <div class="col-sm-2">
-                    <a href="@Url.Action("Edit", "Flight", new {id = Model.MovieId})"><span class="glyphicon glyphicon-edit"></span> Edit</a>
-                </div>
-                <div class="col-sm-2">
-                    <a href="@Url.Action("Delete", "Flight", new {id = Model.MovieId})"><span class="glyphicon glyphicon-remove"></span> Remove</a>
-                </div>
-            }*@
             <div class="col-sm-4 right">
                 <a href="@Url.Action("Flights", "Booking", new {departureAirportId = Model.DepartureAirportId, arivingAirportId = Model.ArivingAirportId})"><span class="glyphicon glyphicon-th-list"></span> Other flights on this direction</a>
             </div>

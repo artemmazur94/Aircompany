@@ -12,7 +12,7 @@
     <h1>@operation airport</h1>
 </div>
 
-@using (Html.BeginForm("CreateEdit", "Airport", FormMethod.Post, new {@class = "form-horizontal", id="airport-create-edit-form"}))
+@using (Html.BeginForm("CreateEdit", "Airport", FormMethod.Post, new {@class = "form-horizontal", id="airport-create-edit-form", enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -21,14 +21,30 @@
     @Html.HiddenFor(x => x.Id)
 
     <div class="form-group">
+        @Html.LabelFor(x => x.Code, new { @class = "control-label col-sm-2" })
+        @Html.TextBoxFor(x => x.Code, new { @class = "form-control col-sm-4", rows = 10 })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.City, new { @class = "control-label col-sm-2" })
+        @Html.TextBoxFor(x => x.City, new { @class = "form-control col-sm-4", rows = 10 })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Country, new { @class = "control-label col-sm-2" })
+        @Html.TextBoxFor(x => x.Country, new { @class = "form-control col-sm-4", rows = 10 })
+    </div>
+    <div class="form-group">
         @Html.LabelFor(x => x.Name, new {@class = "control-label col-sm-2"})
         @Html.TextBoxFor(x => x.Name, new {@class = "form-control col-sm-4"})
-        <span class="help-block col-sm-6 hidden" id="name-label">Airport code is required. Check airport code for leading and trailing spaces.</span>
     </div>
     <div class="form-group">
         @Html.LabelFor(x => x.Description, new {@class = "control-label col-sm-2"})
         @Html.TextAreaFor(x => x.Description, new {@class = "form-control col-sm-4", rows=10})
     </div>
+    <div class="form-group">
+        @Html.LabelFor(x => x.Photo, new { @class = "control-label col-sm-2" })
+        @Html.TextBoxFor(x => x.Photo, new { @type = "file", @class = "col-sm-4" })
+    </div>
+
     <div class="form-group">
         <div class="col-sm-offset-2 col-sm-10">
             <input class="btn btn-success" type="button" value="@operation airport" id="submit-btn"/>

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
+using System.Web;
+using Aircompany.DataAccess.Entities;
 
 namespace Aircompany.Web.Models.Plane
 {
@@ -27,8 +29,6 @@ namespace Aircompany.Web.Models.Plane
         [Display(Name = "Description: ")]
         public string Description { get; set; }
 
-        public string PhotoPath { get; set; }
-
         [Display(Name = "Econom class sector")]
         public SectorViewModel EconomSector { get; set; } = new SectorViewModel();
 
@@ -37,6 +37,10 @@ namespace Aircompany.Web.Models.Plane
 
         [Display(Name = "First class sector")]
         public SectorViewModel FirstClassSector { get; set; } = new SectorViewModel();
+
+        public HttpPostedFileBase Photo { get; set; }
+
+        public Photo PhotoEntity { get; set; }
     }
 
     public class SectorViewModel

@@ -16,6 +16,7 @@ namespace Aircompany.Web.Controllers
     public class PlaneController : Controller
     {
         private readonly IPlaneService _planeService;
+        private readonly IFlightService _flightService;
 
         protected override void Initialize(RequestContext requestContext)
         {
@@ -23,9 +24,10 @@ namespace Aircompany.Web.Controllers
             LanguageHelper.InitializeCulture(HttpContext);
         }
 
-        public PlaneController(IPlaneService planeService)
+        public PlaneController(IPlaneService planeService, IFlightService flightService)
         {
             _planeService = planeService;
+            _flightService = flightService;
         }
 
         [HttpGet]
@@ -42,8 +44,7 @@ namespace Aircompany.Web.Controllers
                 Manufacturer = x.Manufacturer,
                 Name = planeLocalizations.FirstOrDefault(z => z.PlaneId == x.Id)?.Name,
                 Description = planeLocalizations.FirstOrDefault(z => z.PlaneId == x.Id)?.Description,
-                // todo: check this
-                PhotoPath = x.Photo == null ? null : x.Photo.Path + x.Photo.Filename
+                PhotoEntity = x.PhotoId.HasValue ? _planeService.GetPhoto(x.PhotoId.Value) : null
             }).ToList();
 
             return View(model);
@@ -81,8 +82,15 @@ namespace Aircompany.Web.Controllers
 
             var sectors = CreatePlaceSectors(model);
 
+            Photo photo = null;
+            if (model.Photo != null)
+            {
+                photo = _flightService.SetPhotoToDirectory(model.Photo, Server.MapPath("~/"));
+            }
+
             var plane = new Plane
             {
+                Photo = photo,
                 Manufacturer = model.Manufacturer,
                 Model = model.PlaneModel,
                 MaxSpeed = model.MaxSpeed,
@@ -127,7 +135,7 @@ namespace Aircompany.Web.Controllers
                 MaxSpeed = plane.MaxSpeed,
                 Name = planeLocalization?.Name,
                 Description = planeLocalization?.Description,
-                PhotoPath = plane.Photo == null ? null : plane.Photo.Path + plane.Photo.Filename
+                PhotoEntity = plane.Photo
             };
 
             return View(model);

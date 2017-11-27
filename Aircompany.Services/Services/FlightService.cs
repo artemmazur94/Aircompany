@@ -90,6 +90,15 @@ namespace Aircompany.Services.Services
             return _unitOfWork.AirportRepository.Find(x => x.Code == code).FirstOrDefault();
         }
 
+        public void DeletePreviousPhotoFromDirectory(Photo photo, string serverPath)
+        {
+            if (File.Exists(serverPath + photo.Path))
+            {
+                File.Delete(serverPath + photo.Path);
+            }
+            _unitOfWork.FlightRepository.DeletePhoto(photo);
+        }
+
         protected virtual void Dispose(bool disposing)
         {
             if (disposing)

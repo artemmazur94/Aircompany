@@ -37,7 +37,11 @@ namespace Aircompany.Web.Controllers
             {
                 Id = x.AirportId,
                 Name = x.Name,
-                Description = x.Description
+                Description = x.Description,
+                Code = x.Airport.Code,
+                City = x.Airport.City,
+                Country = x.Airport.Country,
+                PhotoEntity = x.Airport.Photo
             }).ToList();
 
             return View(models);
@@ -69,7 +73,11 @@ namespace Aircompany.Web.Controllers
             {
                 Id = airport.Id,
                 Name = airportLocalization.Name,
-                Description = airportLocalization.Description
+                Description = airportLocalization.Description,
+                Code = airport.Code,
+                City = airport.City,
+                Country = airport.Country,
+                PhotoEntity = airport.Photo
             };
             return View("CreateEdit", model);
         }
@@ -97,7 +105,19 @@ namespace Aircompany.Web.Controllers
 
         private void AddAirport(AirportViewModel model)
         {
-            var airport = new Airport();
+            Photo photo = null;
+            if (model.Photo != null)
+            {
+                photo = _flightService.SetPhotoToDirectory(model.Photo, Server.MapPath("~/"));
+            }
+
+            var airport = new Airport
+            {
+                Photo = photo,
+                Code = model.Code,
+                City = model.City,
+                Country = model.Country
+            };
             _airportService.AddAirportLocalization(new AirportLocalization
             {
                 Airport = airport,
@@ -113,6 +133,20 @@ namespace Aircompany.Web.Controllers
             AirportLocalization airportLocalization = _airportService.GetAirportLocalization(model.Id, (int) LanguageType.EN);
             airportLocalization.Name = model.Name;
             airportLocalization.Description = model.Description;
+
+            airportLocalization.Airport.Code = model.Code;
+            airportLocalization.Airport.City = model.City;
+            airportLocalization.Airport.Country = model.Country;
+
+            if (model.Photo != null)
+            {
+                if (airportLocalization.Airport.Photo != null)
+                {
+                    _flightService.DeletePreviousPhotoFromDirectory(airportLocalization.Airport.Photo, Server.MapPath("~/"));
+                }
+                airportLocalization.Airport.Photo = _flightService.SetPhotoToDirectory(model.Photo, Server.MapPath("~/"));
+            }
+            
             _airportService.Commit();
         }
 
@@ -129,7 +163,7 @@ namespace Aircompany.Web.Controllers
             {
                 return HttpNotFound();
             }
-            var model = new DeleteViewModel()
+            var model = new DeleteViewModel
             {
                 Name = _airportService.GetAirportLocalization(id.Value, LanguageHelper.CurrnetCulture).Name
             };

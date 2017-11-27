@@ -8,6 +8,10 @@
     <br/>
     foreach (ExternalProvider provider in Model)
     {
+        if (provider.Name == ExternalProviders.Facebook.ToString())
+        {
+            continue;
+        }
         <div class="row">
             <div class="col-sm-12">
                 @{

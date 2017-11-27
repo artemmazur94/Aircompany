@@ -18,36 +18,68 @@
 {
     <hr/>
     <div class="row">
-        <div class="col-sm-8">
-            <div class="col-sm-8 col-sm-offset-2">
-                <h4>@item.Name</h4>
-            </div>
-            
-        </div>
-    </div>
-    if(!String.IsNullOrEmpty(item.Description))
-    {
-        <div class="row">
-            <div class="col-sm-8">
-                @Html.LabelFor(x => item.Description, new { @class = "col-sm-2" })
-                <div class="col-sm-10">
-                    @item.Description
+        <div class="col-sm-12">
+            <div class="row">
+                <div class="col-sm-9 col-sm-offset-3">
+                    <h3>@item.Name</h3>
                 </div>
             </div>
         </div>
-    }
-    if (User.IsAdmin())
-    {
-        <br/>
-        <div class="row col-sm-offset-2">
-            <div class="col-sm-2">
-                <a href="@Url.Action("Edit", "Airport", new {id = item.Id})"><span class="glyphicon glyphicon-edit"></span> Edit</a>
-            </div>
-            <div class="col-sm-2">
-                <a href="@Url.Action("Delete", "Airport", new {id = item.Id})"><span class="glyphicon glyphicon-remove"></span> Remove</a>
-            </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-sm-2">
+            @if (item.PhotoEntity != null)
+            {
+                <img class="img-responsive" src="@Url.Content($"~/{item.PhotoEntity.Path}")"/>
+            }
+            else
+            {
+                <img class="img-responsive" src="@Url.Content("~/Content/images/placeholder-image.png")"/>
+            }
         </div>
-    }
+        <div class="col-sm-9">
+            <div class="row">
+                @Html.LabelFor(x => item.Code, new {@class = "col-sm-2"})
+                <div class="col-sm-10">
+                    @item.Code
+                </div>
+            </div>
+            <div class="row">
+                @Html.LabelFor(x => item.City, new {@class = "col-sm-2"})
+                <div class="col-sm-10">
+                    @item.City
+                </div>
+            </div>
+            <div class="row">
+                @Html.LabelFor(x => item.Country, new {@class = "col-sm-2"})
+                <div class="col-sm-10">
+                    @item.Country
+                </div>
+            </div>
 
+            @if (!String.IsNullOrEmpty(item.Description))
+            {
+                <div class="row">
+                    @Html.LabelFor(x => item.Description, new {@class = "col-sm-2"})
+                    <div class="col-sm-10">
+                        @item.Description
+                    </div>
+                </div>
+            }
+
+            @if (User.IsAdmin())
+            {
+                <br/>
+                <div class="row col-sm-offset-2">
+                    <div class="col-sm-2">
+                        <a href="@Url.Action("Edit", "Airport", new {id = item.Id})"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+                    </div>
+                    @*<div class="col-sm-2">
+                        <a href="@Url.Action("Delete", "Airport", new {id = item.Id})"><span class="glyphicon glyphicon-remove"></span> Remove</a>
+                    </div>*@
+                </div>
+            }
+        </div>
+    </div>
 }
-

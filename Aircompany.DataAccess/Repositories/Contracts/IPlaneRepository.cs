@@ -8,5 +8,6 @@ namespace Aircompany.DataAccess.Repositories.Contracts
     {
         List<PlaneLocalization> GetAllPlaneLocalizations(int languageId);
         PlaneLocalization GetPlaneLocalization(int id, int languageId);
+        Photo GetPhoto(int photoId);
     }
 }

@@ -13,5 +13,6 @@ namespace Aircompany.Services.Services.Contracts
         Plane GetPlane(int id);
         PlaneLocalization GetPlaneLocalization(int id, int languageId);
         void AddPlane(Plane plane);
+        Photo GetPhoto(int photoId);
     }
 }

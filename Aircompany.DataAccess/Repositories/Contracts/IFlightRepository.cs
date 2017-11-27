@@ -43,5 +43,7 @@ namespace Aircompany.DataAccess.Repositories.Contracts
         decimal GetPriceBySeatTypeId(int seatTypeId, int flightId);
 
         List<Flight> GetFlightsThisWeek();
+
+        void DeletePhoto(Photo photo);
     }
 }

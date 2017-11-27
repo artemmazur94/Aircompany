@@ -17,5 +17,6 @@ namespace Aircompany.Services.Services.Contracts
         void RemoveFlight(int id, int profileId);
         List<AirportLocalization> GetAirportLocalizations(List<int> airportIds, int languageId);
         Airport GetAirportByCode(string code);
+        void DeletePreviousPhotoFromDirectory(Photo photo, string serverPath);
     }
 }

@@ -22,5 +22,10 @@ namespace Aircompany.DataAccess.Repositories
         {
             return PlaneContext.PlaneLocalizations.FirstOrDefault(x => x.PlaneId == id && x.LanguageId == languageId);
         }
+
+        public Photo GetPhoto(int photoId)
+        {
+            return PlaneContext.Photos.First(x => x.Id == photoId);
+        }
     }
 }

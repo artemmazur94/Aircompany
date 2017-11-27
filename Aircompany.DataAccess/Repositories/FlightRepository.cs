@@ -168,5 +168,10 @@ namespace Aircompany.DataAccess.Repositories
                 x.DepartureDateTime >= dateFrom 
                 && x.DepartureDateTime <= dateTo).ToList();
         }
+
+        public void DeletePhoto(Photo photo)
+        {
+            FlightContext.Photos.Remove(photo);
+        }
     }
 }

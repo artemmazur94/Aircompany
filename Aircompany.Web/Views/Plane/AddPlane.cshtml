@@ -11,7 +11,7 @@
 
 <div class="row">
     <div class="col-sm-12">
-        @using (Html.BeginForm("AddPlane", "Plane", FormMethod.Post, new {@class = "form-horizontal", id = "plane-create-edit-form"}))
+        @using (Html.BeginForm("AddPlane", "Plane", FormMethod.Post, new {@class = "form-horizontal", id = "plane-create-edit-form", enctype = "multipart/form-data" }))
         {
             @Html.AntiForgeryToken()
 
@@ -52,7 +52,10 @@
                 @Html.TextAreaFor(x => x.Description, new {@class = "form-control col-sm-4"})
             </div>
 
-            // todo: add photo
+            <div class="form-group">
+                @Html.LabelFor(x => x.Photo, new { @class = "control-label col-sm-2" })
+                @Html.TextBoxFor(x => x.Photo, new { type = "file" ,@class = "form-control col-sm-4" })
+            </div>
 
             <hr/>
             <h2>Places map</h2>
