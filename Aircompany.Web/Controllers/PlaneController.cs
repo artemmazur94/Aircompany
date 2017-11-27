@@ -109,7 +109,7 @@ namespace Aircompany.Web.Controllers
             _planeService.AddPlane(plane);
             _planeService.Commit();
 
-            return RedirectToAction("Details", new {id = 2});
+            return RedirectToAction("Details", new {id = plane.Id});
         }
 
         public ActionResult Details(int? id)
