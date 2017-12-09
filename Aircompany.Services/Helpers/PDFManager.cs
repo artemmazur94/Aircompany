@@ -34,12 +34,11 @@ namespace Aircompany.Services.Helpers
                         document.Add(new Paragraph("FLIGHT TICKET"));
                         document.Add(Chunk.NEWLINE);
                         document.Add(new Paragraph($"Flight code: {ticket.FlightCode}"));
-                        document.Add(new Paragraph($"Departure airport code: {ticket.DepartureAirportCode}"));
-                        document.Add(new Paragraph($"Departure airport city: {ticket.DepartureCity}"));
-                        document.Add(new Paragraph($"Departure airport country: {ticket.DepartureCountry}"));
-                        document.Add(new Paragraph($"Ariving airport code: {ticket.ArivingAirportCode}"));
-                        document.Add(new Paragraph($"Ariving airport city: {ticket.ArivingCity}"));
-                        document.Add(new Paragraph($"Ariving airport country: {ticket.ArivingCountry}"));
+                        document.Add(new Paragraph($"Name: {ticket.Name}"));
+                        document.Add(new Paragraph($"Surname: {ticket.Surname}"));
+                        document.Add(new Paragraph($"Passport number: {ticket.PassportNumber}"));
+                        document.Add(new Paragraph($"Departure airport: {ticket.DepartureAirportCode}, {ticket.DepartureCity}, {ticket.DepartureCountry}"));
+                        document.Add(new Paragraph($"Ariving airport: {ticket.ArivingAirportCode}, {ticket.ArivingCity}, {ticket.ArivingCountry}"));
                         document.Add(new Paragraph($"Date: {ticket.Date.ToShortDateString()}"));
                         document.Add(new Paragraph($"Time: {ticket.Time}"));
                         document.Add(new Paragraph($"Hand luggage: {ticket.HandLuggage} kg, luggage {ticket.Luggage} kg"));

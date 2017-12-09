@@ -99,28 +99,31 @@ namespace Aircompany.Services.Services
             _unitOfWork.FlightRepository.AddTickets(tickets);
         }
 
-        public void SendTickets(List<Ticket> tickets, string serverPath, Profile profile)
+        public void SendTickets(List<NamedTicket> tickets, string serverPath, Profile profile)
         {
             List<TicketPDFModel> ticketModels = new List<TicketPDFModel>();
-            int flightId = tickets.First().FlightId;
+            int flightId = tickets.First().Ticket.FlightId;
             tickets.ForEach(ticket => ticketModels.Add(new TicketPDFModel
             {
-                FlightCode = $"{_airlinesCode} {ticket.FlightId:D4}",
-                Date = ticket.Flight.DepartureDateTime.ToLocalTime().Date,
-                Time = ticket.Flight.DepartureDateTime.ToLocalTime().TimeOfDay,
-                PlaneModel = $"{ticket.Flight.Plane.Manufacturer} {ticket.Flight.Plane.Model}",
-                DepartureAirportCode = ticket.Flight.DepartureAirport.Code,
-                DepartureCountry = ticket.Flight.DepartureAirport.Country,
-                DepartureCity = ticket.Flight.DepartureAirport.City,
-                ArivingAirportCode = ticket.Flight.ArivingAirport.Code,
-                ArivingCountry = ticket.Flight.ArivingAirport.Country,
-                ArivingCity = ticket.Flight.ArivingAirport.City,
-                Place = ticket.Place,
-                Row = ticket.Row,
-                Guid = ticket.Guid,
-                SeatTypeId = _unitOfWork.FlightRepository.GetSeatType(ticket.Flight.PlaneId, ticket.Row, ticket.Place),
-                HandLuggage = ticket.Flight.HandLuggage,
-                Luggage = ticket.Flight.Luggage
+                FlightCode = $"{_airlinesCode} {ticket.Ticket.FlightId:D4}",
+                Date = ticket.Ticket.Flight.DepartureDateTime.ToLocalTime().Date,
+                Time = ticket.Ticket.Flight.DepartureDateTime.ToLocalTime().TimeOfDay,
+                PlaneModel = $"{ticket.Ticket.Flight.Plane.Manufacturer} {ticket.Ticket.Flight.Plane.Model}",
+                DepartureAirportCode = ticket.Ticket.Flight.DepartureAirport.Code,
+                DepartureCountry = ticket.Ticket.Flight.DepartureAirport.Country,
+                DepartureCity = ticket.Ticket.Flight.DepartureAirport.City,
+                ArivingAirportCode = ticket.Ticket.Flight.ArivingAirport.Code,
+                ArivingCountry = ticket.Ticket.Flight.ArivingAirport.Country,
+                ArivingCity = ticket.Ticket.Flight.ArivingAirport.City,
+                Place = ticket.Ticket.Place,
+                Row = ticket.Ticket.Row,
+                Guid = ticket.Ticket.Guid,
+                SeatTypeId = _unitOfWork.FlightRepository.GetSeatType(ticket.Ticket.Flight.PlaneId, ticket.Ticket.Row, ticket.Ticket.Place),
+                HandLuggage = ticket.Ticket.Flight.HandLuggage,
+                Luggage = ticket.Ticket.Flight.Luggage,
+                Name = ticket.Name,
+                Surname = ticket.Surname,
+                PassportNumber = ticket.PassportNumber
             }));
 
             ticketModels.ForEach(x => x.Price = _unitOfWork.FlightRepository.GetPriceBySeatTypeId(x.SeatTypeId, flightId));
@@ -132,7 +135,7 @@ namespace Aircompany.Services.Services
             }
 
             List<string> pathes = tickets.Select(x => serverPath + ConfigurationManager.AppSettings[TICKETS_DIRECTORY_KEY] +
-                                    $"\\Ticket-{x.Guid}.pdf").ToList();
+                                    $"\\Ticket-{x.Ticket.Guid}.pdf").ToList();
             ticketModels.ForEach(x => PDFManager.CreateTicket(x, serverPath));
             EmailManager.TicketEmail(pathes, profile.Email,
                 $"{profile.Name} {profile.Surname}");

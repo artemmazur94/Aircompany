@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Aircompany.DataAccess.Entities;
+using Aircompany.Services.Models;
 
 namespace Aircompany.Services.Services.Contracts
 {
@@ -46,7 +47,7 @@ namespace Aircompany.Services.Services.Contracts
 
         List<int> GetSeatTypesForPlane(int planeId);
 
-        void SendTickets(List<Ticket> tickets, string serverPath, Profile profile);
+        void SendTickets(List<NamedTicket> tickets, string serverPath, Profile profile);
 
         List<Flight> GetFlightsThisWeek();
     }

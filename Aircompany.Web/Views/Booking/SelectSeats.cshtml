@@ -120,7 +120,7 @@
             </div>
             <hr/>
             <div class="plane">
-                @for (var i = Model.PlanePlan.Count; i > 0; i--)
+                @for (var i = 1; i < Model.PlanePlan.Count; i++)
                 {
                     <div class="plane-row">
                         <span class="label label-default">Row @i</span>

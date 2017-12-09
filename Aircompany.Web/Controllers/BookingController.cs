@@ -6,6 +6,7 @@ using System.Net;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Aircompany.DataAccess.Entities;
+using Aircompany.Services.Models;
 using Aircompany.Services.Services.Contracts;
 using Aircompany.Web.Helpers;
 using Aircompany.Web.Models.Booking;
@@ -252,6 +253,23 @@ namespace Aircompany.Web.Controllers
                 return HttpNotFound();
             }
 
+            var model = new ConfirmSelectedSeatsViewModel
+            {
+                FlightId = flight.Id,
+                SelectedSeats = PlaneSeat.GetAllSeats(_bookingService.GetFlightTicketPreOrdersForCurrentUser(flight.Id,
+                    IdentityManager.GetProfileIdFromAuthCookie(HttpContext)))
+            };
+
+            ApplyFlightModel(flight);
+
+            List<Sector> sectors = _bookingService.GetSectorsByPlaneId(flight.PlaneId);
+            PlaneSeat.SetSeatTypes(model.SelectedSeats, sectors);
+
+            return View(model);
+        }
+
+        private void ApplyFlightModel(Flight flight)
+        {
             var model = new FlightViewModel
             {
                 Id = flight.Id,
@@ -262,9 +280,6 @@ namespace Aircompany.Web.Controllers
                 ArivingTime = flight.ArivingDateTime.ToLocalTime().TimeOfDay,
                 Prices = flight.SectorTypePrices.ToList(),
                 PlaneModel = $"{flight.Plane.Manufacturer} {flight.Plane.Model}",
-                SelectedSeats =
-                    PlaneSeat.GetAllSeats(_bookingService.GetFlightTicketPreOrdersForCurrentUser(flight.Id,
-                        IdentityManager.GetProfileIdFromAuthCookie(HttpContext))),
                 DepartureAirportCode = flight.DepartureAirport.Code,
                 DepartureAirportCity = flight.DepartureAirport.City,
                 DepartureAirportCountry = flight.DepartureAirport.Country,
@@ -282,36 +297,36 @@ namespace Aircompany.Web.Controllers
                 model.Prices.ForEach(x => x.Price = (x.Price * (1 - ((decimal)discount / 100m))));
             }
 
-            List<Sector> sectors = _bookingService.GetSectorsByPlaneId(flight.PlaneId);
-            PlaneSeat.SetSeatTypes(model.SelectedSeats, sectors);
-
-            return View(model);
+            ViewBag.FlightModel = model;
         }
 
         [Authorize]
-        public ActionResult BookTickets(int? flightId)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ConfirmSelectedSeats(ConfirmSelectedSeatsViewModel model)
         {
-            if (flightId == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadGateway);
-            }
-
-            var flight = _bookingService.GetFlight(flightId.Value);
+            var flight = _bookingService.GetFlight(model.FlightId);
             if (flight == null)
             {
                 return HttpNotFound();
             }
 
+            if (!ModelState.IsValid)
+            {
+                ApplyFlightModel(flight);
+
+                return View(model);
+            }
+
             int profileId = IdentityManager.GetProfileIdFromAuthCookie(HttpContext);
 
-            List<TicketPreOrder> ticketPreOrders = _bookingService.GetFlightTicketPreOrdersForCurrentUser(flightId.Value, profileId);
+            List<TicketPreOrder> ticketPreOrders = _bookingService.GetFlightTicketPreOrdersForCurrentUser(model.FlightId, profileId);
 
             if (ticketPreOrders.Count == 0)
             {
                 TempData[MESSAGE_KEY] = "Sorry, choosen tickets are already booked. You can choose other onces.";
                 return RedirectToAction("SelectSeats", new { id = flight.Id });
             }
-
 
             var tickets = ticketPreOrders.Select(x => new Ticket
             {
@@ -322,9 +337,18 @@ namespace Aircompany.Web.Controllers
                 ProfileId = profileId
             }).ToList();
 
+            var namedTickets = tickets.Select(x => new NamedTicket
+                {
+                    Ticket = x,
+                    Name = model.SelectedSeats.First(z => z.Row == x.Row && z.Place == x.Place).Name,
+                    Surname = model.SelectedSeats.First(z => z.Row == x.Row && z.Place == x.Place).Surname,
+                    PassportNumber = model.SelectedSeats.First(z => z.Row == x.Row && z.Place == x.Place).PassportNumber,
+                })
+                .ToList();
+
             _bookingService.RemoveTicketPreOrdersForUser(flight.Id, profileId);
             _bookingService.BookTickets(tickets);
-            _bookingService.SendTickets(tickets, Server.MapPath("~/"), _accountService.GetProfile(profileId));
+            _bookingService.SendTickets(namedTickets, Server.MapPath("~/"), _accountService.GetProfile(profileId));
 
             _bookingService.Commit();
 

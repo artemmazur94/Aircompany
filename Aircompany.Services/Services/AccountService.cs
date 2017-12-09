@@ -12,7 +12,7 @@ namespace Aircompany.Services.Services
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        private const string PROTOCOL_TYPE_URL = "https://";
+        private const string PROTOCOL_TYPE_URL = "http://";
         private const string UPDATE_PASSWORD_ACTION_URL = "/Account/UpdatePassword?token=";
 
         public AccountService(IUnitOfWork unitOfWork)

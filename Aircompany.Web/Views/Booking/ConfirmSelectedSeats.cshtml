@@ -1,6 +1,6 @@
 ﻿@using Aircompany.DataAccess.Enums
 @using Aircompany.Web.Models.Booking
-@model FlightViewModel
+@model ConfirmSelectedSeatsViewModel
 
 @{
     ViewBag.Title = "Confirm selected seats";
@@ -20,119 +20,166 @@
         </div>
     </div>
 }
-<div class="jumbotron">
-    <h2>Confirm selected seats</h2>
-    <hr />
-    <h2>Flight: <b>@Model.Code</b></h2>
-    <div class="row">
-        <div class="col-sm-4">
-            <h3>
-                <strong>Flight information: </strong>
-            </h3>
-        </div>
-        <div class="col-sm-8">
-            <br />
-            <div class="col-sm-12">
-                @Html.LabelFor(x => x.DepartureAirportCode)
-                @Model.DepartureAirportCode, @Model.DepartureAirportCity, @Model.DepartureAirportCountry
+@{
+    var flight = (FlightViewModel) ViewBag.FlightModel;
+    <div class="jumbotron">
+        <h2>Confirm selected seats</h2>
+        <hr />
+        <h2>Flight: <b>@flight.Code</b></h2>
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>
+                    <strong>Flight information: </strong>
+                </h3>
             </div>
-            <div class="col-sm-12">
-                @Html.LabelFor(x => x.ArivingAirportCode)
-                @Model.ArivingAirportCode, @Model.ArivingAirportCity, @Model.ArivingAirportCountry
-            </div>
-            <div class="col-sm-6">
-                @Html.LabelFor(x => x.DepartureDate)
-                @Model.DepartureDate.ToShortDateString()
-            </div>
-            <div class="col-sm-6">
-                @Html.LabelFor(x => x.DepartureTime)
-                @Model.DepartureTime.ToString()
-            </div>
-            <div class="col-sm-6">
-                @Html.LabelFor(x => x.ArivingDate)
-                @Model.ArivingDate.ToShortDateString()
-            </div>
-            <div class="col-sm-6">
-                @Html.LabelFor(x => x.ArivingTime)
-                @Model.ArivingTime.ToString()
-            </div>
-            <div class="col-sm-6">
-                @Html.LabelFor(x => x.HandLuggage)
-                @Model.HandLuggage kg
-            </div>
-            <div class="col-sm-6">
-                @Html.LabelFor(x => x.Luggage)
-                @Model.Luggage kg
-            </div>
-            <div class="col-sm-6">
-                @Html.LabelFor(x => x.PlaneModel)
-                @Model.PlaneModel
-            </div>
-            <div class="col-sm-6">
-                @Html.LabelFor(x => x.Prices)
-                @String.Join(", ", Model.Prices.Select(x => string.Format("{0:0.00}", x.Price))) (UAH)
+            <div class="col-sm-8">
+                <br />
+                <div class="col-sm-12">
+                    @Html.LabelFor(x => flight.DepartureAirportCode)
+                    @flight.DepartureAirportCode, @flight.DepartureAirportCity, @flight.DepartureAirportCountry
+                </div>
+                <div class="col-sm-12">
+                    @Html.LabelFor(x => flight.ArivingAirportCode)
+                    @flight.ArivingAirportCode, @flight.ArivingAirportCity, @flight.ArivingAirportCountry
+                </div>
+                <div class="col-sm-6">
+                    @Html.LabelFor(x => flight.DepartureDate)
+                    @flight.DepartureDate.ToShortDateString()
+                </div>
+                <div class="col-sm-6">
+                    @Html.LabelFor(x => flight.DepartureTime)
+                    @flight.DepartureTime.ToString()
+                </div>
+                <div class="col-sm-6">
+                    @Html.LabelFor(x => flight.ArivingDate)
+                    @flight.ArivingDate.ToShortDateString()
+                </div>
+                <div class="col-sm-6">
+                    @Html.LabelFor(x => flight.ArivingTime)
+                    @flight.ArivingTime.ToString()
+                </div>
+                <div class="col-sm-6">
+                    @Html.LabelFor(x => flight.HandLuggage)
+                    @flight.HandLuggage kg
+                </div>
+                <div class="col-sm-6">
+                    @Html.LabelFor(x => flight.Luggage)
+                    @flight.Luggage kg
+                </div>
+                <div class="col-sm-6">
+                    @Html.LabelFor(x => flight.PlaneModel)
+                    @flight.PlaneModel
+                </div>
+                <div class="col-sm-6">
+                    @Html.LabelFor(x => flight.Prices)
+                    @String.Join(", ", flight.Prices.Select(x => string.Format("{0:0.00}", x.Price))) (UAH)
+                </div>
             </div>
         </div>
     </div>
-</div>
-@if (Model.SelectedSeats.Count == 0)
-{
-    <h3>
-        <strong>Error! </strong>There is no selected seats!
-    </h3>
+    if (Model.SelectedSeats.Count == 0)
+    {
+        <h3>
+            <strong>Error! </strong>There is no selected seats!
+        </h3>
 
-}
-else
-{
-    <div class="row">
-        @foreach (PlaneSeat seat in Model.SelectedSeats)
+    }
+    else
+    {
+        using (Html.BeginForm("ConfirmSelectedSeats", "Booking", FormMethod.Post))
         {
-            <div class="col-sm-3">
-                @{
-                    string panelClass;
-                    string type = "";
-                    decimal price = Model.Prices.Find(x => x.SeatTypeId == seat.Type).Price;
-                    switch (seat.Type)
-                    {
-                        case (int) SeatType.Econom:
-                            panelClass = "panel-primary";
-                            type = SeatType.Econom.ToString();
-                            break;
-                        case (int) SeatType.Business:
-                            panelClass = "panel-info";
-                            type = SeatType.Business.ToString();
-                            break;
-                        case (int) SeatType.First:
-                            panelClass = "panel-danger";
-                            type = SeatType.First.ToString();
-                            break;
-                        default:
-                            panelClass = "panel-default";
-                            break;
-                    }
+            @Html.AntiForgeryToken()
+
+            @Html.Partial("FormValidation")
+
+            @Html.HiddenFor(x => x.FlightId)
+
+            <div class="row">
+                @for (var i = 0; i < Model.SelectedSeats.Count; i++)
+                {
+                    @Html.HiddenFor(x => x.SelectedSeats[i].Row)
+                    @Html.HiddenFor(x => x.SelectedSeats[i].Place)
+                    @Html.HiddenFor(x => x.SelectedSeats[i].Type)
+
+                    <div class="col-sm-6">
+                        @{
+                            string panelClass;
+                            string type = "";
+                            decimal price = flight.Prices.Find(x => x.SeatTypeId == Model.SelectedSeats[i].Type).Price;
+                            switch (Model.SelectedSeats[i].Type)
+                            {
+                                case (int) SeatType.Econom:
+                                    panelClass = "panel-primary";
+                                    type = SeatType.Econom.ToString();
+                                    break;
+                                case (int) SeatType.Business:
+                                    panelClass = "panel-info";
+                                    type = SeatType.Business.ToString();
+                                    break;
+                                case (int) SeatType.First:
+                                    panelClass = "panel-danger";
+                                    type = SeatType.First.ToString();
+                                    break;
+                                default:
+                                    panelClass = "panel-default";
+                                    break;
+                            }
+                        }
+                        <div class="panel @panelClass">
+                            <div class="panel-heading"><strong>Ticket</strong>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <strong>Row: </strong>@Model.SelectedSeats[i].Row
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <strong>Palce: </strong>@Model.SelectedSeats[i].Place
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <strong>Class: </strong>@type
+                                    </div>
+                                </div>
+                                <hr/>
+                                <div class="row">
+                                    <div class="form-group">
+                                        @Html.LabelFor(x => Model.SelectedSeats[i].Name, new {@class = "control-label col-sm-4"})
+                                        @Html.TextBoxFor(x => Model.SelectedSeats[i].Name, new {@class = "form-control col-sm-8"})
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        @Html.LabelFor(x => Model.SelectedSeats[i].Surname, new {@class = "control-label col-sm-4"})
+                                        @Html.TextBoxFor(x => Model.SelectedSeats[i].Surname, new {@class = "form-control col-sm-8"})
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group">
+                                        @Html.LabelFor(x => Model.SelectedSeats[i].PassportNumber, new {@class = "control-label col-sm-4"})
+                                        @Html.TextBoxFor(x => Model.SelectedSeats[i].PassportNumber, new {@class = "form-control col-sm-8"})
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <strong>Price: </strong>@price
+                            </div>
+                        </div>
+                    </div>
                 }
-                <div class="panel @panelClass">
-                    <div class="panel-heading"><strong>Ticket</strong></div>
-                    <div class="panel-body">
-                        <strong>Row: </strong>@seat.Row
-                        <br/>
-                        <strong>Palce: </strong>@seat.Place
-                        <br/>
-                        <strong>Class: </strong>@type
-                    </div>
-                    <div class="panel-footer">
-                        <strong>Price: </strong>@price
-                    </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-4 pull-right">
+                    <input type="button" class="btn btn-danger" value="Cancel selected tickets" onclick="location.href = '@Url.Action("CancelSelectedSeats", "Booking", new {flightId = Model.FlightId})'"/>
+                    <input type="submit" class="btn btn-success" value="Book tickets"/>
                 </div>
             </div>
         }
-    </div>
-    <div class="row">
-        <div class="col-sm-4 pull-right">
-            <input type="button" class="btn btn-danger" value="Cancel selected tickets" onclick="location.href = '@Url.Action("CancelSelectedSeats", "Booking", new {flightId = Model.Id})'" />
-            <input type="button" class="btn btn-success" value="Book tickets" onclick="location.href = '@Url.Action("BookTickets", new {flightId = Model.Id})'" />
-        </div>
-    </div>
+    }
+    <hr />
+    @Html.ActionLink("< Back to plane map", "SelectSeats", new { id = Model.FlightId })
 }
-<hr />
-@Html.ActionLink("< Back to plane map", "SelectSeats", new { id = Model.Id })

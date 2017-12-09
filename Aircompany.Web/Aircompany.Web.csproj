@@ -302,6 +302,7 @@
     <Compile Include="Models\Account\RegisterViewModel.cs" />
     <Compile Include="Models\Account\UpdatePasswordViewModel.cs" />
     <Compile Include="Models\Booking\AddFlightViewModel.cs" />
+    <Compile Include="Models\Booking\ConfirmSelectedSeatsViewModel.cs" />
     <Compile Include="Models\Booking\HallSeat.cs" />
     <Compile Include="Models\Booking\FlightsViewModel.cs" />
     <Compile Include="Models\Booking\FlightViewModel.cs" />

@@ -7,14 +7,31 @@ namespace Aircompany.Web.Models.Booking
 {
     public class PlaneSeat
     {
+        [Required]
         [Display(Name = "Row: ")]
         public int Row { get; set; }
         
+        [Required]
         [Display(Name = "Place: ")]
         public int Place { get; set; }
 
+        [Required]
         [Display(Name = "Seat class: ")]
         public int Type { get; set; }
+
+        [Required]
+        [Display(Name = "Name: ")]
+        public string Name { get; set; }
+
+        [Required]
+        [Display(Name = "Surbname: ")]
+        public string Surname { get; set; }
+
+        [Required]
+        [MinLength(8)]
+        [MaxLength(100)]
+        [Display(Name = "Passport number: ")]
+        public string PassportNumber { get; set; }
 
         public static List<PlaneSeat> GetAllSeats(List<Ticket> tickets, List<TicketPreOrder> ticketPreOrders)
         {
